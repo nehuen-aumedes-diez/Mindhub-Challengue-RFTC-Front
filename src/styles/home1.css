@@ -120,6 +120,10 @@ padding: 0px;
   .imgCamisetas{
       width: 12rem;
   }
+  .subt{
+    font-size: 20px;
+
+  }
 }
 
 
@@ -137,7 +141,13 @@ padding: 0px;
 @media (max-width: 375px){
   .banner{
       width: 90%;
-      padding: 1rem;
+  }
+  .btn1{
+
+    color: white;
+    left: 11rem;
+    top: 41rem;
+    cursor: pointer;
   }
   .imgCamisetas{
       width: 16rem;
