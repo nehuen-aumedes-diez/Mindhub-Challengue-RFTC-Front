@@ -18,13 +18,13 @@ return(
 
 
 
-<div className='btn1'>
+<div className='btn1-cont'>
 
 <button className='btn1'> ver camiseta </button>
 
 </div>
 
-<div className='btn2'>
+<div className='btn2-cont'>
 
 <button className='btn2'> conocé más </button>
 
@@ -32,12 +32,11 @@ return(
 
 </div>
 
-
-<div>
+ <div>
 
     <img className='imgCamisetas' src="//cdn.shopify.com/s/files/1/0016/1061/2806/files/20221101_153113.jpg?v=1667458746&width=2200 2200w"></img>
 
-</div>
+</div> 
 
 
 
