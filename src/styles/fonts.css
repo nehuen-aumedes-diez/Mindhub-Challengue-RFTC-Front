@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'IBM+Plex+Sans';
+    src: url("https://fonts.google.com/share?selection.family=IBM%20Plex%20Sans:wght@400;500;700")
+}
+h1{
+    font-family: "IBM";
+}
