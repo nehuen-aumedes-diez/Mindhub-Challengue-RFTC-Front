@@ -32,11 +32,11 @@ return(
 
 </div>
 
- <div>
+ {/* <div>
 
     <img className='imgCamisetas' src="//cdn.shopify.com/s/files/1/0016/1061/2806/files/20221101_153113.jpg?v=1667458746&width=2200 2200w"></img>
 
-</div> 
+</div>  */}
 
 
 
