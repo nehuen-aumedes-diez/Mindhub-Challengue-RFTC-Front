@@ -15,6 +15,24 @@ const getBuzo = createAsyncThunk("getBuzo", async () => {
     };
   }
 });
+const deleteBuzo = createAsyncThunk("deleteBuzo", async ({buzoId}) => {
+
+  try {
+    const res = await axios.delete(`http://localhost:8000/api/buzo/${buzoId}`);
+
+    return {
+      success: true,
+      response: res.data.message,
+    };
+
+  } catch (error) {
+    console.log(error);
+    
+    return {
+      payload: "Error",
+    };
+  }
+});
 const getOneBuzoId = createAsyncThunk(
   "getOneBuzoId",
   async (_id) => {
@@ -36,6 +54,7 @@ const getOneBuzoId = createAsyncThunk(
 
 const buzoActions = {
   getBuzo,
+  deleteBuzo,
   getOneBuzoId,
 };
 
