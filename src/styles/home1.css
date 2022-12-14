@@ -3,40 +3,37 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 .home-container {
   display: flex;
   flex-direction: column;
   /* text-align: center; */
   width: 100%;
-  
+
 }
+
 .tittle-home {
   display: flex;
-  
+
   font-size: 280%;
   font-weight: 600;
   text-transform: uppercase;
   color: whitesmoke;
-  top: 20rem;
+  top: 25rem;
   position: absolute;
   z-index: 100;
-  /* text-shadow:8px 8px 30px rgb(165, 36, 36),
-    -2px 2px 20px rgb(165, 36, 36); */
-    /* text-shadow: -10px -5px 3px #4321bf,   -15px -10px 5px #42dd36, -20px -15px 7px #dd7c31; */
-    /* text-shadow: 0px -20px 7px #630303; */
-    text-shadow: 0px 20px 7px #630303;
-    /* text-shadow: -20px 0px 7px red; */
-    /* text-shadow: 20px 0px 7px red; */
-    /* text-shadow: 20px 15px 7px red; */
+  text-shadow: 0px 20px 7px #630303;
 }
+
 .banner1 {
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 1.76);
- 
+
 }
+
 .banner {
   display: flex;
   justify-content: center;
@@ -49,9 +46,10 @@
   background-image: none;
   opacity: 0.6;
 }
-.subt{
- display: flex;
- flex-direction: column;
+
+.subt {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 900px;
@@ -60,65 +58,26 @@
   background-repeat: no-repeat;
   background: center;
   object-fit: cover;
-color: rgb(248, 248, 32);
+  color:  #EEA904;
   background-image: none;
   position: absolute;
   bottom: 280px;
   font-weight: bold;
 }
-.picture{
-object-fit: cover;
+
+.picture {
+  object-fit: cover;
 }
-.btn1{
-  padding: 5px;
-  border-radius: 8px;
-  position: absolute;
-  z-index: 100;
-  width: 6rem;
-  background-color: rgb(13, 25, 251);
-  color: white;
-  left: 45rem;
-  top: 41rem;
-  cursor: pointer;
-}
-.btn2{
-  position: absolute;
-  border-radius: 8px;
-  z-index: 100;
-  padding: 5px;
-  /* margin-top: 11rem; */
-  right: 44rem;
-  width: 5.5rem;
-  color: white;
-  background-color: rgb(13, 25, 251);
-  top: 41rem;
-  cursor: pointer;
-}
-.imgCamisetas{
+
+.imgCamisetas {
   display: flex;
   margin-left: 26rem;
   justify-content: center;
   align-items: center;
   width: 58rem;
 }
-.btn1-cont{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-right: 4rem;
-width: 0px;
-padding: 0px;
-height: 10vh;
-}
-.btn2-cont{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 0px;
-padding: 0px;
-}
 
-/*  carrusel ?  */
+/*  slider */
 
 
 :root {
@@ -149,13 +108,11 @@ padding: 0px;
   overflow: hidden;
   user-select: none;
   gap: var(--gap);
-  mask-image: linear-gradient(
-    var(--mask-direction, to right),
-    hsl(0 0% 0% / 0),
-    hsl(0 0% 0% / 1) 20%,
-    hsl(0 0% 0% / 1) 80%,
-    hsl(0 0% 0% / 0)
-  );
+  mask-image: linear-gradient(var(--mask-direction, to right),
+      hsl(0 0% 0% / 0),
+      hsl(0 0% 0% / 1) 20%,
+      hsl(0 0% 0% / 1) 80%,
+      hsl(0 0% 0% / 0));
 }
 
 .marquee__group {
@@ -180,6 +137,7 @@ padding: 0px;
   from {
     transform: translateX(var(--scroll-start));
   }
+
   to {
     transform: translateX(var(--scroll-end));
   }
@@ -189,6 +147,7 @@ padding: 0px;
   from {
     transform: translateY(var(--scroll-start));
   }
+
   to {
     transform: translateY(var(--scroll-end));
   }
@@ -222,7 +181,7 @@ padding: 0px;
   gap: var(--gap);
   margin: auto;
   max-width: 100%;
-  
+
 }
 
 .wrapper--vertical {
@@ -235,7 +194,7 @@ padding: 0px;
 .marquee--reverse .marquee__group {
   animation-direction: reverse;
   animation-delay: -3s;
-  
+
 }
 
 
@@ -282,170 +241,185 @@ padding: 0px;
 
 
 
-@media (max-width: 930px){
-  .banner{
+@media (max-width: 930px) {
+  .banner {
     width: 100%;
-}
-.btn1{
-
-  color: white;
-  left: 11rem;
-  top: 41rem;
-  cursor: pointer;
-}
-.btn2{
-
-  color: white;
-  left: 5rem;
-  top: 41rem;
-  cursor: pointer;
-}
-
-
-.imgCamisetas{
-    width: 16rem;
-}
-.subt{
-  top: 32rem;
-  width: 18rem;
-}
-
-}
-
-
-
-
-@media (max-width: 700px){
-  .banner{
-    width: 100%;
-}
-.btn1{
-
-  color: white;
-  left: 11rem;
-  top: 41rem;
-  cursor: pointer;
-}
-.btn2{
-
-  color: white;
-  left: 5rem;
-  top: 41rem;
-  cursor: pointer;
-}
-
-
-.imgCamisetas{
-    width: 16rem;
-}
-.subt{
-  top: 32rem;
-  width: 18rem;
-}
-.btn1-cont{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-right: 4rem;
-width: 0px;
-padding: 0px;
-height: 10vh;
-}
-.btn2-cont{
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  width: 0px;
-padding: 0px;
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-
-@media (max-width: 550px){
-  .banner{
-    width: 100%;
-}
-.btn1{
-
-  color: white;
-  left: 11rem;
-  top: 41rem;
-  cursor: pointer;
-}
-.btn2{
-
-  color: white;
-  left: 5rem;
-  top: 41rem;
-  cursor: pointer;
-}
-
-
-.imgCamisetas{
-    width: 16rem;
-}
-.subt{
-  top: 32rem;
-  width: 18rem;
-  font-size: 25px;
-}
-
-.tittle-home{
-  font-size: 40px;
-
-}
-
-
-
-}
-
-
-@media (max-width: 425px){
-  .banner{
-    width: 100%;
-}
-.btn1{
-
-  color: white;
-  left: 11rem;
-  top: 41rem;
-  cursor: pointer;
-}
-.btn2{
-
-  color: white;
-  left: 5rem;
-  top: 41rem;
-  cursor: pointer;
-}
-
-
-.imgCamisetas{
-    width: 16rem;
-}
-.subt{
-  top: 32rem;
-  width: 18rem;
-}
-}
-
-
-
-@media (max-width: 375px){
-  .banner{
-      width: 100%;
   }
-  .btn1{
+
+  .btn1 {
+
+    color: white;
+    left: 11rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+  .btn2 {
+
+    color: white;
+    left: 5rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+
+  .imgCamisetas {
+    width: 16rem;
+  }
+
+  .subt {
+    top: 32rem;
+    width: 18rem;
+  }
+
+}
+
+
+
+
+@media (max-width: 700px) {
+  .banner {
+    width: 100%;
+  }
+
+  .btn1 {
+
+    color: white;
+    left: 11rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+  .btn2 {
+
+    color: white;
+    left: 5rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+
+  .imgCamisetas {
+    width: 16rem;
+  }
+
+  .subt {
+    top: 32rem;
+    width: 18rem;
+  }
+
+  .btn1-cont {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    right: 4rem;
+    width: 0px;
+    padding: 0px;
+    height: 10vh;
+  }
+
+  .btn2-cont {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 0px;
+    padding: 0px;
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 550px) {
+  .banner {
+    width: 100%;
+  }
+
+  .btn1 {
+
+    color: white;
+    left: 11rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+  .btn2 {
+
+    color: white;
+    left: 5rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+
+  .imgCamisetas {
+    width: 16rem;
+  }
+
+  .subt {
+    top: 32rem;
+    width: 18rem;
+    font-size: 25px;
+  }
+
+  .tittle-home {
+    font-size: 40px;
+
+  }
+
+
+
+}
+
+
+@media (max-width: 425px) {
+  .banner {
+    width: 100%;
+  }
+
+  .btn1 {
+
+    color: white;
+    left: 11rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+  .btn2 {
+
+    color: white;
+    left: 5rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+
+  .imgCamisetas {
+    width: 16rem;
+  }
+
+  .subt {
+    top: 32rem;
+    width: 18rem;
+  }
+}
+
+
+
+@media (max-width: 375px) {
+  .banner {
+    width: 100%;
+  }
+
+  .btn1 {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -454,7 +428,8 @@ padding: 0px;
     top: 41rem;
     cursor: pointer;
   }
-  .btn2{
+
+  .btn2 {
 
     color: white;
     /* left: 5rem; */
@@ -463,51 +438,20 @@ padding: 0px;
   }
 
 
-  .imgCamisetas{
-      width: 16rem;
+  .imgCamisetas {
+    width: 16rem;
   }
-  .subt{
+
+  .subt {
     top: 32rem;
     width: 18rem;
     font-size: 20px;
   }
-  .tittle-home{
+
+  .tittle-home {
     font-size: 28px;
 
   }
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
