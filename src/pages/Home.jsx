@@ -9,7 +9,7 @@ import Footer from '../components/Footer/Footer'
 export default function Home() {
   return (
     <>
-    {<Home1/>}
+    {/* <Home1/> */}
     <CardHome/>
     </>
   )
