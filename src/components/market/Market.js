@@ -11,14 +11,13 @@ return (
   <div className="filtro-market-">
     <h3> <Lista /> </h3>
   </div>
-  <div  className="nav"> <Navbar /></div>
   <div className="barra-y-nombre"> 
-  <h3>Nombre</h3>
-  <div> <Select /> </div>
+  <h3 className='TopDiv'>Nombre</h3>
   <div> <SearchBar /> </div>
+  <div className='BotDiv'> <Select /> </div>
   </div>
-  <div className="articulos"> <h3> Articulos </h3></div>
-  <div className="void-para-el-mensajero"> <h3> espacio para el chat </h3></div>
+  <div className="articulos"></div>
+  <div className="void-para-el-mensajero"></div>
 </div>
 )
 }

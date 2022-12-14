@@ -2,44 +2,54 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  
 }
 
-.container {  display: grid;
+.containerMarket {  display: grid;
     grid-template-columns: 0.5fr 0.5fr 1fr 1fr 1fr 1fr 0.8fr;
-    grid-template-rows: 0.8fr 0.6fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:  0.6fr 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-      "nav nav nav nav nav nav nav"
       "filtro-market- filtro-market- barra-y-nombre barra-y-nombre barra-y-nombre barra-y-nombre barra-y-nombre"
       "filtro-market- filtro-market- articulos articulos articulos articulos void-para-el-mensajero"
       "filtro-market- filtro-market- articulos articulos articulos articulos void-para-el-mensajero"
       "filtro-market- filtro-market- articulos articulos articulos articulos void-para-el-mensajero"
       "filtro-market- filtro-market- articulos articulos articulos articulos void-para-el-mensajero";
     height: 100vh;
+        background-color: lightgray;
     }
   
   .filtro-market- { grid-area: filtro-market-; 
-background-color: red;
-}
-  
-  .nav { grid-area: nav; 
-    background-color: blue;
-}
+    padding-top: 4vh;
+    display: flex;
+    justify-content: space-around ;
+    background-color: lightgray;
+    
+    }
+
   
   .barra-y-nombre { grid-area: barra-y-nombre; 
-    background-color: green;
+    display: flex;
+    justify-content: space-around ;
+    align-items: center;
+    background-color: lightgray;
 
 }
   
   .articulos { grid-area: articulos;
-    background-color: violet;
     overflow-y: scroll;
+    border: 2px solid black;
+    border-radius: 50px;
+    box-shadow: 5px 5px #630303;
+    z-index: 1;
+    margin-bottom: 15px;
+    background-color: white;
 
 }
   
   .void-para-el-mensajero { grid-area: void-para-el-mensajero; 
-    background-color: grey;
+    background-color: lightgray;
 
 }
 
@@ -48,16 +58,44 @@ background-color: red;
         display: none;
       }
 
-      .container {  display: grid;
+      .containerMarket {  display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.8fr 0.8fr 1.2fr 4fr;
+        grid-template-rows: 0.6fr 1.2fr 4fr;
         gap: 0px 0px;
         grid-auto-flow: row;
         grid-template-areas:
-        "nav"
         "filtro-market-"
-        "barra-y-nombre"
+        "barra-y-nombre "
         "articulos";
         height: 100vh;
+        }
+
+        .filtro-market- { grid-area: filtro-market-; 
+          align-items: center;
+          
+        }
+          
+            
+        .barra-y-nombre { grid-area: barra-y-nombre; 
+              flex-direction: column;
+              justify-content:center ;
+              gap: 1rem;
+          
+        }
+
+        .barra-y-nombre .TopDiv { grid-area: barra-y-nombre; 
+       
+          padding-top: 1rem;
+      
+    }
+          .barra-y-nombre .BotDiv { grid-area: barra-y-nombre; 
+   
+            padding-bottom: 1rem;
+      }
+            
+        .articulos { grid-area: articulos;
+              overflow-y: scroll;
+              margin: 0 8px 8px 8px;
+          
         }
  }

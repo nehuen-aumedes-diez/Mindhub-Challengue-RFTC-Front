@@ -3,6 +3,12 @@
     padding: 0px;
     box-sizing: border-box;
   }
+
+  .listalist a:link {
+    font-size: large;
+    font-weight: bolder;
+    text-decoration: none;
+  }
   
   
   @media only screen and (max-width: 475px) {
@@ -16,7 +22,7 @@
 
    @media only screen and (min-width: 475px) {
         .listalist {
-
+            list-style: none;
         }
         .listaselect{
             display: none;

@@ -11,14 +11,22 @@ export default function Select(props) {
 
   return (
     <>
-    <ul className='listaList' >
+    <ul className='listalist' >
         <dl>
             <dt>Camisetas</dt>
-                <dd>    <button>Hombre</button></dd>
-                <dd>    <button>Mujer</button></dd>
+                <dd> <Navlink>Hombre</Navlink>    {/* <button>Hombre</button> */}</dd>
+                <dd>  <Navlink>Mujer</Navlink> {/*  <button>Mujer</button> */}</dd>
         </dl>
-        <li>    <button>Buzos</button></li>
-        <li>    <button>Gorras</button></li>
+        <hr
+          style={{
+            background: 'black',
+            color: 'black',
+            borderColor: 'black',
+            height: '5px',
+          }}
+        />
+        <li>  <Navlink>Buzos</Navlink>  {/* <button>Buzos</button> */}</li>
+        <li>  <Navlink>Gorras</Navlink>  {/* <button>Gorras</button> */}</li>
     </ul>
     
 
