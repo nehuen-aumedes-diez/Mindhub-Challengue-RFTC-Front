@@ -7,7 +7,7 @@ import SearchBar from '../searchBar/SearchBar'
 
 function Market() {
 return (
-<div className="container">
+<div className="containerMarket">
   <div className="filtro-market-">
     <h3> <Lista /> </h3>
   </div>

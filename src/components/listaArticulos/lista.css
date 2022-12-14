@@ -6,7 +6,7 @@
   
   
   @media only screen and (max-width: 475px) {
-        .listaList {
+        .listalist {
             display: none;
         }
         .listaselect{
