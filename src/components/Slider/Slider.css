@@ -149,11 +149,9 @@ img {
 
 #TextoConfian{
   /* border: 2px solid greenyellow; */
-  color: white;
   align-self: flex-end;
   font-family: proxima-nova, sans-serif;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 20px;
+  color: rgba(231, 227, 227, 0.61);
   font-weight: 400;
   font-style: italic;
 }
@@ -258,11 +256,16 @@ img {
   
   #TextoConfian{
     /* border: 2px solid greenyellow; */
+    font-size: 15.5px;
   }
 
   .DivisorLeft {
     border-left: 5px solid var(--Amarillo);
     margin-left: 7rem;
     height: 10vh;
+  }
+
+  .Span-ProdRetro{
+    color: var(--Amarillo);
   }
 }
