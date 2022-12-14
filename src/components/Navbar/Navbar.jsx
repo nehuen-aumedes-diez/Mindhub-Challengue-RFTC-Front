@@ -3,6 +3,7 @@ import './Navbar.css'
 import { useState } from 'react'
 import { IoCartOutline } from "react-icons/io5";
 import { BiUser } from "react-icons/bi";
+import { Link as LinkRouter } from 'react-router-dom';
 
 export default function Navbar() {
   let [hideDropdown, setHideDropdown] = useState(false)
@@ -19,7 +20,7 @@ export default function Navbar() {
           Tienda
           {hideDropdown ?
             <div id='containerDropdownNav' onMouseLeave={() => { setHideDropdown(false) }} >
-              <div className='itemDropdown'>Camisetas Mujer</div>
+              <LinkRouter to='/camisetasF' className='itemDropdown'>Camisetas Mujer</LinkRouter>
               <div className='itemDropdown'>Camisetas Hombre</div>
               <div className='itemDropdown'>Buzos</div>
               <div className='itemDropdown'>Gorras</div>
