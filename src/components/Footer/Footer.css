@@ -158,3 +158,20 @@ ul {
   font-size: 14px;
   color: #878787;
 }
+
+.logoFooter{
+  border:none;
+  width: 10rem;
+}
+
+.footer-logo{
+  text-align: center;
+}
+
+.copyright-area{
+  margin: 0;
+}
+
+.footer-content{
+  height: 23rem;
+}
