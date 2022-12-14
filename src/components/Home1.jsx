@@ -15,14 +15,6 @@ export default function Home1() {
           ></img>
           <h1 className="tittle-home">{tittle}</h1>
           <p className="subt">{sub}</p>
-
-          <div className="btn1-cont">
-            <button className="btn1"> ver camiseta </button>
-          </div>
-
-          <div className="btn2-cont">
-            <button className="btn2"> conocé más </button>
-          </div>
         </div>
       </div>
     </>
