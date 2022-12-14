@@ -1,9 +1,9 @@
 import React from 'react'
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import buzoActions from '../redux/actions/buzoAction';
+import buzoActions from '../../redux/actions/buzoAction';
 
-export default function Probando() {
+export default function PaginaBusos() {
     const dispatch = useDispatch();
     const { getBuzo } = buzoActions;
     const { busos } = useSelector((state) => state.busos);
@@ -18,7 +18,7 @@ export default function Probando() {
 
     return (
         <div>
-            holaaaaaa
+            BUSOS
         </div>
     )
 }
