@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import CamisetasF from "./pages/camisetasF/CamisetasF";
 import CamisetasFDetalles from "./pages/CamisetasFDetalles/CamisetasFDetalles";
 import Probando from "./components/Probando";

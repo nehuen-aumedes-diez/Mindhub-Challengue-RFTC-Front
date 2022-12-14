@@ -6,9 +6,7 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   /* text-align: center; */
-  height: 179vh;
   width: 100%;
   
 }
