@@ -3,7 +3,7 @@
     --Amarillo: #EEA904;
     --Negro: #000000;
   }
-  body {
+  .supergeneral-detalle {
     width: 100%;
     height: 100%;
     display: flex;

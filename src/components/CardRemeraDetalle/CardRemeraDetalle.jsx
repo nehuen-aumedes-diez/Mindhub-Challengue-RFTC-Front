@@ -3,7 +3,7 @@ import './CardRemeraDetalle.css'
 
 function CardRemeraDetalle() {
   return (
-    <body>
+    <div className='supergeneral-detalle'>
         <div class="contenedor-detalleF">
             <div class="imagen-producto remeraImg">
                 <img src='https://cdn.shopify.com/s/files/1/0015/5841/3357/products/PERCHAS-ARGENTINA-WOMEN-CUERVO_550x.png?v=1627407396' alt='' />
@@ -32,7 +32,7 @@ function CardRemeraDetalle() {
                 </div>
             </div>
         </div>
-    </body>
+    </div>
   )
 }
 

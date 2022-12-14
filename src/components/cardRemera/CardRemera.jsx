@@ -4,8 +4,8 @@ import { Link as LinkRouter } from 'react-router-dom'
 
 function cardRemera() {
 return (
-    <body>
-        <div class="container shoe">
+    <div className='supergeneral'>
+        <div class="contenedorespecial shoe">
             <div class="productImage shoeImg"></div>
             <div class="size shoeSize">
                 <h4>TALLE</h4>
@@ -51,7 +51,7 @@ return (
                 {nombre}
             </div>
         </div> */}
-    </body>
+    </div>
 )
 }
 
