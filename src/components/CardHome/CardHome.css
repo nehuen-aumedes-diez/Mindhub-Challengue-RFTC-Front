@@ -60,6 +60,7 @@
   .card{
     list-style: none;
     position: relative;
+    border: none;
   }
   
   .card:before{
@@ -67,6 +68,7 @@
     display: block;
     padding-bottom: 150%;
     width: 100%;
+    background-color: #1D5B6E;
   }
   
   .card__background{
