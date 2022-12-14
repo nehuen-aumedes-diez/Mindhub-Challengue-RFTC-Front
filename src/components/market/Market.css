@@ -1,0 +1,63 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.container {  display: grid;
+    grid-template-columns: 0.5fr 0.5fr 1fr 1fr 1fr 1fr 0.8fr;
+    grid-template-rows: 0.8fr 0.6fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "nav nav nav nav nav nav nav"
+      "filtro-market- filtro-market- barra-y-nombre barra-y-nombre barra-y-nombre barra-y-nombre barra-y-nombre"
+      "filtro-market- filtro-market- articulos articulos articulos articulos void-para-el-mensajero"
+      "filtro-market- filtro-market- articulos articulos articulos articulos void-para-el-mensajero"
+      "filtro-market- filtro-market- articulos articulos articulos articulos void-para-el-mensajero"
+      "filtro-market- filtro-market- articulos articulos articulos articulos void-para-el-mensajero";
+    height: 100vh;
+    }
+  
+  .filtro-market- { grid-area: filtro-market-; 
+background-color: red;
+}
+  
+  .nav { grid-area: nav; 
+    background-color: blue;
+}
+  
+  .barra-y-nombre { grid-area: barra-y-nombre; 
+    background-color: green;
+
+}
+  
+  .articulos { grid-area: articulos;
+    background-color: violet;
+    overflow-y: scroll;
+
+}
+  
+  .void-para-el-mensajero { grid-area: void-para-el-mensajero; 
+    background-color: grey;
+
+}
+
+@media only screen and (max-width: 475px) {
+      .void-para-el-mensajero {
+        display: none;
+      }
+
+      .container {  display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.8fr 0.8fr 1.2fr 4fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+        "nav"
+        "filtro-market-"
+        "barra-y-nombre"
+        "articulos";
+        height: 100vh;
+        }
+ }

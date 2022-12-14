@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  
+  
+  @media only screen and (max-width: 475px) {
+        .listaList {
+            display: none;
+        }
+        .listaselect{
+
+        }
+   }
+
+   @media only screen and (min-width: 475px) {
+        .listalist {
+
+        }
+        .listaselect{
+            display: none;
+        }
+}
