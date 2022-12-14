@@ -21,9 +21,9 @@ export default function Navbar() {
           {hideDropdown ?
             <div id='containerDropdownNav' onMouseLeave={() => { setHideDropdown(false) }} >
               <LinkRouter to='/camisetasF' className='itemDropdown'>Camisetas Mujer</LinkRouter>
-              <div className='itemDropdown'>Camisetas Hombre</div>
-              <div className='itemDropdown'>Buzos</div>
-              <div className='itemDropdown'>Gorras</div>
+              <LinkRouter to='/camisetasF' className='itemDropdown'>Camisetas Hombres</LinkRouter>
+              <LinkRouter to='/camisetasF' className='itemDropdown'>Buzos</LinkRouter>
+              <LinkRouter to='/camisetasF' className='itemDropdown'>Gorras</LinkRouter>
             </div>
             :
             console.log('')
@@ -37,8 +37,8 @@ export default function Navbar() {
             <BiUser className='RefCart' onMouseEnter={() => { setMenuUser(true) }} onClick={() => { !menuUser ? setMenuUser(true) : setMenuUser(false) }}></BiUser>
             {menuUser ?
               <div id='containerDropdownMenuUser' onMouseLeave={() => { setMenuUser(false) }} >
-                <div className='itemDropdown2'>Ingresar</div>
-                <div className='itemDropdown2'>Registrarse</div>
+                <LinkRouter to='/camisetasF' className='itemDropdown'>Ingreso</LinkRouter>
+                <LinkRouter to='/camisetasF' className='itemDropdown'>Registro</LinkRouter>
               </div>
               :
               console.log('')
