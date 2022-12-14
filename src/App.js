@@ -2,11 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import Footer from './footer/Footer';
 import Error from './error/Error'
+import Testimonio from './testimonios/Testimonio';
+import Contacto from './contacto/Contacto';
 
 
 function App() {
   return (
-    <Error></Error>
+  <Contacto></Contacto>
     /* <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
