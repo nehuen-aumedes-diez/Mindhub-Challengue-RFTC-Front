@@ -1,5 +1,5 @@
 import React from 'react'
-import CardRemera from '../../components/cardRemera/CardRemera'
+import CardRemera from '../../components/CardRemera/CardRemera'
 
 function CamisetasF() {
   return (
