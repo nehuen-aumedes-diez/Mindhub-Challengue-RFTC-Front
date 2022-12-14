@@ -3,15 +3,20 @@ import "./App.css";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Market from "./components/market/Market";
+import Probando from "./components/Probando";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./layout/Layout";
+
 
 function App() {
   return (
-    <BrowserRouter>
+    <Layout>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
+        <Route path="/hola" element={<Probando/>}></Route>
         <Route path="/" element={<Market/>}></Route>
       </Routes>
-    </BrowserRouter>
+    </Layout>
   );
 }
 

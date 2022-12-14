@@ -25,7 +25,7 @@ export default function Navbar() {
               <div className='itemDropdown'>Gorras</div>
             </div>
             :
-            console.log('ElSE')
+            console.log('')
           }
         </div>
         <div className='LinkRefNav'>Contacto</div>
@@ -40,7 +40,7 @@ export default function Navbar() {
                 <div className='itemDropdown2'>Registrarse</div>
               </div>
               :
-              console.log('ElSE')
+              console.log('')
             }
           </div>
         </div>
