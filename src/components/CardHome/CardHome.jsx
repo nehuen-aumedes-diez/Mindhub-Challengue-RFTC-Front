@@ -4,9 +4,9 @@ import "./CardHome.css";
 export default function CardHome() {
   return (
     <div id="containerGeneralCardHome">
-      <h2 className="tituloNuestrosProductos">Nuestros Productos</h2>
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
       <section className="hero-section">
+      <h2 className="tituloNuestrosProductos">- Catálogo de Productos -</h2>
         <div className="card-grid">
           <a className="card" href="#">
             <div className="card__background"
