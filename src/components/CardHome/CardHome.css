@@ -1,5 +1,6 @@
 :root{
     --background-dark: #2d3548;
+    /* --background-dark: #2d3548; */
     --text-light: rgba(255,255,255,0.6);
     --text-lighter: rgba(255,255,255,0.9);
     --spacing-s: 8px;
@@ -29,7 +30,7 @@
   
   .hero-section{
     align-items: flex-start;
-    background-image: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
+    background-image: linear-gradient(15deg, black 10%, #2a6973 300%);
     display: flex;
     min-height: 100%;
     justify-content: center;
@@ -68,7 +69,7 @@
     display: block;
     padding-bottom: 150%;
     width: 100%;
-    background-color: #1D5B6E;
+    background-color: rgba(0, 0, 0, 0.884);
   }
   
   .card__background{
@@ -122,10 +123,10 @@
     text-align: center;
     margin: 1rem 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 25px;
   }
 
   #containerGeneralCardHome{
-    margin-top: 2rem;
+    margin: 3rem 0;
   }
