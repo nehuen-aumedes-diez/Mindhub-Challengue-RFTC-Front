@@ -33,10 +33,29 @@ const getOneRemeraFId = createAsyncThunk(
     }
   }
 );
+const deleteRemeraF = createAsyncThunk("deleteRemeraF", async ({remeraFId}) => {
+
+  try {
+    const res = await axios.delete(`http://localhost:8000/api/remeraF/${remeraFId}`);
+
+    return {
+      success: true,
+      response: res.data.message,
+    };
+
+  } catch (error) {
+    console.log(error);
+    
+    return {
+      payload: "Error",
+    };
+  }
+});
 
 const remeraFActions = {
   getRemeraF,
   getOneRemeraFId,
+  deleteRemeraF
 };
 
 export default remeraFActions;
