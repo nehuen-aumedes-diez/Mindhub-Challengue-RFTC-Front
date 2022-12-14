@@ -145,18 +145,7 @@ padding: 0px;
 * {
   box-sizing: border-box;
 }
-body {
-  display: grid;
-  align-content: center;
-  gap: var(--gap);
-  width: 100%;
-  min-height: 100vh;
-  font-family: system-ui, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--color-text);
-  background-color: var(--color-bg);
-}
+
 
 .marquee {
   display: flex;
