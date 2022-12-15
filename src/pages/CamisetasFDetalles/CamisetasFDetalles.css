@@ -2,4 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    min-height: 69vh;
+    /* background-image: url(https://img.freepik.com/vector-gratis/versus-vs-pantalla-dos-efectos-luz-enfoque_1017-26146.jpg?w=1380&t=st=1671069935~exp=1671070535~hmac=b1f8b665bbb81791422d1b3fc80bc020e80f5d012003f051c21f4df63053b057); */
+    background-image: linear-gradient(15deg, black 24%, var(--Amarillo) 160%);
+    background-repeat: no-repeat;
+    background-size: cover;
 }

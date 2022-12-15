@@ -23,7 +23,7 @@ const getOneRemeraMId = createAsyncThunk(
       const res = await axios.get(url);
       console.log(res.data.res);
       return {
-        remerasM: res.data.res,
+        remeraMencontrada: res.data.res,
       };
     } catch (error) {
       console.log(error);
@@ -33,10 +33,29 @@ const getOneRemeraMId = createAsyncThunk(
     }
   }
 );
+const deleteRemeraM = createAsyncThunk("deleteRemeraM", async ({remeraMId}) => {
+
+  try {
+    const res = await axios.delete(`http://localhost:8000/api/remeraM/${remeraMId}`);
+
+    return {
+      success: true,
+      response: res.data.message,
+    };
+
+  } catch (error) {
+    console.log(error);
+    
+    return {
+      payload: "Error",
+    };
+  }
+});
 
 const remeraMActions = {
   getRemeraM,
   getOneRemeraMId,
+  deleteRemeraM
 };
 
 export default remeraMActions;

@@ -4,7 +4,7 @@
     --Negro: #000000;
   }
   .supergeneral-detalle {
-    width: 65%;
+    width: 50%;
     display: flex;
     justify-items: center;
     align-items: center;
@@ -27,14 +27,16 @@
 
 
 .contenedor-2{
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     width: 50%;
     flex-direction: column;
     align-items: center;
-    gap: 35px;
+    gap: 25px;
 }
 .nombre-producto{
     font-size: 60px;
+    font-weight: 600;
 }
 .talle-producto{
     display: flex;
@@ -55,6 +57,7 @@
     color: black;
     border-radius: 50%;
     font-weight: 600;
+    cursor: pointer;
 }
 .talle-producto ul{
     display: flex;
@@ -80,19 +83,20 @@
 .descripcion-producto span{
     font-size: 15px;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     font-style: italic;
 }
 .comprar-producto span{
-    font-size: 30px;
-    padding: 5px;
-    color: var(--Amarillo);
-    background-color: var(--Negro);
+    font-size: 19px;
+    padding: 10px;
+    color: var(--Negro);
+    background-color: rgba(0, 0, 0, 0.128);
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .comprar-producto span:hover{
-    background-color: #2e2e2e;
+    background-color: var(--Negro);
+    color: var(--Amarillo);
 }

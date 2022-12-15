@@ -5,7 +5,6 @@ import remeraFActions from '../../redux/actions/remeraFAction'
 import './CardRemeraDetalle.css'
 
 function CardRemeraDetalle(props) {
-    let {img, nombre, descripcion, talle, stock, precio} = props
 
     let {id} = useParams()
     let dispatch = useDispatch()
@@ -43,7 +42,7 @@ function CardRemeraDetalle(props) {
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
-                </div>
+            </div>
             <div className='contenedor-2'>
                 <div className="nombre-producto">
                     {miRemera?.nombre}

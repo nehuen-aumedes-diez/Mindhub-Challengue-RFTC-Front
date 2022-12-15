@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CardRemera from "../../components/CardRemera/CardRemera"
 import remeraFActions from '../../redux/actions/remeraFAction'
-import './CamisetasF.css'
+import Market from '../../components/market/Market'
 
 function CamisetasF() {
   const dispatch = useDispatch()
@@ -17,12 +17,18 @@ function CamisetasF() {
   console.log(remerasF)
 
   return (
-    <div className='cont-remerasF'>
+/*     <div className='cont-remerasF'>
       {
         remerasF.map(each => 
           <CardRemera key={each._id} id={each._id} precio={each.precio} nombre={each.nombre} img={each.foto1} />)
       }
-    </div>
+    </div> */
+    <Market>
+    {
+      remerasF.map(each => 
+      <CardRemera key={each._id} id={each._id} precio={each.precio} nombre={each.nombre} img={each.foto1} />
+    )}
+    </Market>
   )
 }
 
