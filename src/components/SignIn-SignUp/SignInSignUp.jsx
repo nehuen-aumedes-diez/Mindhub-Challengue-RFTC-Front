@@ -1,10 +1,14 @@
 import React from 'react'
 import './SignInSignUp.css'
-
+import { useEffect, useState } from 'react'
 
 export default function SignInSignUp() {
     
-    const container = document.getElementById('containerS')
+
+    let [container, setContainer] = useState(null)
+    useEffect( () => {
+        setContainer(document.getElementById('containerS'))
+    }, [])
     console.log(container);
     async function botonSignUp(event) {
         container.classList.add("right-panel-active")
