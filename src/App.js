@@ -8,7 +8,7 @@ import Layout from "./layout/Layout";
 import NotFound from "./pages/NotFound/Error";
 import SignInSignUp from "./components/SignIn-SignUp/SignInSignUp";
 import Contacto from "./pages/contacto/Contacto";
-import Nosotros from './pages/nosotros/Nosotros'
+import Nosotros from './pages/Nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
 
 function App() {

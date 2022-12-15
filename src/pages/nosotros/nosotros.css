@@ -1,109 +1,324 @@
-@import url('https://fonts.googleapis.com/css?family=Exo+2:700');
-.cuerpo-nosotros {
-  background: url("https://library.sportingnews.com/styles/twitter_card_120x120/s3/2022-12/Argentina%20players%20jugadores%20Mundial%20Qatar%202022%20World%20Cup%20121322%20%281%29.jpg?itok=py2uo0SG");
-  background-color: #212121;
-  background-blend-mode: overlay;
-  background-size: cover;
-  text-align: center;
-  height: 100vh;
-  width: 100%;
+@import url("https://fonts.googleapis.com/css?family=Exo+2:700");
+
+:root {
+  --Bordo: #630303;
+  --Amarillo: #eea904;
+  --Negro: #000000;
+  --NovaFont: proxima-nova, sans-serif;
 }
 
-.titulo-nosotros {
-  color: whitesmoke;
-  font-family: 'Exo 2', sans-serif;
-  font-size: 46px;
-  font-weight: 900;
-  text-transform: uppercase;
-  padding-bottom: 30px;
- padding-top: 20px;
-}
-
-.subtitulo-nosotros{
-  padding-bottom: 20px;
-}
-
-.texto-nosotros {
-  max-width: 700px;
-  padding: 0;
-  color: whitesmoke;
-  font-family: OpenSans;
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 22px;
-  padding-bottom: 20px;
-}
-
-.lista-nosotros {
-  padding-bottom: 80px;
-}
-
-.img-nosotros {
-  width: 60px;
-  height: 60px;
-
-}
-
-
-@keyframes rotateInDownLeft {
-  from {
-    transform-origin: left bottom;
-    transform: rotate3d(0,0,0, 0deg);
-    opacity: 1;
-  }
-
-  to {
-    -webkit-transform-origin: left bottom;
-    transform-origin: left bottom;
- 
- transform:translateX(850px) translateY(-83px) rotate3d(0,0,1, -60deg);
-    opacity: 1;
-  }
-}
-@keyframes rotateOut {
-  from {
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    opacity: 1;
-  }
-
-  to {
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    -webkit-transform: rotate3d(0, 0, 1, 90deg);
-    transform: rotate3d(0, 0, 1, 90deg);
-    opacity: 1;
-  }
-}
-
-@media screen and (max-width: 730px) {
-
-  .subtitulo-nosotros{
-    padding-bottom: 20px;
-  }
-  
-  .texto-nosotros {
-    max-width: 400px;
-    font-size: 15px;
-  }
+@media screen and (min-width: 320px) {
   .cuerpo-nosotros {
-    height: 150vh;
+    background-color: rgba(17, 17, 17, 0.747);
+    min-height: 50vh;
+    width: 100%;
   }
-}
 
-@media screen and (max-width: 425px) {
   .titulo-nosotros {
-    font-size: 30px;
+    color: whitesmoke;
+    font-size: 25px;
+    font-weight: 300;
+    font-family: var(--NovaFont);
+    padding: 1rem 0;
+    text-align: center;
   }
-  .subtitulo-nosotros{
-    padding-bottom: 20px;
+
+  #container-nosotros-1 {
+    width: 100%;
+    min-height: 60vh;
   }
-  
+
+  .fotoPrincipal-nosotros {
+    width: 100%;
+    object-fit: cover;
+    padding: 0 1rem;
+  }
+
   .texto-nosotros {
-    max-width: 300px;
-    font-size: 15px;
+    color: white;
+    font-weight: 550;
+    font-size: 11.5px;
+    font-family: var(--NovaFont);
+    text-align: center;
+    line-height: 22px;
   }
+
+  #tituloQuienesSomos {
+    display: inline;
+    color: var(--Amarillo);
+    font-family: var(--NovaFont);
+    font-weight: 100;
+  }
+
+  #containerQuienesSomos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    color: white;
+  }
+
+  .titulo-mision {
+    color: whitesmoke;
+    font-size: 25px;
+    font-weight: 300;
+    font-family: var(--NovaFont);
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  #containerMision{
+    min-height: 50vh;
+    padding: 1rem;
+  }
+
+  .CardMision-Nosotros{
+    background-color: rgba(17, 17, 17, 0.747);
+    margin: 2rem 0;
+  }
+
+  .FotoCardMision{
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .TextoCardMision{
+    color: var(--Amarillo);
+    font-weight: 400;
+    font-family: var(--NovaFont);
+    text-align: center;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lista-nosotros{
+    list-style-position: inside;
+    list-style:square;
+  }
+
+  .lista-nosotros li{
+    margin: .8rem 0;
+    color: var(--Amarillo);
+  }
+}
+
+@media screen and (min-width: 768px) {
   .cuerpo-nosotros {
-    height: 150vh;
+    text-align: center;
+    width: 100%;
+  }
+
+  .titulo-nosotros {
+    color: whitesmoke;
+    font-size: 25px;
+    font-weight: 300;
+    font-family: var(--NovaFont);
+    padding: 1rem 0;
+  }
+
+  #container-nosotros-1 {
+    width: 100%;
+    min-height: 60vh;
+  }
+
+  .fotoPrincipal-nosotros {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    padding: 0 5rem;
+  }
+
+  .texto-nosotros {
+    color: white;
+    font-weight: 550;
+    font-size: 11.5px;
+    font-family: var(--NovaFont);
+    text-align: center;
+    line-height: 35px;
+    padding: 0 8rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .titulo-nosotros {
+    color: whitesmoke;
+    font-size: 25px;
+    font-weight: 300;
+    font-family: var(--NovaFont);
+    padding: 1rem 0;
+  }
+
+  #container-nosotros-1 {
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  .fotoPrincipal-nosotros {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    padding: 0;
+  }
+
+  .texto-nosotros {
+    color: white;
+    font-weight: 450;
+    font-size: 12px;
+    font-family: var(--NovaFont);
+    text-align: center;
+    padding: 1rem;
+    line-height: 30px;
+  }
+
+  #containerMision{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+  }
+
+  .CardMision-Nosotros{
+    width: 30%;
+  }
+
+  .FotoCardMision{
+    height: 45%;
+    object-fit: cover;
+  }
+
+  .TextoCardMision{
+    margin: 0;
+    color: white;
+    font-weight: 400;
+    line-height: 25px;
+  }
+
+  .lista-nosotros li{
+    margin: .8rem 0;
+    color: white;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .titulo-nosotros {
+    color: whitesmoke;
+    font-size: 45px;
+    font-weight: 300;
+    font-family: var(--NovaFont);
+    padding: 1rem 0;
+    text-align: start;
+    margin-left: 4rem;
+    letter-spacing: 1px;
+  }
+
+  #container-nosotros-1 {
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fotoPrincipal-nosotros {
+    width: 30%;
+    height: 60vh;
+    object-fit: cover;
+    object-position: left;
+    background-color: rgba(0, 0, 0, 0.192);
+    padding: 0.6rem;
+    border-radius: 20px 0px 20px 0px;
+  }
+
+  .texto-nosotros {
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0rem;
+    line-height: 35px;
+    width: 100%;
+  }
+
+  #containerQuienesSomos {
+    width: 30%;
+    padding: 0;
+    margin-left: 10rem;
+  }
+
+  .DivisorLeftNosotros {
+    border-left: 5px solid var(--Amarillo);
+    margin-left: 11.5rem;
+    height: 11vh;
+    margin-top: 1rem;
+  }
+
+  #cuerpoGeneral-Nosotros{
+    padding: 2rem;
+  }
+
+  .DivisorRightNosotros{
+    border-left: 5px solid var(--Amarillo);
+    height: 11vh;
+    margin-right: 8rem;
+  }
+
+  #containerDivisorRight{
+    display: flex;
+    margin-top: 2rem;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+
+  .titulo-mision {
+    color: whitesmoke;
+    font-size: 45px;
+    font-weight: 300;
+    font-family: var(--NovaFont);
+    padding: 1rem 0;
+    text-align: start;
+    letter-spacing: 1px;
+    margin-right: 10rem;
+  }
+
+  #containerMision{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
+
+  .CardMision-Nosotros{
+    width: 20%;
+    height: 20%;
+  }
+
+  .FotoCardMision{
+    height: 18rem;
+    object-fit: cover;
+  }
+
+  .TextoCardMision{
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    line-height: 22px;
+    font-size: 14px;
+    padding: 2rem;
+    margin-top: .5rem;
+    font-family: var(--NovaFont);
+  }
+
+  .lista-nosotros li{
+    margin: .8rem 0;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .CardMision-Nosotros{
+    background-color: rgba(7, 7, 7, 0.747);
+    margin: 2rem 0;
+    border-radius: 20px 0px 20px 0px;
   }
 }
