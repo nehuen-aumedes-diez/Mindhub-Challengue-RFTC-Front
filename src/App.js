@@ -8,6 +8,7 @@ import Layout from "./layout/Layout";
 import NotFound from "./pages/NotFound/Error";
 import SignInSignUp from "./components/SignIn-SignUp/SignInSignUp";
 import Contacto from "./pages/contacto/Contacto";
+import Nosotros from './pages/nosotros/Nosotros'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/camisetasFDetalles" element={<CamisetasFDetalles/>}></Route>
         <Route path="/*" element={<NotFound/>}></Route>
         <Route path="/contacto" element={<Contacto/>}></Route>
+        <Route path="/nosotros" element={<Nosotros/>}></Route>
       </Routes>
     </Layout>
   );

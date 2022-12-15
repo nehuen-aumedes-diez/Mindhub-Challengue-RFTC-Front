@@ -38,13 +38,6 @@
   padding-bottom: 20px;
 }
 
-
-.square:hover {
-  background-color: rgba(27, 182, 239, 0.2);
-  transition: ease 0.2s;
-  cursor: pointer;
-}
-
 .lista-nosotros {
   padding-bottom: 80px;
 }
@@ -55,21 +48,7 @@
 
 }
 
-.square .icons {
-  position: absolute;
-  transform: rotateZ(-44deg);
 
-}
-
-
-
-.pen{
-  fill:black;
- animation:rotateInDownLeft 3s forwards;
-}
-.all{
-  animation:rotateOut 3s forwards;
-}
 @keyframes rotateInDownLeft {
   from {
     transform-origin: left bottom;

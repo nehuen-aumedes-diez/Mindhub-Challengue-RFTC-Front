@@ -14,7 +14,7 @@ export default function Navbar() {
       <LinkRouter to='/'id='logoHome'><img src='./logo.png' /></LinkRouter>
       <div id='containerRefsNav'>
       <LinkRouter to='/' className='LinkRefNav'>Inicio</LinkRouter>
-      <LinkRouter to='/' className='LinkRefNav'>Nosotros</LinkRouter>
+      <LinkRouter to='/nosotros' className='LinkRefNav'>Nosotros</LinkRouter>
         <div className='LinkRefNav'
           onMouseEnter={() => { setHideDropdown(true) }} onClick={() => { !hideDropdown ? setHideDropdown(true) : setHideDropdown(false) }}>
           Tienda
