@@ -52,10 +52,24 @@ const deleteRemeraM = createAsyncThunk("deleteRemeraM", async ({remeraMId}) => {
   }
 });
 
+const filtrarRemerasM = createAsyncThunk('filtrarRemerasM', async(nombre) => {
+  let url = ` ${BASE_URL}/remeraM?nombre=${nombre}`
+  try{
+      const res = await axios.get(url)
+      return {
+        remerasM: res.data.res,
+      }
+  } catch(error){
+      console.log(error)
+      return { payload: "error" }
+  }
+})
+
 const remeraMActions = {
   getRemeraM,
   getOneRemeraMId,
-  deleteRemeraM
+  deleteRemeraM,
+  filtrarRemerasM
 };
 
 export default remeraMActions;

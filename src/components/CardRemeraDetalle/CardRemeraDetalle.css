@@ -42,7 +42,7 @@
     display: flex;
     flex-direction: column;
 }
-.talle-producto h4, .precio-producto h4, .descripcion-producto h4  {
+.talle-producto h4 {
     font-size: 25px;
     text-align: center;
 }
@@ -99,4 +99,65 @@
 .comprar-producto span:hover{
     background-color: var(--Negro);
     color: var(--Amarillo);
+}
+
+/* ------------ media queries ------------------- */
+@media screen and (max-width: 1770px){
+    .supergeneral-detalle {
+        width: 65%;
+    }
+
+/*     .nombre-producto{
+        font-size: 35px;
+    }
+    .precio-producto span{
+        font-size: 25px;
+    }
+    .talle-producto h4 {
+        font-size: 18px;
+    } */
+}
+
+@media screen and (max-width: 1400px){
+    .supergeneral-detalle {
+        width: 70%;
+    }
+    .nombre-producto{
+        font-size: 35px;
+    }
+    .precio-producto span{
+        font-size: 25px;
+    }
+    .talle-producto h4 {
+        font-size: 18px;
+    }
+    .descripcion-producto span{
+        font-size: 11px;
+    }
+    .comprar-producto span{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .supergeneral-detalle {
+        width: 60%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 20px;
+    }
+
+    .contenedor-detalleF {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+    .imagen-producto {
+        width: 100%;
+    }
+    .contenedor-2{
+        width: 100%;
+        gap: 15px;
+    }
 }

@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import gorraActions from "../actions/gorraAction";
 
-const { getGorra, getOneGorraId, deleteGorra } = gorraActions
+const { getGorra, getOneGorraId, deleteGorra, filtrarGorras } = gorraActions
 
 const initialState = {
 
@@ -29,6 +29,13 @@ const gorraReducer = createReducer(initialState, (builder) => {
       return {
         ...state,
         gorraId: action.payload.id
+      }
+    })
+    .addCase(filtrarGorras.fulfilled, (state, action) => {
+      //console.log("ACTION DE FILTRAR: ", action.payload);
+      return {
+          ...state,
+          gorras: action.payload.gorras,
       }
     })
 });

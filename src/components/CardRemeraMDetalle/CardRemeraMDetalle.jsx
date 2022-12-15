@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import remeraMActions from '../../redux/actions/remeraMAction'
 import '../CardRemeraDetalle/CardRemeraDetalle.css'
 
-function CardRemeraDetalle(props) {
+function CardRemeraMDetalle(props) {
 
     let {id} = useParams()
     let dispatch = useDispatch()
@@ -71,4 +71,4 @@ function CardRemeraDetalle(props) {
     )
 }
 
-export default CardRemeraDetalle
+export default CardRemeraMDetalle

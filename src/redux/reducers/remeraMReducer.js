@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import remeraMActions from "../actions/remeraMAction";
 
-const { getRemeraM, getOneRemeraMId, deleteRemeraM } = remeraMActions
+const { getRemeraM, getOneRemeraMId, deleteRemeraM, filtrarRemerasM } = remeraMActions
 
 const initialState = {
 
@@ -29,6 +29,13 @@ const remeraMReducer = createReducer(initialState, (builder) => {
       return {
         ...state,
         remeraMId: action.payload.id
+      }
+    })
+    .addCase(filtrarRemerasM.fulfilled, (state, action) => {
+      //console.log("ACTION DE FILTRAR: ", action.payload);
+      return {
+          ...state,
+          remerasM: action.payload.remerasM,
       }
     })
 });

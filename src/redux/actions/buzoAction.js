@@ -52,10 +52,24 @@ const getOneBuzoId = createAsyncThunk(
   }
 );
 
+const filtrarBuzos = createAsyncThunk('filtrarBuzos', async(nombre) => {
+  let url = ` ${BASE_URL}/buzo?nombre=${nombre}`
+  try{
+      const res = await axios.get(url)
+      return {
+        buzos: res.data.res,
+      }
+  } catch(error){
+      console.log(error)
+      return { payload: "error" }
+  }
+})
+
 const buzoActions = {
   getBuzo,
   deleteBuzo,
   getOneBuzoId,
+  filtrarBuzos
 };
 
 export default buzoActions;

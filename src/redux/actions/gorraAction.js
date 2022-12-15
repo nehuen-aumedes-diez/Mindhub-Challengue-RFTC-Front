@@ -52,10 +52,24 @@ const deleteGorra = createAsyncThunk("deleteGorra", async ({gorraId}) => {
   }
 });
 
+const filtrarGorras = createAsyncThunk('filtrarGorras', async(nombre) => {
+  let url = ` ${BASE_URL}/gorra?nombre=${nombre}`
+  try{
+      const res = await axios.get(url)
+      return {
+        gorras: res.data.res,
+      }
+  } catch(error){
+      console.log(error)
+      return { payload: "error" }
+  }
+})
+
 const gorraActions = {
   getGorra,
   getOneGorraId,
-  deleteGorra
+  deleteGorra,
+  filtrarGorras
 };
 
 export default gorraActions;

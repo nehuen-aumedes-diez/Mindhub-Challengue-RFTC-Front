@@ -2,7 +2,7 @@ import React from 'react'
 import './Market.css'
 import Lista from '../listaArticulos/Lista'
 import Select from '../order/Select'
-import SearchBar from '../searchBar/SearchBar'
+
 
 
 function Market(props) {
@@ -12,8 +12,8 @@ return (
     <h3> <Lista /> </h3>
   </div>
   <div className="barra-y-nombre"> 
-  <h3 className='TopDiv'>Nombre</h3>
-  <div> <SearchBar /> </div>
+  <h3 className='TopDiv'>{props.nombre}</h3>
+  <div> {props.componente} </div>
   <div className='BotDiv'> <Select /> </div>
   </div>
   <div className="articulos">
