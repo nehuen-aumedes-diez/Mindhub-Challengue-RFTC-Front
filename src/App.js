@@ -17,6 +17,7 @@ function App() {
         <Route path="/camisetasFDetalles" element={<CamisetasFDetalles/>}></Route>
       </Routes>
     </Layout>
+
   );
 }
 
