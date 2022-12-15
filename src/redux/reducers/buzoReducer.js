@@ -20,9 +20,10 @@ const buzoReducer = createReducer(initialState, (builder) => {
       };
     })
     .addCase(getOneBuzoId.fulfilled, (state, action) => {
+      console.log(action.payload);
       return {
         ...state,
-        buzos: action.payload,
+        buzoId: action.payload,
       };
     }).addCase(deleteBuzo.fulfilled, (state, action) => {
       return {

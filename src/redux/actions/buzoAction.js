@@ -41,7 +41,7 @@ const getOneBuzoId = createAsyncThunk(
       const res = await axios.get(url);
       console.log(res.data.res);
       return {
-        buzos: res.data.res,
+        buzoId: res.data.res,
       };
     } catch (error) {
       console.log(error);

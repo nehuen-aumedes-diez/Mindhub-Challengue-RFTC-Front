@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import remeraFActions from '../../redux/actions/remeraFAction'
-import './CardRemeraDetalle.css'
+import remeraMActions from '../../redux/actions/remeraMAction'
+import '../CardRemeraDetalle/CardRemeraDetalle.css'
 
-function CardRemeraMDetalle(props) {
+function CardRemeraDetalle(props) {
 
     let {id} = useParams()
     let dispatch = useDispatch()
     //console.log("ID",id)
-    const {getOneRemeraFId} = remeraFActions
-    let {remeraFencontrada} = useSelector(store => store.remerasF)
+    const {getOneRemeraMId} = remeraMActions
+    let {remeraMencontrada} = useSelector(store => store.remerasM)
 
     useEffect( () => {
-        dispatch(getOneRemeraFId(id))
+        dispatch(getOneRemeraMId(id))
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [])
-    let miRemera = remeraFencontrada[0]
+    let miRemera = remeraMencontrada[0]
 
   return (
     <div className='supergeneral-detalle'>
@@ -71,4 +71,4 @@ function CardRemeraMDetalle(props) {
     )
 }
 
-export default CardRemeraMDetalle
+export default CardRemeraDetalle

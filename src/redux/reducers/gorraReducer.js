@@ -22,7 +22,7 @@ const gorraReducer = createReducer(initialState, (builder) => {
     .addCase(getOneGorraId.fulfilled, (state, action) => {
       return {
         ...state,
-        gorras: action.payload,
+        gorraId: action.payload,
       };
     })
     .addCase(deleteGorra.fulfilled, (state, action) => {

@@ -23,7 +23,7 @@ const getOneGorraId = createAsyncThunk(
       const res = await axios.get(url);
       console.log(res.data.res);
       return {
-        gorras: res.data.res,
+        gorraId: res.data.res,
       };
     } catch (error) {
       console.log(error);

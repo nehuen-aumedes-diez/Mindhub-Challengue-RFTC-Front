@@ -10,6 +10,9 @@ import Market from './components/market/Market'
 import CamisetasM from './pages/CamisetasM/CamisetasM'
 import Buzos from './pages/Buzos/Buzos'
 import Gorras from "./pages/Gorras/Gorras";
+import CamisetasMDetalles from "./pages/CamisetasMDetalles/CamisetasMDetalles";
+import BuzosDetalles from "./pages/BuzosDetalles/BuzosDetalles";
+import GorrasDetalles from "./pages/GorrasDetalles/GorrasDetalles";
 
 
 function App() {
@@ -18,11 +21,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/camisetasF/:id" element={<CamisetasFDetalles/>}></Route>
+        <Route path="/camisetasM/:id" element={<CamisetasMDetalles/>}></Route>
         <Route path="/hola" element={<SignInSignUp/>}></Route>
         <Route path="/camisetasF" element={<CamisetasF/>}></Route>
         <Route path="/camisetasM" element={<CamisetasM/>}></Route>
         <Route path="/buzos" element={<Buzos/>}></Route>
+        <Route path="/buzos/:id" element={<BuzosDetalles/>}></Route>
         <Route path="/gorras" element={<Gorras/>}></Route>
+        <Route path="/gorras/:id" element={<GorrasDetalles/>}></Route>
         <Route path="/market" element={<Market/>}></Route>
       </Routes>
     </Layout>
