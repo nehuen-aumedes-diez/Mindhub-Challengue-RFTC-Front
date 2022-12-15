@@ -1,5 +1,6 @@
 import React from 'react'
 import './Slider.css'
+import { Link, Link as LinkRouter } from 'react-router-dom';
 
 export default function Slider() {
   return (
@@ -7,7 +8,7 @@ export default function Slider() {
       <div className='DivisorLeft'></div>
       <div id='containerConfian'>
           <h2 id='TituloConfian'>Clubes que confían en nosotros.</h2>
-          <p id='TextoConfian'>- Ofrecemos los mejores <span className='Span-ProdRetro'>'Productos Retro'</span> de tu equipo favorito, te invitamos a ver nuestro catalogo.</p>
+          <p id='TextoConfian'>- Ofrecemos los mejores <Link className='Span-ProdRetro' to={'/'}>'Productos Retro'</Link> de tu equipo favorito, te invitamos a ver nuestro catalogo.</p>
           <p></p>
       </div>
       <article className="wrapper">

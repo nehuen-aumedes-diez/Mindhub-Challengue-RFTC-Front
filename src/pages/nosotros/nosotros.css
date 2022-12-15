@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2:700');
+.cuerpo-nosotros {
+  background: url("https://library.sportingnews.com/styles/twitter_card_120x120/s3/2022-12/Argentina%20players%20jugadores%20Mundial%20Qatar%202022%20World%20Cup%20121322%20%281%29.jpg?itok=py2uo0SG");
+  background-color: #212121;
+  background-blend-mode: overlay;
+  background-size: cover;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.titulo-nosotros {
+  color: whitesmoke;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 46px;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+ padding-top: 20px;
+}
+
+.subtitulo-nosotros{
+  padding-bottom: 20px;
+}
+
+.texto-nosotros {
+  max-width: 700px;
+  padding: 0;
+  color: whitesmoke;
+  font-family: OpenSans;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 22px;
+  padding-bottom: 20px;
+}
+
+.lista-nosotros {
+  padding-bottom: 80px;
+}
+
+.img-nosotros {
+  width: 60px;
+  height: 60px;
+
+}
+
+
+@keyframes rotateInDownLeft {
+  from {
+    transform-origin: left bottom;
+    transform: rotate3d(0,0,0, 0deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+ 
+ transform:translateX(850px) translateY(-83px) rotate3d(0,0,1, -60deg);
+    opacity: 1;
+  }
+}
+@keyframes rotateOut {
+  from {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: rotate3d(0, 0, 1, 90deg);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 730px) {
+
+  .subtitulo-nosotros{
+    padding-bottom: 20px;
+  }
+  
+  .texto-nosotros {
+    max-width: 400px;
+    font-size: 15px;
+  }
+  .cuerpo-nosotros {
+    height: 150vh;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .titulo-nosotros {
+    font-size: 30px;
+  }
+  .subtitulo-nosotros{
+    padding-bottom: 20px;
+  }
+  
+  .texto-nosotros {
+    max-width: 300px;
+    font-size: 15px;
+  }
+  .cuerpo-nosotros {
+    height: 150vh;
+  }
+}

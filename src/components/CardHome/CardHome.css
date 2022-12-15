@@ -24,14 +24,14 @@
   
   html{
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: proxima-nova, sans-serif;
     font-size: 14px;
   }
   
   
   .hero-section{
     align-items: flex-start;
-    background-image: linear-gradient(15deg, black 24%, var(--Amarillo) 160%);
+    background-image: linear-gradient(0deg, black 85%, skyblue 140%);
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -113,6 +113,8 @@
     font-size: 0.9rem;
     margin-bottom: var(--spacing-s);
     text-transform: uppercase;
+    color: white;
+    font-weight: 400;
   }
   
   .card__heading{

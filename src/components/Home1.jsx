@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/home1.css";
+import Contador from "./Contador/Contador";
 
 export default function Home1() {
 
