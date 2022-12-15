@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import Error from './error/Error'
-import Testimonio from './testimonios/Testimonio';
-import Contacto from './contacto/Contacto';
-import Nosotros from './nosotros/Nosotros';
-
+import React from "react";
+import "./App.css";
+import Home from "./pages/Home/Home";
+import CamisetasF from "./pages/camisetasF/CamisetasF";
+import CamisetasFDetalles from "./pages/CamisetasFDetalles/CamisetasFDetalles";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./layout/Layout";
+import SignInSignUp from "./components/SignIn-SignUp/SignInSignUp";
 
 function App() {
   return (

@@ -1,0 +1,457 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  width: 100%;
+
+}
+
+.tittle-home {
+  display: flex;
+
+  font-size: 280%;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: whitesmoke;
+  top: 25rem;
+  position: absolute;
+  z-index: 100;
+  text-shadow: 0px 20px 7px #630303;
+}
+
+.banner1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 1.76);
+
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85.1vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background: center;
+  object-fit: cover;
+  background-image: none;
+  opacity: 0.6;
+}
+
+.subt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+  height: 10vh;
+  font-size: 25px;
+  background-repeat: no-repeat;
+  background: center;
+  object-fit: cover;
+  color:  #EEA904;
+  background-image: none;
+  position: absolute;
+  bottom: 280px;
+  font-weight: bold;
+}
+
+.picture {
+  object-fit: cover;
+}
+
+.imgCamisetas {
+  display: flex;
+  margin-left: 26rem;
+  justify-content: center;
+  align-items: center;
+  width: 58rem;
+}
+
+/*  slider */
+
+
+:root {
+  --color-text: navy;
+  --color-bg: papayawhip;
+  --color-bg-accent: #ecdcc0;
+  --size: clamp(10rem, 1rem + 40vmin, 30rem);
+  --gap: calc(var(--size) / 14);
+  --duration: 54s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text: papayawhip;
+    --color-bg: navy;
+    --color-bg-accent: rgba(0, 0, 0, 0.413);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  mask-image: linear-gradient(var(--mask-direction, to right),
+      hsl(0 0% 0% / 0),
+      hsl(0 0% 0% / 1) 20%,
+      hsl(0 0% 0% / 1) 80%,
+      hsl(0 0% 0% / 0));
+}
+
+.marquee__group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll-x var(--duration) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__group {
+    animation-play-state: paused;
+  }
+}
+
+
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+
+@keyframes scroll-y {
+  from {
+    transform: translateY(var(--scroll-start));
+  }
+
+  to {
+    transform: translateY(var(--scroll-end));
+  }
+}
+
+/* Element styles */
+.marquee img {
+  display: grid;
+  place-items: center;
+  width: var(--size);
+  fill: var(--color-text);
+  background: var(--color-bg-accent);
+  aspect-ratio: 16/9;
+  padding: calc(var(--size) / 10);
+  border-radius: 0.5rem;
+  object-fit: contain;
+  transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.marquee--vertical img {
+  aspect-ratio: 1;
+  width: calc(var(--size) / 1.5);
+  padding: calc(var(--size) / 6);
+}
+
+/* Parent wrapper */
+.wrapper {
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin: auto;
+  max-width: 100%;
+
+}
+
+.wrapper--vertical {
+  flex-direction: row;
+  height: 100vh;
+}
+
+/* Toggle direction button */
+
+.marquee--reverse .marquee__group {
+  animation-direction: reverse;
+  animation-delay: -3s;
+
+}
+
+
+
+
+@keyframes fade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====================================================================================================  */
+/* ====================================================================================================  */
+/* ====================================================================================================  */
+/* ====================================================================================================  */
+/* ====================================================================================================  */
+/* ====================================================================================================  */
+/* ======================================Media Querys==================================================  */
+/* ====================================================================================================  */
+/* ====================================================================================================  */
+/* ====================================================================================================  */
+/* ====================================================================================================  */
+/* ====================================================================================================  */
+/* ====================================================================================================  */
+/* ====================================================================================================  */
+/* ====================================================================================================  */
+
+
+
+@media (max-width: 930px) {
+  .banner {
+    width: 100%;
+  }
+
+  .btn1 {
+
+    color: white;
+    left: 11rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+  .btn2 {
+
+    color: white;
+    left: 5rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+
+  .imgCamisetas {
+    width: 16rem;
+  }
+
+  .subt {
+    top: 32rem;
+    width: 18rem;
+  }
+
+}
+
+
+
+
+@media (max-width: 700px) {
+  .banner {
+    width: 100%;
+  }
+
+  .btn1 {
+
+    color: white;
+    left: 11rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+  .btn2 {
+
+    color: white;
+    left: 5rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+
+  .imgCamisetas {
+    width: 16rem;
+  }
+
+  .subt {
+    top: 32rem;
+    width: 18rem;
+  }
+
+  .btn1-cont {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    right: 4rem;
+    width: 0px;
+    padding: 0px;
+    height: 10vh;
+  }
+
+  .btn2-cont {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 0px;
+    padding: 0px;
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 550px) {
+  .banner {
+    width: 100%;
+  }
+
+  .btn1 {
+
+    color: white;
+    left: 11rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+  .btn2 {
+
+    color: white;
+    left: 5rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+
+  .imgCamisetas {
+    width: 16rem;
+  }
+
+  .subt {
+    top: 32rem;
+    width: 18rem;
+    font-size: 25px;
+  }
+
+  .tittle-home {
+    font-size: 40px;
+
+  }
+
+
+
+}
+
+
+@media (max-width: 425px) {
+  .banner {
+    width: 100%;
+  }
+
+  .btn1 {
+
+    color: white;
+    left: 11rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+  .btn2 {
+
+    color: white;
+    left: 5rem;
+    top: 41rem;
+    cursor: pointer;
+  }
+
+
+  .imgCamisetas {
+    width: 16rem;
+  }
+
+  .subt {
+    top: 32rem;
+    width: 18rem;
+  }
+}
+
+
+
+@media (max-width: 375px) {
+  .banner {
+    width: 100%;
+  }
+
+  .btn1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    /* left: 11rem; */
+    top: 41rem;
+    cursor: pointer;
+  }
+
+  .btn2 {
+
+    color: white;
+    /* left: 5rem; */
+    top: 41rem;
+    cursor: pointer;
+  }
+
+
+  .imgCamisetas {
+    width: 16rem;
+  }
+
+  .subt {
+    top: 32rem;
+    width: 18rem;
+    font-size: 20px;
+  }
+
+  .tittle-home {
+    font-size: 28px;
+
+  }
+
+
+}
