@@ -8,7 +8,7 @@ import Nosotros from './nosotros/Nosotros';
 
 function App() {
   return (
-  <Nosotros></Nosotros>
+ <Testimonio></Testimonio>
     /* <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
