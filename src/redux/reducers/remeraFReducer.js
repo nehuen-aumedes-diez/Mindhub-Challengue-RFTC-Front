@@ -7,6 +7,7 @@ const initialState = {
 
     remerasF: [ ],
     remeraFencontrada: [],
+    busqueda: '',
 
 };
 
@@ -32,7 +33,7 @@ const remeraFReducer = createReducer(initialState, (builder) => {
       }
     })
     .addCase(filtrarRemerasF.fulfilled, (state, action) => {
-      //console.log("ACTION DE FILTRAR: ", action.payload);
+      console.log("reducer DE FILTRAR: ", action.payload);
       return {
           ...state,
           remerasF: action.payload.remerasF,

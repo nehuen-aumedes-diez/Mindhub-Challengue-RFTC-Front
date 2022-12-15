@@ -52,12 +52,16 @@ const deleteRemeraF = createAsyncThunk("deleteRemeraF", async ({remeraFId}) => {
   }
 });
 
-const filtrarRemerasF = createAsyncThunk('filtrarRemerasF', async(nombre) => {
-  let url = ` ${BASE_URL}/remeraF?nombre=${nombre}`
+const filtrarRemerasF = createAsyncThunk('filtrarRemerasF', async(data) => {
+  let url = ` ${BASE_URL}/remeraF?nombre=${data.nombre}&order=${data.order}&orderName=${data.orderName}`
   try{
       const res = await axios.get(url)
+      console.log("FILTRAR REMERAS ACTION",res.data);
       return {
         remerasF: res.data.res,
+        busqueda: data.nombre,
+        ordenAlfabetico: data.order,
+        ordenPrecio: data.orderName,
       }
   } catch(error){
       console.log(error)

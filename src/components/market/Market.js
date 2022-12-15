@@ -1,7 +1,6 @@
 import React from 'react'
 import './Market.css'
 import Lista from '../listaArticulos/Lista'
-import Select from '../order/Select'
 
 
 
@@ -14,7 +13,7 @@ return (
   <div className="barra-y-nombre"> 
   <h3 className='TopDiv'>{props.nombre}</h3>
   <div> {props.componente} </div>
-  <div className='BotDiv'> <Select /> </div>
+  <div className='BotDiv'>{props.segundocomp}</div>
   </div>
   <div className="articulos">
   {props.children}
