@@ -95,16 +95,17 @@
   /* border: 2px solid green; */
   font-family: proxima-nova, sans-serif;
   color: white;
-  font-size: 33px;
+  font-size: 40px;
   font-weight: 300;
   width: 100%;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 #containerGeneralComentarios{
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 2rem;
 }
