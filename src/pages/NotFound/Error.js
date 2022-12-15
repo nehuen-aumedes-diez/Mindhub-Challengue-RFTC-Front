@@ -1,9 +1,9 @@
 import React from "react";
 import "./error.css";
 
-export default function Error() {
+export default function NotFound() {
   return (
-    <>
+    <div id="containerError">
       <div className="textocont">
         <h2 className="titulo404">ERROR 404, ¡Página no encontrada!</h2>
         <p className="texto404">
@@ -198,6 +198,6 @@ export default function Error() {
           </defs>
         </svg>
       </body>
-    </>
+    </div>
   );
 }

@@ -3,11 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    text-align: center;
-    padding-top: 5%;
-    background-color: black;
-}
 
 body svg #football{
     animation: jump 1.5s ease-in-out  infinite ;    

@@ -79,7 +79,7 @@
 .marquee img {
   display: grid;
   place-items: center;
-  width: 17%;
+  width: 25%;
   fill: var(--color-text);
   background: rgba(255, 255, 255, 0.308);
   aspect-ratio: 17/9;
@@ -256,7 +256,7 @@ img {
   
   #TextoConfian{
     /* border: 2px solid greenyellow; */
-    font-size: 15.5px;
+    font-size: 16px;
   }
 
   .DivisorLeft {
@@ -267,5 +267,12 @@ img {
 
   .Span-ProdRetro{
     color: var(--Amarillo);
+    cursor: pointer;
+    text-decoration: none;
+    transition: .5s ease;
+  }
+  
+  .Span-ProdRetro:hover{
+    color: rgb(216, 64, 9);
   }
 }
