@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound/Error";
 import SignInSignUp from "./components/SignIn-SignUp/SignInSignUp";
 import Contacto from "./pages/contacto/Contacto";
 import Nosotros from './pages/nosotros/Nosotros'
-import Contador from "./components/Contador/Contador";
+import PaginaDeStock from "./pages/PaginaDeStock/PaginaDeStock";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/hola" element={<SignInSignUp/>}></Route>
-        <Route path="/chau" element={<Contador/>}></Route>
+        <Route path="/chau" element={<PaginaDeStock/>}></Route>
         <Route path="/camisetasF" element={<CamisetasF/>}></Route>
         <Route path="/camisetasFDetalles" element={<CamisetasFDetalles/>}></Route>
         <Route path="/*" element={<NotFound/>}></Route>
