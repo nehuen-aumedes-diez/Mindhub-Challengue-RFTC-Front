@@ -17,12 +17,6 @@ function CamisetasF() {
   console.log(remerasF)
 
   return (
-/*     <div className='cont-remerasF'>
-      {
-        remerasF.map(each => 
-          <CardRemera key={each._id} id={each._id} precio={each.precio} nombre={each.nombre} img={each.foto1} />)
-      }
-    </div> */
     <Market>
     {
       remerasF.map(each => 

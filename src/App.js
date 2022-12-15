@@ -5,15 +5,17 @@ import Home from "./pages/Home/Home";
 import CamisetasFDetalles from "./pages/CamisetasFDetalles/CamisetasFDetalles";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
+import NotFound from "./pages/NotFound/Error";
 import SignInSignUp from "./components/SignIn-SignUp/SignInSignUp";
-import Market from './components/market/Market'
+//import Market from './components/market/Market'
 import CamisetasM from './pages/CamisetasM/CamisetasM'
 import Buzos from './pages/Buzos/Buzos'
 import Gorras from "./pages/Gorras/Gorras";
 import CamisetasMDetalles from "./pages/CamisetasMDetalles/CamisetasMDetalles";
 import BuzosDetalles from "./pages/BuzosDetalles/BuzosDetalles";
 import GorrasDetalles from "./pages/GorrasDetalles/GorrasDetalles";
-
+import Contacto from "./pages/contacto/Contacto";
+import Nosotros from './pages/nosotros/Nosotros'
 
 function App() {
   return (
@@ -29,7 +31,10 @@ function App() {
         <Route path="/buzos/:id" element={<BuzosDetalles/>}></Route>
         <Route path="/gorras" element={<Gorras/>}></Route>
         <Route path="/gorras/:id" element={<GorrasDetalles/>}></Route>
-        <Route path="/market" element={<Market/>}></Route>
+        {/* <Route path="/market" element={<Market/>}></Route> */}
+        <Route path="/*" element={<NotFound/>}></Route>
+        <Route path="/contacto" element={<Contacto/>}></Route>
+        <Route path="/nosotros" element={<Nosotros/>}></Route>
       </Routes>
     </Layout>
   );
