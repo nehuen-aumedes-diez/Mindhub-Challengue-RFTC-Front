@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './SignInSignUp.css'
+import { useEffect, useState } from 'react'
 
 export default function SignInSignUp() {
     
