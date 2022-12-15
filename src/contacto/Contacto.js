@@ -3,7 +3,8 @@ import "./contacto.css";
 
 export default function Contacto() {
   return (
-<div class="container">
+    <div className="cuerpo-contacto">
+<div class="container-contacto">
 
 <h1 class="brand"><span>¿Tenés alguna consulta?</span></h1>
 
@@ -65,7 +66,7 @@ export default function Contacto() {
 </div>
 
 </div>
-
+</div>
 
   );
 }

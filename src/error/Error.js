@@ -3,7 +3,7 @@ import "./error.css";
 
 export default function Error() {
   return (
-    <>
+    <div className="cuerpo-error">
       <div className="textocont">
         <h2 className="titulo404">ERROR 404, ¡Página no encontrada!</h2>
         <p className="texto404">
@@ -198,6 +198,6 @@ export default function Error() {
           </defs>
         </svg>
       </body>
-    </>
+    </div>
   );
 }

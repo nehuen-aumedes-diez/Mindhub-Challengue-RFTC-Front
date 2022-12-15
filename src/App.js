@@ -1,14 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import Footer from './footer/Footer';
 import Error from './error/Error'
 import Testimonio from './testimonios/Testimonio';
 import Contacto from './contacto/Contacto';
+import Nosotros from './nosotros/Nosotros';
 
 
 function App() {
   return (
-  <Contacto></Contacto>
+  <Nosotros></Nosotros>
     /* <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
