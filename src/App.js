@@ -1,30 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-import Error from './error/Error'
-import Testimonio from './testimonios/Testimonio';
-import Contacto from './contacto/Contacto';
-import Nosotros from './nosotros/Nosotros';
-
+import React from "react";
+import "./App.css";
+import Home from "./pages/Home/Home";
+import CamisetasF from "./pages/camisetasF/CamisetasF";
+import CamisetasFDetalles from "./pages/CamisetasFDetalles/CamisetasFDetalles";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./layout/Layout";
+import SignInSignUp from "./components/SignIn-SignUp/SignInSignUp";
 
 function App() {
   return (
-  <Nosotros></Nosotros>
-    /* <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div> */
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/hola" element={<SignInSignUp/>}></Route>
+        <Route path="/camisetasF" element={<CamisetasF/>}></Route>
+        <Route path="/camisetasFDetalles" element={<CamisetasFDetalles/>}></Route>
+      </Routes>
+    </Layout>
+
   );
 }
 
