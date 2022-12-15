@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import NotFound from "./pages/NotFound/Error";
 import SignInSignUp from "./components/SignIn-SignUp/SignInSignUp";
+import Contacto from "./pages/contacto/Contacto";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/camisetasF" element={<CamisetasF/>}></Route>
         <Route path="/camisetasFDetalles" element={<CamisetasFDetalles/>}></Route>
         <Route path="/*" element={<NotFound/>}></Route>
+        <Route path="/contacto" element={<Contacto/>}></Route>
       </Routes>
     </Layout>
   );

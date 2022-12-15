@@ -29,7 +29,7 @@ export default function Navbar() {
             console.log('')
           }
         </div>
-        <LinkRouter to='/' className='LinkRefNav'>Contacto</LinkRouter>
+        <LinkRouter to='/contacto' className='LinkRefNav'>Contacto</LinkRouter>
         <div id='containerIconRefs'>
           <div className='LinkIcon Icon1'><IoCartOutline className='RefCart' /></div>
           <hr className='HR' />

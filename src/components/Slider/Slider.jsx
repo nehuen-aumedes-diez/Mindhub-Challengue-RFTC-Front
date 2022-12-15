@@ -8,7 +8,7 @@ export default function Slider() {
       <div className='DivisorLeft'></div>
       <div id='containerConfian'>
           <h2 id='TituloConfian'>Clubes que confían en nosotros.</h2>
-          <p id='TextoConfian'>- Ofrecemos los mejores <Link to={'/'} className='Span-ProdRetro'>'Productos Retro'</Link> de tu equipo favorito, te invitamos a ver nuestro catalogo.</p>
+          <p id='TextoConfian'>- Ofrecemos los mejores <Link to={'/'}>'Productos Retro'</Link> de tu equipo favorito, te invitamos a ver nuestro catalogo.</p>
           <p></p>
       </div>
       <article className="wrapper">
