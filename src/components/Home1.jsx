@@ -6,6 +6,7 @@ export default function Home1() {
 
   return (
     <>
+      <Contador/>  
       <div className="home-container">
           <video autoPlay loop muted playsInline src="./vamomessi.mp4" className="mechi"></video>
         <div className="banner1">
