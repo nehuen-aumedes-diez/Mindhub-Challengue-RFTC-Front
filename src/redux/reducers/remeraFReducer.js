@@ -6,6 +6,7 @@ const { getRemeraF,getOneRemeraFId } = remeraFActions
 const initialState = {
 
     remerasF: [ ],
+    remeraFencontrada: [],
 
 };
 
@@ -20,9 +21,10 @@ const remeraFReducer = createReducer(initialState, (builder) => {
         };
       })
       .addCase(getOneRemeraFId.fulfilled, (state, action) => {
+        console.log(action.payload);
         return {
           ...state,
-          remerasF: action.payload,
+          remeraFencontrada: action.payload.remeraFencontrada,
         };
       })
 });

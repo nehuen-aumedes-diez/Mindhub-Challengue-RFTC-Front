@@ -23,7 +23,7 @@ const getOneRemeraFId = createAsyncThunk(
       const res = await axios.get(url);
       console.log(res.data.res);
       return {
-        remerasF: res.data.res,
+        remeraFencontrada: res.data.res,
       };
     } catch (error) {
       console.log(error);
