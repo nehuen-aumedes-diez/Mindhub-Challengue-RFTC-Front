@@ -28,8 +28,8 @@ return (
             </div>
         </div>
         {/* DE FORMA DINAMICA */}
-        {/* 
-        <div class="container shoe">
+        
+{/*         <div class="container shoe">
             <div class="productImage shoeImg"></div>
             <div class="size shoeSize">
                 <h4>TALLE</h4>

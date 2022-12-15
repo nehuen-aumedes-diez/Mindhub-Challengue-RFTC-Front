@@ -20,11 +20,7 @@ return (
   </div>
   <div className="articulos">
         <CardRemera />
-        <CardRemera />
-        <CardRemera />
-        <CardRemera />
-        <CardRemera />
-        <CardRemera /></div>
+  </div>
 </div>
 )
 }
