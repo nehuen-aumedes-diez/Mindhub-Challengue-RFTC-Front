@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <div id='containerGeneralNav' onMouseLeave={() => { setHideDropdown(false) ; setMenuUser(false) }}>
-      <img id='logoHome' src='./logo.png' />
+      <LinkRouter to='/'id='logoHome'><img src='./logo.png' /></LinkRouter>
       <div id='containerRefsNav'>
         <div className='LinkRefNav'>Inicio</div>
         <div className='LinkRefNav'>Nosotros</div>
