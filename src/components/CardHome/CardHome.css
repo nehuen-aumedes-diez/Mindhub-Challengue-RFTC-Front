@@ -112,6 +112,8 @@
     font-size: 0.9rem;
     margin-bottom: var(--spacing-s);
     text-transform: uppercase;
+    color: white;
+    font-weight: 400;
   }
   
   .card__heading{
