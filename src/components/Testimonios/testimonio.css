@@ -15,8 +15,19 @@
   text-align: center;
   font-size: 16px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-  height: 30vh;
+  height: 50vh;
   width: 30vh;
+}
+
+.estrellas-testimonio {
+  width: 20vh;
+  margin-top: 20px;
+  height: 18vh;
+}
+
+.testimonio-fotos {
+  width: 100px;
+  height: 100px;
 }
 
 .snip1559 * {
@@ -47,6 +58,7 @@
   font-weight: 400;
   line-height: 24px;
   margin: 3px 0;
+  height: 20px;
 }
 
 .snip1559 h5 {
@@ -55,6 +67,7 @@
   text-transform: uppercase;
   color: #888;
   letter-spacing: 1px;
+  padding-top: 20px;
 }
 
 .snip1559 .icons i {

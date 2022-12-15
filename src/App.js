@@ -6,10 +6,12 @@ import CamisetasFDetalles from "./pages/CamisetasFDetalles/CamisetasFDetalles";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import SignInSignUp from "./components/SignIn-SignUp/SignInSignUp";
+import Testimonio from './components/Testimonios/Testimonio'
+import Nosotros from './nosotros/Nosotros'
 
 function App() {
   return (
- <Testimonio></Testimonio>
+ <Nosotros></Nosotros>
     /* <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
