@@ -1,9 +1,13 @@
 import React from "react";
 import "./error.css";
 
-export default function Error() {
+export default function NotFound() {
   return (
+<<<<<<< HEAD:src/pages/NotFound/Error.js
+    <div id="containerError">
+=======
     <div className="cuerpo-error">
+>>>>>>> b01b4e2be0142c56d81754447db2f649a2dfa78f:src/error/Error.js
       <div className="textocont">
         <h2 className="titulo404">ERROR 404, ¡Página no encontrada!</h2>
         <p className="texto404">

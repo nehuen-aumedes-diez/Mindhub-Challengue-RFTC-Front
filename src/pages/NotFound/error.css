@@ -3,12 +3,15 @@
     margin: 0;
     box-sizing: border-box;
 }
+<<<<<<< HEAD:src/pages/NotFound/error.css
+=======
 .cuerpo-error{
     text-align: center;
     padding-top: 5%;
     background-color: black;
     padding-bottom: 5%;
 }
+>>>>>>> b01b4e2be0142c56d81754447db2f649a2dfa78f:src/error/error.css
 
 .cuerpo-error svg #football{
     animation: jump 1.5s ease-in-out  infinite ;    

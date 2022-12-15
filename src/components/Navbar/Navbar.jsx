@@ -13,8 +13,8 @@ export default function Navbar() {
     <div id='containerGeneralNav' onMouseLeave={() => { setHideDropdown(false) ; setMenuUser(false) }}>
       <LinkRouter to='/'id='logoHome'><img src='./logo.png' /></LinkRouter>
       <div id='containerRefsNav'>
-        <div className='LinkRefNav'>Inicio</div>
-        <div className='LinkRefNav'>Nosotros</div>
+      <LinkRouter to='/' className='LinkRefNav'>Inicio</LinkRouter>
+      <LinkRouter to='/' className='LinkRefNav'>Nosotros</LinkRouter>
         <div className='LinkRefNav'
           onMouseEnter={() => { setHideDropdown(true) }} onClick={() => { !hideDropdown ? setHideDropdown(true) : setHideDropdown(false) }}>
           Tienda
@@ -29,7 +29,7 @@ export default function Navbar() {
             console.log('')
           }
         </div>
-        <div className='LinkRefNav'>Contacto</div>
+        <LinkRouter to='/' className='LinkRefNav'>Contacto</LinkRouter>
         <div id='containerIconRefs'>
           <div className='LinkIcon Icon1'><IoCartOutline className='RefCart' /></div>
           <hr className='HR' />

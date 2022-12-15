@@ -2,6 +2,7 @@ import React from 'react'
 import Home1 from "../../components/Home1"
 import CardHome from '../../components/CardHome/CardHome'
 import Slider from '../../components/Slider/Slider'
+import Testimonio from '../../components/Testimonio/Testimonio'
 
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
     <Home1/>
     <CardHome/>
     <Slider/>
+    <Testimonio/>
     </div>
   )
 }
