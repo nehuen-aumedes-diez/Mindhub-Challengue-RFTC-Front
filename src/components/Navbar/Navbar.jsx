@@ -21,9 +21,9 @@ export default function Navbar() {
           {hideDropdown ?
             <div id='containerDropdownNav' onMouseLeave={() => { setHideDropdown(false) }} >
               <LinkRouter to='/camisetasF' className='itemDropdown'>Camisetas Mujer</LinkRouter>
-              <LinkRouter to='/camisetasF' className='itemDropdown'>Camisetas Hombres</LinkRouter>
-              <LinkRouter to='/camisetasF' className='itemDropdown'>Buzos</LinkRouter>
-              <LinkRouter to='/camisetasF' className='itemDropdown'>Gorras</LinkRouter>
+              <LinkRouter to='/camisetasM' className='itemDropdown'>Camisetas Hombres</LinkRouter>
+              <LinkRouter to='/buzos' className='itemDropdown'>Buzos</LinkRouter>
+              <LinkRouter to='/gorras' className='itemDropdown'>Gorras</LinkRouter>
             </div>
             :
             console.log('')

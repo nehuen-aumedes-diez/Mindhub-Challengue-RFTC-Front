@@ -12,7 +12,7 @@ export default function Home1() {
         <div className="banner1">
           <div>
           <h2>La</h2>
-          <h2>Remera</h2>
+          <h2>Camiseta</h2>
           <h2>NO</h2>
           <h2>se</h2>
           <h2>mancha</h2>

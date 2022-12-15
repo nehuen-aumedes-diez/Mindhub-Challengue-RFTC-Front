@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import remeraFActions from '../../redux/actions/remeraFAction'
-import './CardRemeraDetalle.css'
+import buzoActions from '../../redux/actions/buzoAction'
+import '../CardRemeraDetalle/CardRemeraDetalle.css'
 
-function CardRemeraDetalle(props) {
+function CardBuzoDetalle(props) {
 
     let {id} = useParams()
     let dispatch = useDispatch()
     //console.log("ID",id)
-    const {getOneRemeraFId} = remeraFActions
-    let {remeraFencontrada} = useSelector(store => store.remerasF)
-
+    const {getOneBuzoId} = buzoActions
+    let {buzoId} = useSelector(store => store.buzos)
+    
     useEffect( () => {
-        dispatch(getOneRemeraFId(id))
+        dispatch(getOneBuzoId(id))
         // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, [])
-    let miRemera = remeraFencontrada[0]
+    }, [])
+    let miBuzo = buzoId?.buzoId
+    console.log("BUZO", miBuzo);
 
   return (
     <div className='supergeneral-detalle'>
@@ -28,10 +29,10 @@ function CardRemeraDetalle(props) {
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src={miRemera?.foto1} class="d-block w-100" alt={miRemera?.nombre} />
+                        <img src={miBuzo?.[0].foto1} class="d-block w-100" alt={miBuzo?.[0].nombre} />
                     </div>
                     <div class="carousel-item">
-                        <img src={miRemera?.foto2} class="d-block w-100" alt={miRemera?.nombre} />
+                        <img src={miBuzo?.[0].foto2} class="d-block w-100" alt={miBuzo?.[0].nombre} />
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -45,7 +46,7 @@ function CardRemeraDetalle(props) {
             </div>
             <div className='contenedor-2'>
                 <div className="nombre-producto">
-                    {miRemera?.nombre}
+                    {miBuzo?.[0].nombre}
                 </div>
                 <div className="talle-producto">
                     <h4>TALLE</h4>
@@ -57,10 +58,10 @@ function CardRemeraDetalle(props) {
                     </ul>
                 </div>
                 <div className="precio-producto">
-                    <span>${miRemera?.precio}</span>
+                    <span>${miBuzo?.[0].precio}</span>
                 </div>
                 <div className="descripcion-producto">
-                    <span>{miRemera?.descripcion}</span>
+                    <span>{miBuzo?.[0].descripcion}</span>
                 </div>
                 <div className="comprar-producto">
                     <span>AGREGAR AL CARRITO</span>
@@ -71,4 +72,4 @@ function CardRemeraDetalle(props) {
     )
 }
 
-export default CardRemeraDetalle
+export default CardBuzoDetalle
