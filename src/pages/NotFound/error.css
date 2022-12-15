@@ -3,8 +3,17 @@
     margin: 0;
     box-sizing: border-box;
 }
+<<<<<<< HEAD:src/pages/NotFound/error.css
+=======
+.cuerpo-error{
+    text-align: center;
+    padding-top: 5%;
+    background-color: black;
+    padding-bottom: 5%;
+}
+>>>>>>> b01b4e2be0142c56d81754447db2f649a2dfa78f:src/error/error.css
 
-body svg #football{
+.cuerpo-error svg #football{
     animation: jump 1.5s ease-in-out  infinite ;    
 }
 .textocont {
@@ -20,9 +29,10 @@ body svg #football{
 .texto404{
     color: aliceblue;
     font-size: 20px;
+    padding-top: 50px;
+    
 }
 .wrap {
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,6 +54,7 @@ body svg #football{
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
+    margin-bottom: 50px;
     }
   
   .button:hover {
@@ -65,7 +76,7 @@ body svg #football{
     }
 }
 
-body svg #hand{
+.cuerpo-error svg #hand{
     
     animation: hand 1.5s linear infinite;
     transform-origin: top right;
@@ -82,7 +93,7 @@ body svg #hand{
 }
 
 
-body svg #leg{
+.cuerpo-error svg #leg{
     animation: kick 1.5s ease-in-out  infinite  ;
     transform-origin: top;
     transform-box: fill-box;
@@ -96,7 +107,7 @@ body svg #leg{
     }
 }
 
-body svg #head{
+.cuerpo-error svg #head{
     animation: rotate 1.5s ease-in-out infinite;
     transform-origin: center;
     transform-box: fill-box ;
