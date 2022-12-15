@@ -1,12 +1,12 @@
 import { createReducer } from "@reduxjs/toolkit";
 import buzoActions from "../actions/buzoAction";
 
-const { getBuzo, getOneBuzoId, deleteBuzo } = buzoActions
+const { getBuzo, getOneBuzoId, deleteBuzo, filtrarBuzos } = buzoActions
 
 const initialState = {
 
-  busos: [],
-  buzoId: '',
+  buzos: [],
+  buzoId: [],
 };
 
 const buzoReducer = createReducer(initialState, (builder) => {
@@ -15,19 +15,27 @@ const buzoReducer = createReducer(initialState, (builder) => {
       console.log(action);
       return {
         ...state,
-        busos: action.payload,
+        buzos: action.payload,
 
       };
     })
     .addCase(getOneBuzoId.fulfilled, (state, action) => {
+      console.log(action.payload);
       return {
         ...state,
-        busos: action.payload,
+        buzoId: action.payload,
       };
     }).addCase(deleteBuzo.fulfilled, (state, action) => {
       return {
         ...state,
         buzoId: action.payload.id
+      }
+    })
+    .addCase(filtrarBuzos.fulfilled, (state, action) => {
+      //console.log("ACTION DE FILTRAR: ", action.payload);
+      return {
+          ...state,
+          buzos: action.payload.buzos,
       }
     })
 });

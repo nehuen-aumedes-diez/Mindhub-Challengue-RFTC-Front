@@ -21,13 +21,6 @@
     box-sizing: border-box;
   }
   
-  html{
-    height: 100%;
-    font-family: proxima-nova, sans-serif;
-    font-size: 14px;
-  }
-  
-  
   .hero-section{
     align-items: flex-start;
     background-image: linear-gradient(0deg, black 85%, skyblue 140%);
@@ -72,7 +65,7 @@
     display: block;
     padding-bottom: 150%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.884);
+    background-color: black;
   }
   
   .card__background{
