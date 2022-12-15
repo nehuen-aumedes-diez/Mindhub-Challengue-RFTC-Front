@@ -3,6 +3,7 @@ import './Navbar.css'
 import { useState } from 'react'
 import { IoCartOutline } from "react-icons/io5";
 import { BiUser } from "react-icons/bi";
+import { Link as LinkRouter } from 'react-router-dom';
 
 export default function Navbar() {
   let [hideDropdown, setHideDropdown] = useState(false)
@@ -19,10 +20,10 @@ export default function Navbar() {
           Tienda
           {hideDropdown ?
             <div id='containerDropdownNav' onMouseLeave={() => { setHideDropdown(false) }} >
-              <div className='itemDropdown'>Camisetas Mujer</div>
-              <div className='itemDropdown'>Camisetas Hombre</div>
-              <div className='itemDropdown'>Buzos</div>
-              <div className='itemDropdown'>Gorras</div>
+              <LinkRouter to='/camisetasF' className='itemDropdown'>Camisetas Mujer</LinkRouter>
+              <LinkRouter to='/camisetasF' className='itemDropdown'>Camisetas Hombres</LinkRouter>
+              <LinkRouter to='/camisetasF' className='itemDropdown'>Buzos</LinkRouter>
+              <LinkRouter to='/camisetasF' className='itemDropdown'>Gorras</LinkRouter>
             </div>
             :
             console.log('')
@@ -36,8 +37,8 @@ export default function Navbar() {
             <BiUser className='RefCart' onMouseEnter={() => { setMenuUser(true) }} onClick={() => { !menuUser ? setMenuUser(true) : setMenuUser(false) }}></BiUser>
             {menuUser ?
               <div id='containerDropdownMenuUser' onMouseLeave={() => { setMenuUser(false) }} >
-                <div className='itemDropdown2'>Ingresar</div>
-                <div className='itemDropdown2'>Registrarse</div>
+                <LinkRouter to='/camisetasF' className='itemDropdown'>Ingreso</LinkRouter>
+                <LinkRouter to='/camisetasF' className='itemDropdown'>Registro</LinkRouter>
               </div>
               :
               console.log('')

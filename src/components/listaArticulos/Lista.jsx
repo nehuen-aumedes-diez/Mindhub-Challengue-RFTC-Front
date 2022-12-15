@@ -14,8 +14,8 @@ export default function Select(props) {
     <ul className='listalist' >
         <dl>
             <dt>Camisetas</dt>
-                <dd> <Navlink>Hombre</Navlink>    {/* <button>Hombre</button> */}</dd>
-                <dd>  <Navlink>Mujer</Navlink> {/*  <button>Mujer</button> */}</dd>
+                <dd> <Navlink>Hombre</Navlink></dd>
+                <dd>  <Navlink>Mujer</Navlink></dd>
         </dl>
         <hr
           style={{
@@ -25,8 +25,8 @@ export default function Select(props) {
             height: '5px',
           }}
         />
-        <li>  <Navlink>Buzos</Navlink>  {/* <button>Buzos</button> */}</li>
-        <li>  <Navlink>Gorras</Navlink>  {/* <button>Gorras</button> */}</li>
+        <li>  <Navlink>Buzos</Navlink></li>
+        <li>  <Navlink>Gorras</Navlink></li>
     </ul>
     
 

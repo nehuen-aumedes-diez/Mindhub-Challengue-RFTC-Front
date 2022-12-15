@@ -4,6 +4,8 @@ import Navbar from '../Navbar/Navbar'
 import Lista from '../listaArticulos/Lista'
 import Select from '../order/Select'
 import SearchBar from '../searchBar/SearchBar'
+import CardRemera from '../cardRemera/CardRemera'
+
 
 function Market() {
 return (
@@ -16,8 +18,13 @@ return (
   <div> <SearchBar /> </div>
   <div className='BotDiv'> <Select /> </div>
   </div>
-  <div className="articulos"></div>
-  <div className="void-para-el-mensajero"></div>
+  <div className="articulos">
+        <CardRemera />
+        <CardRemera />
+        <CardRemera />
+        <CardRemera />
+        <CardRemera />
+        <CardRemera /></div>
 </div>
 )
 }
