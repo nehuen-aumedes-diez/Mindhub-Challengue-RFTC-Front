@@ -7,7 +7,7 @@ export default function CardHome() {
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
       <section className="hero-section">
       <h2 className="tituloNuestrosProductos">- Catálogo de Productos -</h2>
-        <div className="card-grid">
+        <div className="card-grid" data-aos="zoom-in" data-aos-duration="1000">
           <a className="card" href="#">
             <div className="card__background"
               style={{
