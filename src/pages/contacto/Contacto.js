@@ -7,7 +7,7 @@ export default function Contacto() {
         <div className="cuerpo-contacto">
       <div class="container-contacto">
         <h1 class="brand">
-          <span>¿Tenés alguna consulta?</span>
+          <h2 className="tituloConsulta-Contacto">¿Tenés alguna consulta?</h2>
         </h1>
         <div class="wrapperContacto">
           <div class="company-info">
@@ -33,7 +33,7 @@ export default function Contacto() {
             </div>
           </div>
           <div class="contact">
-            <h3>Envianos un correo</h3>
+            <h3 className="titulo-envianos">Envianos un correo</h3>
             <form id="contact-form">
               <p>
                 <label>Nombre</label>
