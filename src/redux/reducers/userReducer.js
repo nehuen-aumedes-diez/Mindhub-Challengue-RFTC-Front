@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import userActions from "../actions/userAction";
 
-const {newUser, signIn, signOut} = userActions
+const {newUser, signIn, signOut, relogin} = userActions
 
 const initialState = {
     perfiles: [],
@@ -17,12 +17,12 @@ const userReducer = createReducer(initialState, (builder)=>{
             return state.perfiles.push(action.payload.response)
         }
     })
-    builder.addCase(signIn.fulfilled, (state, action)=>{
+    .addCase(signIn.fulfilled, (state, action)=>{
         console.log(action)
         const{success , response }= action.payload
         if(success){
             let {user, token} = response
-            localStorage.setItem('token', JSON.stringify({ token : token}))
+            localStorage.setItem('token', JSON.stringify({ token : {user:token}}))
             let newState={
                 ...state,
                 name: user.name,
@@ -30,7 +30,7 @@ const userReducer = createReducer(initialState, (builder)=>{
                 token: token
             }
             
-            return newState, console.log(initialState);
+            return newState
         } else{
             let newState={
                 ...state,
@@ -39,7 +39,8 @@ const userReducer = createReducer(initialState, (builder)=>{
             return newState
         }
     })
-    builder.addCase(signOut, (state,action)=>{
+    .addCase(signOut.fulfilled, (state,action)=>{
+        console.log(action);
         const{success , response }= action.payload
         if(success){
             localStorage.removeItem('token')
@@ -51,6 +52,27 @@ const userReducer = createReducer(initialState, (builder)=>{
             }
             return newState
         }else{
+            let newState={
+                ...state,
+                messagge: response
+            }
+            return newState
+        }
+    })
+   .addCase(relogin.fulfilled, (state, action)=>{
+        // console.log(action)
+        const{success , response }= action.payload
+        if(success){
+            let {user, token} = response
+            let newState={
+                ...state,
+                name: user.name,
+                logged: true,
+                token: token
+            }
+            
+            return newState
+        } else{
             let newState={
                 ...state,
                 messagge: response
