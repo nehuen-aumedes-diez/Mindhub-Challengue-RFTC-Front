@@ -25,7 +25,7 @@ function App() {
         <Route path="/" element={<Home/>}></Route>
         <Route path="/camisetasF/:id" element={<CamisetasFDetalles/>}></Route>
         <Route path="/camisetasM/:id" element={<CamisetasMDetalles/>}></Route>
-        <Route path="/hola" element={<SignInSignUp/>}></Route>
+        <Route path="/signinsignup" element={<SignInSignUp/>}></Route>
         <Route path="/chau" element={<PaginaDeStock/>}></Route>
         <Route path="/camisetasF" element={<CamisetasF/>}></Route>
         <Route path="/camisetasFDetalles" element={<CamisetasFDetalles/>}></Route>
@@ -40,6 +40,6 @@ function App() {
       </Routes>
     </Layout>
   );
-}
+} 
 
 export default App;
