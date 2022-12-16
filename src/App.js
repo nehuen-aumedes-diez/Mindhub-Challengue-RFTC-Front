@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import CamisetasF from "./pages/camisetasF/CamisetasF";
+import CamisetasF from "./pages/CamisetasF/CamisetasF";
 import Home from "./pages/Home/Home";
 import CamisetasFDetalles from "./pages/CamisetasFDetalles/CamisetasFDetalles";
 import { Routes, Route } from "react-router-dom";
@@ -16,6 +16,7 @@ import GorrasDetalles from "./pages/GorrasDetalles/GorrasDetalles";
 import Contacto from "./pages/Contacto/Contacto";
 import Nosotros from './pages/Nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/*" element={<NotFound/>}></Route>
         <Route path="/contacto" element={<Contacto/>}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
+        <Route path="/carrito" element={<Cart/>}></Route>
       </Routes>
     </Layout>
   );
