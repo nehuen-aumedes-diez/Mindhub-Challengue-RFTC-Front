@@ -13,7 +13,7 @@ import Gorras from "./pages/Gorras/Gorras";
 import CamisetasMDetalles from "./pages/CamisetasMDetalles/CamisetasMDetalles";
 import BuzosDetalles from "./pages/BuzosDetalles/BuzosDetalles";
 import GorrasDetalles from "./pages/GorrasDetalles/GorrasDetalles";
-import Contacto from "./pages/contacto/Contacto";
+import Contacto from "./pages/Contacto/Contacto";
 import Nosotros from './pages/Nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
 import PaginaDeStock from './pages/PaginaDeStock/PaginaDeStock'

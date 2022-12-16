@@ -19,7 +19,7 @@ export default function Testimonio() {
           </div>
           <figcaption>
             <h3>Lucas Sosa</h3>
-            <h5>Atr perro</h5>
+            <h5>Atr perro cumbia gato</h5>
             <div class="icons">
               <img className="ImgTestimonios" src="./estrellas.png" width={"100px"}></img>
             </div>
