@@ -6,7 +6,7 @@ import userReducer from "./userReducer";
 
 const rootReducer = {
  
-  busos: buzoReducer,
+  buzos: buzoReducer,
   gorras: gorraReducer,
   remerasM: remeraMReducer,
   remerasF: remeraFReducer,

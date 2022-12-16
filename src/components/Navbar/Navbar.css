@@ -20,12 +20,6 @@
     background-color: var(--Negro);
   }
 
-  #logoHome {
-    width: 55px;
-    height: 55px;
-    margin: 0 8px;
-  }
-
   #containerRefsNav {
     /*  border: 2px solid red; */
     width: 100%;
@@ -105,6 +99,17 @@
 
   .itemDropdown2{
     margin: 8px 0;
+  }
+
+  .LogoNav{
+    width: 65px;
+    height: 65px;
+  }
+
+  #logoHome {
+    width: 25%;
+    height: 25%;
+    margin: 0 8px;
   }
 }
 
@@ -259,8 +264,8 @@
   }
 
   #logoHome {
-    width: 80px;
-    height: 80px;
+    width: 10%;
+    height: 100%;
   }
 
   #containerRefsNav {
@@ -315,10 +320,10 @@
   }
 
   #containerIconRefs {
-    /*  border: 2px solid greenyellow; */
+    /* border: 2px solid greenyellow; */
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0px;
   }
 
   #containerDropdownMenuUser{

@@ -12,7 +12,7 @@ export default function SignInSignUp() {
     useEffect( () => {
         setContainer(document.getElementById('containerS'))
     }, [])
-    // console.log(container);
+
     async function botonSignUp(event) {
         container.classList.add("right-panel-active")
     }
