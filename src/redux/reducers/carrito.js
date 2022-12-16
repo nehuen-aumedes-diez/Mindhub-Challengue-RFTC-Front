@@ -10,7 +10,7 @@ export const cartInitialState ={
 
 }
 
-const remeraFReducer = createReducer(initialState, (builder) => {
+/* const remeraFReducer = createReducer(initialState, (builder) => {
     builder
       .addCase(ADD_TO_CART.fulfilled, (state, action) => {
         console.log(action);
@@ -38,4 +38,4 @@ const remeraFReducer = createReducer(initialState, (builder) => {
             cart: ,
         }
       })
-  });
+  }); */
