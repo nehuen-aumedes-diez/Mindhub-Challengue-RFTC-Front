@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './SignInSignUp.css'
-// import swal from "sweetalert";
-// import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
-import axios from "axios";
-import { BASE_URL } from "../../api/url";
 import userActions from '../../redux/actions/userAction';
 import { useDispatch } from 'react-redux';
 
@@ -23,7 +19,6 @@ export default function SignInSignUp() {
     async function botonSignIn(event) {
         container.classList.remove("right-panel-active")
     }
-
 
     const [dataUser, setDataUser] = useState({
         name: '',
@@ -49,7 +44,6 @@ export default function SignInSignUp() {
         })
     }
 
-    
     async function sendData(event) {
         event.preventDefault();
         try {
@@ -73,9 +67,7 @@ export default function SignInSignUp() {
         alert('usuario logueado')
         event.target.reset()
         } 
-  
-        // console.log(dataUser);
-        // console.log(dataLogin); 
+ 
     return (
         <div className='bodyS'>
             <div class="containerS" id="containerS">
