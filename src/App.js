@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import CamisetasF from "./pages/camisetasF/CamisetasF";
 import Home from "./pages/Home/Home";
@@ -17,8 +17,21 @@ import Contacto from "./pages/contacto/Contacto";
 import Nosotros from './pages/nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
 import PaginaDeStock from './pages/PaginaDeStock/PaginaDeStock'
+import { useDispatch } from "react-redux";
+import userActions from "./redux/actions/userAction";
+
+
 
 function App() {
+  let dispatch = useDispatch()
+  
+  useEffect(()=>{
+    let token = JSON.parse(localStorage.getItem('token'))
+    // console.log(token?.token.user);
+    if(token){
+      dispatch(userActions.relogin(token.token.user))
+    }
+  },[])
   return (
     <Layout>
       <Routes>
