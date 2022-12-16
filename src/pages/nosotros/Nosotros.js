@@ -18,10 +18,10 @@ export default function Nosotros() {
               <h2 id="tituloQuienesSomos">¿Quienes Somos?</h2>
               <p className="texto-nosotros">
                 Nuestra historia comienza allá por 1970 con la inauguración de
-                nuestra primera tienda física, El rey de las zapatillas. Con el
+                nuestra primera tienda física, "El rey de las Camisetas". Con el
                 correr de los años nos fuimos expandiendo cada vez más a través
                 de la apertura de nuevas sucursales, hasta que en 1986 abrimos
-                el primer local integral de deportes. Desde ese momento, todo
+                el primer local integral de camisetas deportivas. Desde ese momento, todo
                 fue crecimiento: realizamos alianzas estratégicas con otras
                 marcas para ampliar nuestras redes y en 1988 inauguramos un
                 nuevo concepto de tienda deportiva en San Isidro. Esta tienda se
@@ -44,7 +44,7 @@ export default function Nosotros() {
               src="https://cdn.shopify.com/s/files/1/0015/5841/3357/files/embroidery-workshop-20190605-0013_3000x.jpg?v=1613692939"
             />
             <p className="TextoCardMision">
-              Vivimos entrenando para ganar y conquistar a los consumidores
+              Vivimos entrenando para ganar y conquistar a los clientes
               ofreciendo una experiencia premium. 
             </p>
           </div>

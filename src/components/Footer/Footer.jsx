@@ -12,7 +12,7 @@ export default function Footer() {
               <i className="fas fa-map-marker-alt" />
               <div className="cta-text">
                 <h4>Dirección</h4>
-                <span>1010 Avenue, sw 54321, chandigarh</span>
+                <a href='https://goo.gl/maps/Vmau94WRA2449swaA' target="_blank">Caaguazú 7101, Liniers, CABA</a>
               </div>
             </div>
           </div>
@@ -21,7 +21,7 @@ export default function Footer() {
               <i className="fas fa-phone" />
               <div className="cta-text">
                 <h4>Teléfono</h4>
-                <span>9876543210 0</span>
+                <a href='tel:+541126062011' target="_blank">+54 11 2606 2011</a>
               </div>
             </div>
           </div>
@@ -30,7 +30,7 @@ export default function Footer() {
               <i className="far fa-envelope-open" />
               <div className="cta-text">
                 <h4>Email</h4>
-                <span>mail@info.com</span>
+                <a href='mailto:retrofootballtc@gmail.com?Subject=Contacto%20a%20RFTC' target="_blank">retrofootballtc@gmail.com</a>
               </div>
             </div>
           </div>
@@ -49,9 +49,7 @@ export default function Footer() {
               </div>
               <div className="footer-text">
                 <p>
-                  Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed
-                  do eiusmod tempor incididuntut consec tetur adipisicing
-                  elit,Lorem ipsum dolor sit amet.
+                La camiseta no se mancha. Los valores no se negocian. Lo retro nunca pasa de moda. Sé parte del club de fans de la indumentaria deportiva estilo vintage. 
                 </p>
               </div>
               <div className="footer-social-icon">
@@ -74,16 +72,16 @@ export default function Footer() {
               </div>
               <ul>
                 <li>
-                  <a href="#">Inicio</a>
+                  <a href="/">Inicio</a>
                 </li>
                 <li>
-                  <a href="#">Nosotros</a>
+                  <a href="/nosotros">Nosotros</a>
                 </li>
                 <li>
-                  <a href="#">Tienda</a>
+                  <a href="/camisetasF">Tienda</a>
                 </li>
                 <li>
-                  <a href="#">Contacto</a>
+                  <a href="/contacto">Contacto</a>
                 </li>
               </ul>
             </div>
@@ -92,12 +90,11 @@ export default function Footer() {
           <div className="col-xl-4 col-lg-4 col-md-6 mb-50">
             <div className="footer-widget">
               <div className="footer-widget-heading">
-                <h3>Suscribite</h3>
+                <h3>Sponsors</h3>
               </div>
               <div className="footer-text mb-25">
                 <p>
-                  Don’t miss to subscribe to our new feeds, kindly fill the form
-                  below.
+                  Si tenés un club de fútbol y estás interesado en nuestros productos, mandanos un email o contactanos por teléfono.
                 </p>
               </div>
              {/*  <div className="subscribe-form">
@@ -120,7 +117,7 @@ export default function Footer() {
           <div className="col-xl-6 col-lg-6 text-center text-lg-left">
             <div className="copyright-text">
               <p>
-                Copyright © 2022, All Right Reserved{" "}
+                Retro Football Team Clothing © 2022 - Todos los derechos reservados{" "}
               </p>
             </div>
           </div>
@@ -128,19 +125,16 @@ export default function Footer() {
             <div className="footer-menu">
               <ul>
                 <li>
-                  <a href="#">Home</a>
+                  <a href="/">Inicio</a>
                 </li>
                 <li>
-                  <a href="#">Terms</a>
+                  <a href="#">Privacidad</a>
                 </li>
                 <li>
-                  <a href="#">Privacy</a>
+                  <a href="#">Políticas</a>
                 </li>
                 <li>
-                  <a href="#">Policy</a>
-                </li>
-                <li>
-                  <a href="#">Contact</a>
+                  <a href="/contacto">Contacto</a>
                 </li>
               </ul>
             </div>
