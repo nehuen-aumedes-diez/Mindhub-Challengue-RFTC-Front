@@ -88,6 +88,7 @@ export default function Footer() {
               </ul>
             </div>
           </div>
+
           <div className="col-xl-4 col-lg-4 col-md-6 mb-50">
             <div className="footer-widget">
               <div className="footer-widget-heading">
@@ -99,16 +100,17 @@ export default function Footer() {
                   below.
                 </p>
               </div>
-              <div className="subscribe-form">
+             {/*  <div className="subscribe-form">
                 <form action="#">
                   <input type="text" placeholder="Email Address" />
                   <button>
                     <i className="fab fa-telegram-plane" />
                   </button>
                 </form>
-              </div>
+              </div> */}
             </div>
           </div>
+          
         </div>
       </div>
     </div>
