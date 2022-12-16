@@ -3,12 +3,14 @@ import './SignInSignUp.css'
 import "react-confirm-alert/src/react-confirm-alert.css";
 import userActions from '../../redux/actions/userAction';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 export default function SignInSignUp() {
     
     let dispatch = useDispatch()
     // const container = document.getElementById('containerS')
     let [container, setContainer] = useState(null)
+    const navigate = useNavigate();
     useEffect( () => {
         setContainer(document.getElementById('containerS'))
     }, [])
@@ -66,6 +68,7 @@ export default function SignInSignUp() {
         }
         alert('usuario logueado')
         event.target.reset()
+        navigate("/")
         } 
  
     return (
