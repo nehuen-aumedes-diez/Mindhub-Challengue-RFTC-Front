@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import CamisetasF from "./pages/camisetasF/CamisetasF";
+import CamisetasF from "./pages/CamisetasF/CamisetasF";
 import Home from "./pages/Home/Home";
 import CamisetasFDetalles from "./pages/CamisetasFDetalles/CamisetasFDetalles";
 import { Routes, Route } from "react-router-dom";
@@ -14,7 +14,7 @@ import CamisetasMDetalles from "./pages/CamisetasMDetalles/CamisetasMDetalles";
 import BuzosDetalles from "./pages/BuzosDetalles/BuzosDetalles";
 import GorrasDetalles from "./pages/GorrasDetalles/GorrasDetalles";
 import Contacto from "./pages/contacto/Contacto";
-import Nosotros from './pages/nosotros/Nosotros'
+import Nosotros from './pages/Nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
 import PaginaDeStock from './pages/PaginaDeStock/PaginaDeStock'
 

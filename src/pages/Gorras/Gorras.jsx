@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import gorraActions from '../../redux/actions/gorraAction';
-import CardRemera from "../../components/cardRemera/CardRemera"
+import CardRemera from "../../components/CardRemera/CardRemera"
 import Market from '../../components/market/Market'
 import SearchBar from '../../components/searchBar/SearchBar'
 import Select from '../../components/order/Select'
