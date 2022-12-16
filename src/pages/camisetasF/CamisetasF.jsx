@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import CardRemera from "../../components/CardRemera/CardRemera"
+import CardRemera from "../../components/cardRemera/CardRemera"
 import remeraFActions from '../../redux/actions/remeraFAction'
 import Market from '../../components/market/Market'
 import SearchBar from '../../components/searchBar/SearchBar'
