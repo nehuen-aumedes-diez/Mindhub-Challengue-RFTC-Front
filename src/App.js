@@ -14,8 +14,9 @@ import CamisetasMDetalles from "./pages/CamisetasMDetalles/CamisetasMDetalles";
 import BuzosDetalles from "./pages/BuzosDetalles/BuzosDetalles";
 import GorrasDetalles from "./pages/GorrasDetalles/GorrasDetalles";
 import Contacto from "./pages/Contacto/Contacto";
-import Nosotros from './pages/Nosotros/Nosotros'
+import Nosotros from './pages/nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
+import PaginaDeStock from './pages/PaginaDeStock/PaginaDeStock'
 
 function App() {
   return (
@@ -24,8 +25,8 @@ function App() {
         <Route path="/" element={<Home/>}></Route>
         <Route path="/camisetasF/:id" element={<CamisetasFDetalles/>}></Route>
         <Route path="/camisetasM/:id" element={<CamisetasMDetalles/>}></Route>
-        <Route path="/hola" element={<SignInSignUp/>}></Route>
-        <Route path="/chau" element={<Contador/>}></Route>
+        <Route path="/signinsignup" element={<SignInSignUp/>}></Route>
+        <Route path="/chau" element={<PaginaDeStock/>}></Route>
         <Route path="/camisetasF" element={<CamisetasF/>}></Route>
         <Route path="/camisetasFDetalles" element={<CamisetasFDetalles/>}></Route>
         <Route path="/camisetasM" element={<CamisetasM/>}></Route>
@@ -39,6 +40,6 @@ function App() {
       </Routes>
     </Layout>
   );
-}
+} 
 
 export default App;
