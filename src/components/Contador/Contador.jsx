@@ -3,7 +3,7 @@ import './Contador.css'
 
 export default function Contador() {
    // Set the date we're counting down to
-var countDownDate = new Date("Dec 17, 2022 10:59:59").getTime();
+var countDownDate = new Date("Feb 14, 2023 11:59:59").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -39,7 +39,7 @@ var x = setInterval(function() {
 
             <div id="content-conteo">
                 <div id="faltan">
-                    <img src="https://digitalhub.fifa.com/transform/e9d95991-47a6-45e9-af75-c33e93beaf11/Qatar_2022_white_logo" width="190"></img>
+                    <img src="./NUEVO_LANZAMIENTO.png"></img>
                 </div>
                 <div id="conteo">
                     <div class="wrap-date" >

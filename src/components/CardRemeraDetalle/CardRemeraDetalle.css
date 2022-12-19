@@ -49,16 +49,52 @@
 /* CAMBIAR DE COLOR DEPENDIENDO EL STOCK */
 .talle-producto ul li{
     list-style: none;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     padding: 5px;
     text-align: center;
-    background-color: greenyellow;
     color: black;
     border-radius: 50%;
     font-weight: 600;
     cursor: pointer;
+    border: 1px solid rgb(164, 164, 164);
 }
+
+.rojo{
+    background-color: red;
+}
+
+.naranja:hover{
+    content: 'SIN STOCK';
+}
+
+.naranja{
+    background-color: orange;
+}
+
+.amarillo{
+    background-color: yellow;
+}
+
+.verde{
+    background-color: greenyellow;
+}
+
+/* ----- REDONDEAR EL TALLE SELECCIONADO */
+
+#S-talleactivo{
+    border: 2px solid black;
+}
+#M-talleactivo{
+    border: 2px solid black;
+}
+#L-talleactivo{
+    border: 2px solid black;
+}
+#XL-talleactivo{
+    border: 2px solid black;
+}
+
 .talle-producto ul{
     display: flex;
     justify-content: center;
