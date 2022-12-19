@@ -18,17 +18,17 @@ export default function Contacto() {
             <div className="iconos-contacto">
               <a>
                 {" "}
-                <img src="./gmail.png" width={"50px"}></img>
+                <img className="lpm" src="./gmail.png" width={"50px"}></img>
               </a>
               <a>
-                <img src="./gorjeo.png" width={"50px"}></img>
+                <img className="lpm" src="./gorjeo.png" width={"50px"}></img>
               </a>
               <a>
-                <img src="./instagram.png" width={"50px"}></img>
+                <img className="lpm" src="./instagram.png" width={"50px"}></img>
               </a>
               <a>
                 {" "}
-                <img src="./facebook.png" width={"50px"}></img>
+                <img className="lpm" src="./facebook.png" width={"50px"}></img>
               </a>
             </div>
           </div>

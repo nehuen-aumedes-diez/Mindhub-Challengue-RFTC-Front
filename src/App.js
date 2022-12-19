@@ -13,12 +13,16 @@ import Gorras from "./pages/Gorras/Gorras";
 import CamisetasMDetalles from "./pages/CamisetasMDetalles/CamisetasMDetalles";
 import BuzosDetalles from "./pages/BuzosDetalles/BuzosDetalles";
 import GorrasDetalles from "./pages/GorrasDetalles/GorrasDetalles";
-import Contacto from "./pages/Contacto/Contacto";
-import Nosotros from './pages/Nosotros/Nosotros'
+import Contacto from "./pages/contacto/Contacto";
+import Nosotros from './pages/nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
+
+import Noticias from "./pages/Noticias/Noticias";
+
 import PaginaDeStock from './pages/PaginaDeStock/PaginaDeStock'
 import { useDispatch } from "react-redux";
 import userActions from "./redux/actions/userAction";
+
 
 
 
@@ -33,8 +37,10 @@ function App() {
     }
   },[])
   return (
+   
     <Layout>
-      <Routes>
+       {/* <Noticias></Noticias> */}
+       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/camisetasF/:id" element={<CamisetasFDetalles/>}></Route>
         <Route path="/camisetasM/:id" element={<CamisetasMDetalles/>}></Route>
@@ -50,8 +56,8 @@ function App() {
         <Route path="/*" element={<NotFound/>}></Route>
         <Route path="/contacto" element={<Contacto/>}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
-      </Routes>
-    </Layout>
+      </Routes> 
+    </Layout> 
   );
 } 
 
