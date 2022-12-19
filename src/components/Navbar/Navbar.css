@@ -112,6 +112,12 @@
     margin: 0 8px;
   }
 }
+.btnLogout{
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  margin-left: 5px;
+}
 
 @media screen and (min-width: 425px) and (max-width: 768px) {
   #containerDropdownMenuUser{
@@ -252,6 +258,7 @@
     height: 100px;
   }
 }
+
 
 @media screen and (min-width: 1440px) {
   #containerGeneralNav {

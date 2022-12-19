@@ -5,24 +5,66 @@ import gorraActions from '../../redux/actions/gorraAction';
 import CardRemera from "../../components/CardRemera/CardRemera"
 import Market from '../../components/market/Market'
 import SearchBar from '../../components/searchBar/SearchBar'
+import Select from '../../components/order/Select'
 
 export default function Gorras() {
     const dispatch = useDispatch();
     const { getGorra, filtrarGorras } = gorraActions;
-    const { gorras } = useSelector((state) => state.gorras);
+    const { gorras, ordenPrecio, busqueda } = useSelector((state) => state.gorras);
 
     useEffect(() => {
         dispatch(getGorra());
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    const filtrar = (event) => {
-      dispatch(filtrarGorras(event.target.value.trim()))
+    useEffect(() => {
+      if (ordenPrecio || busqueda) {
+          let data = {
+            nombre: busqueda,
+            order: ordenPrecio,
+          }
+          dispatch(filtrarGorras(data))
+      } else {
+          dispatch(getGorra())
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  let filtrarOrden = (event) => {
+    //console.log(event);
+    let nombrecito = busqueda;
+    let ordencito = ordenPrecio;
+    if (event.type === 'keyup'){
+      nombrecito = event?.target?.value?.trim()
     }
+    if (event.type === 'change'){
+      ordencito = event?.target?.value
+    }
+    //console.log(nombrecito)
+    console.log("ordencito",ordencito)
+      let order= '';
+      if (ordencito === '0') {
+          order = ordenPrecio
+      }
+      if (ordencito === 'precio-asc'){
+        order = 'asc'
+      } else if (ordencito === 'precio-desc'){
+        order = 'desc'
+      }
+      let data = {
+          nombre: nombrecito,
+          order: order,
+      }
+    dispatch(filtrarGorras(data))
+  }
+
+/*     const filtrar = (event) => {
+      dispatch(filtrarGorras(event.target.value.trim()))
+    } */
 
 
   return (
-    <Market nombre={'Camisetas de Mujeres'} fn={filtrar} componente={<SearchBar fn={filtrar} />} >
+    <Market nombre={'Gorras'} componente={<SearchBar fn={filtrarOrden} />} segundocomp={<Select fn={filtrarOrden} />} >
     { (gorras.length > 0)
       ? gorras.map(each => 
       <CardRemera key={each._id} id={each._id} precio={each.precio} nombre={each.nombre} img={each.foto1} />)
