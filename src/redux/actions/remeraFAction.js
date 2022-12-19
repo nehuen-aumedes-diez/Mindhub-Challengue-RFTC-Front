@@ -21,7 +21,7 @@ const getOneRemeraFId = createAsyncThunk(
     let url = ` ${BASE_URL}/remeraF/?_id=${_id}`;
     try {
       const res = await axios.get(url);
-      console.log(res.data.res);
+      //console.log(res.data.res);
       return {
         remeraFencontrada: res.data.res,
       };
@@ -53,15 +53,16 @@ const deleteRemeraF = createAsyncThunk("deleteRemeraF", async ({remeraFId}) => {
 });
 
 const filtrarRemerasF = createAsyncThunk('filtrarRemerasF', async(data) => {
-  let url = ` ${BASE_URL}/remeraF?nombre=${data.nombre}&order=${data.order}&orderName=${data.orderName}`
+  let url = ` ${BASE_URL}/remeraF?nombre=${data.nombre}&order=${data.order}`
   try{
       const res = await axios.get(url)
-      console.log("FILTRAR REMERAS ACTION",res.data);
+      //console.log("res", res);
+      //console.log("FILTRAR REMERAS ACTION",res.data);
+      //console.log("data: ",data);
       return {
         remerasF: res.data.res,
         busqueda: data.nombre,
-        ordenAlfabetico: data.order,
-        ordenPrecio: data.orderName,
+        ordenPrecio: data.order,
       }
   } catch(error){
       console.log(error)

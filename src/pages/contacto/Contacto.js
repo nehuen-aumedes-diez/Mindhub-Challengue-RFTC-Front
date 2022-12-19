@@ -12,9 +12,9 @@ export default function Contacto() {
         <div class="wrapperContacto">
           <div class="company-info">
             <h3>Retro Football Team Clothing</h3>
-            <p>Teléfono: 011 2252-5309</p>
-            <p>Email: rftc@info.com</p>
-            <p>Dirección: Av. Rivadavia 2000, CABA</p>
+            <p>Teléfono: +54 11 2606 2011</p>
+            <p>Email: retrofootballtc@gmail.com</p>
+            <p>Dirección: Caaguazú 7101, Liniers, CABA</p>
             <div className="iconos-contacto">
               <a>
                 {" "}

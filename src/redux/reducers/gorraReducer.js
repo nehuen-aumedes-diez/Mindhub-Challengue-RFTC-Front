@@ -7,6 +7,8 @@ const initialState = {
 
   gorras: [],
   gorraId: '',
+  busqueda: '',
+  ordenPrecio: 'asc',
 };
 
 const gorraReducer = createReducer(initialState, (builder) => {
@@ -36,6 +38,8 @@ const gorraReducer = createReducer(initialState, (builder) => {
       return {
           ...state,
           gorras: action.payload.gorras,
+          busqueda: action.payload.busqueda,
+          ordenPrecio: action.payload.ordenPrecio,
       }
     })
 });

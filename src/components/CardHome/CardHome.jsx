@@ -7,8 +7,8 @@ export default function CardHome() {
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
       <section className="hero-section">
       <h2 className="tituloNuestrosProductos">- Catálogo de Productos -</h2>
-        <div className="card-grid">
-          <a className="card" href="#">
+        <div className="card-grid" data-aos="zoom-in" data-aos-duration="1000" >
+          <a className="cardHome" href="#">
             <div className="card__background"
               style={{
                 backgroundImage:
@@ -20,7 +20,7 @@ export default function CardHome() {
               <h3 className="card__heading">Camisetas Mujer</h3>
             </div>
           </a>
-          <a className="card" href="#">
+          <a className="cardHome" href="#">
             <div
               className="card__background"
               style={{
@@ -33,7 +33,7 @@ export default function CardHome() {
               <h3 className="card__heading">Camisetas Hombre</h3>
             </div>
           </a>
-          <a className="card" href="#">
+          <a className="cardHome" href="#">
             <div
               className="card__background"
               style={{
@@ -46,7 +46,7 @@ export default function CardHome() {
               <h3 className="card__heading">Buzos</h3>
             </div>
           </a>
-          <a className="card" href="#">
+          <a className="cardHome" href="#">
             <div
               className="card__background"
               style={{

@@ -52,12 +52,14 @@ const getOneBuzoId = createAsyncThunk(
   }
 );
 
-const filtrarBuzos = createAsyncThunk('filtrarBuzos', async(nombre) => {
-  let url = ` ${BASE_URL}/buzo?nombre=${nombre}`
+const filtrarBuzos = createAsyncThunk('filtrarBuzos', async(data) => {
+  let url = ` ${BASE_URL}/buzo?nombre=${data.nombre}&order=${data.order}`
   try{
       const res = await axios.get(url)
       return {
         buzos: res.data.res,
+        busqueda: data.nombre,
+        ordenPrecio: data.order,
       }
   } catch(error){
       console.log(error)

@@ -5,23 +5,65 @@ import CardRemera from "../../components/CardRemera/CardRemera"
 import buzoActions from '../../redux/actions/buzoAction';
 import Market from '../../components/market/Market'
 import SearchBar from '../../components/searchBar/SearchBar'
+import Select from '../../components/order/Select'
 
 export default function Buzos() {
     const dispatch = useDispatch();
     const { getBuzo, filtrarBuzos } = buzoActions;
-    const { buzos } = useSelector((state) => state.buzos);
+    const { buzos, ordenPrecio, busqueda } = useSelector((state) => state.buzos);
 
     useEffect(() => {
         dispatch(getBuzo());
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    const filtrar = (event) => {
-        dispatch(filtrarBuzos(event.target.value.trim()))
+    useEffect(() => {
+      if (ordenPrecio || busqueda) {
+          let data = {
+            nombre: busqueda,
+            order: ordenPrecio,
+          }
+          dispatch(filtrarBuzos(data))
+      } else {
+          dispatch(getBuzo())
       }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  let filtrarOrden = (event) => {
+    //console.log(event);
+    let nombrecito = busqueda;
+    let ordencito = ordenPrecio;
+    if (event.type === 'keyup'){
+      nombrecito = event?.target?.value?.trim()
+    }
+    if (event.type === 'change'){
+      ordencito = event?.target?.value
+    }
+    //console.log(nombrecito)
+    console.log("ordencito",ordencito)
+      let order= '';
+      if (ordencito === '0') {
+          order = ordenPrecio
+      }
+      if (ordencito === 'precio-asc'){
+        order = 'asc'
+      } else if (ordencito === 'precio-desc'){
+        order = 'desc'
+      }
+      let data = {
+          nombre: nombrecito,
+          order: order,
+      }
+    dispatch(filtrarBuzos(data))
+  }
+
+/*     const filtrar = (event) => {
+        dispatch(filtrarBuzos(event.target.value.trim()))
+      } */
 
     return (
-        <Market nombre={'Buzos Unisex'} fn={filtrar} componente={<SearchBar fn={filtrar} />} >
+        <Market nombre={'Buzos Unisex'} componente={<SearchBar fn={filtrarOrden} />} segundocomp={<Select fn={filtrarOrden} />} >
         { (buzos.length > 0)
           ? buzos.map(each => 
           <CardRemera key={each._id} id={each._id} precio={each.precio} nombre={each.nombre} img={each.foto1} />)

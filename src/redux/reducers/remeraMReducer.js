@@ -6,7 +6,9 @@ const { getRemeraM, getOneRemeraMId, deleteRemeraM, filtrarRemerasM } = remeraMA
 const initialState = {
 
   remerasM: [],
-  remeraMencontrada:[]
+  remeraMencontrada:[],
+  busqueda: '',
+  ordenPrecio: 'asc',
 };
 
 const remeraMReducer = createReducer(initialState, (builder) => {
@@ -36,6 +38,8 @@ const remeraMReducer = createReducer(initialState, (builder) => {
       return {
           ...state,
           remerasM: action.payload.remerasM,
+          busqueda: action.payload.busqueda,
+          ordenPrecio: action.payload.ordenPrecio,
       }
     })
 });
