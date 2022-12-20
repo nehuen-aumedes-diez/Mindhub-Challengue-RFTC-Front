@@ -117,6 +117,7 @@ function CardRemeraDetalle(props) {
 
     const agregarAlCarrito = () => {
         let productoAgregado = {
+            tipo: 'Camiseta Mujer',
             id: miRemera?._id,
             nombre: miRemera?.nombre,
             foto: miRemera?.foto1,

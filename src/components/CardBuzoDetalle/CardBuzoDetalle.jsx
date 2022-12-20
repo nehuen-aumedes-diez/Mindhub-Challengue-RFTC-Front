@@ -117,6 +117,7 @@ function CardBuzoDetalle(props) {
     
         const agregarAlCarrito = () => {
             let productoAgregado = {
+                tipo: 'Buzo',
                 id: miBuzo?._id,
                 nombre: miBuzo?.nombre,
                 foto: miBuzo?.foto1,

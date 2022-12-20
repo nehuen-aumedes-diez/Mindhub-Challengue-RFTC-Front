@@ -70,7 +70,7 @@ function CardRemeraMDetalle(props) {
         }
         // --------------------------------------------------
     
-        let [talleElegido, setTalleElegido] = useState('')
+        let [talleElegido, setTalleElegido] = useState(null)
         let [talleActivoS, setTalleActivoS] = useState('')
         let [talleActivoM, setTalleActivoM] = useState('')
         let [talleActivoL, setTalleActivoL] = useState('')
@@ -114,15 +114,20 @@ function CardRemeraMDetalle(props) {
         }, [reload])
     
         const agregarAlCarrito = () => {
-            let productoAgregado = {
-                id: miRemera?._id,
-                nombre: miRemera?.nombre,
-                foto: miRemera?.foto1,
-                precio: miRemera?.precio,
-                stock: miRemera?.stock,
-                talle: talleElegido
+            if (talleElegido === null){
+                alert('flaco elegi un talle primero')
+            } else {                
+                let productoAgregado = {
+                    tipo: 'Camiseta Hombre',
+                    id: miRemera?._id,
+                    nombre: miRemera?.nombre,
+                    foto: miRemera?.foto1,
+                    precio: miRemera?.precio,
+                    stock: miRemera?.stock,
+                    talle: talleElegido
+                }
+                console.log("producto agregado", productoAgregado);
             }
-            console.log("producto agregado", productoAgregado);
         }
 
 return (

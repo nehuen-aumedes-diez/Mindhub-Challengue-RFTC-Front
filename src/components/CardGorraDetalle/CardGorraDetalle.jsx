@@ -21,6 +21,7 @@ function CardGorraDetalle(props) {
     
         const agregarAlCarrito = () => {
             let productoAgregado = {
+                tipo: 'Gorra',
                 id: miGorra?._id,
                 nombre: miGorra?.nombre,
                 foto: miGorra?.foto1,
