@@ -18,9 +18,9 @@ function CardBuzoDetalle(props) {
         dispatch(getOneBuzoId(id))
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    console.log(buzoId?.buzoId);
+    //console.log(buzoId?.buzoId);
     let miBuzo = buzoId?.buzoId?.[0]
-    console.log("BUZO", miBuzo);
+    //console.log("BUZO", miBuzo);
 
         // ------- COLORES DE LOS TALLES SEGUN LA DISPONIBILIDAD DEL STOCK ------------
         let stockS = miBuzo?.stock[0]
