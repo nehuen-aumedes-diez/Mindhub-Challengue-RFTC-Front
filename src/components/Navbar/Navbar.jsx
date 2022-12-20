@@ -41,6 +41,7 @@ export default function Navbar() {
           }
         </div>
         <LinkRouter to='/contacto' className='LinkRefNav'>Contacto</LinkRouter>
+        <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>
         <div id='containerIconRefs'>
           <div className='LinkIcon Icon1'><IoCartOutline className='RefCart' /></div>
           <hr className='HR' />
