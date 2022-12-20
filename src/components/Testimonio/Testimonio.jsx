@@ -53,7 +53,7 @@ export default function Testimonio() {
           </div>
           <figcaption>
             <h3>Violeta Indigo</h3>
-            <h5>Muy buena calidad de productos </h5>
+            <h5>Muy buena calidad </h5>
             <div class="icons">
               <img className="ImgTestimonios" src="./estrellas.png" width={"100px"}></img>
             </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import "./CardHome.css";
+import { Link, Link as LinkRouter } from 'react-router-dom';
 
 export default function CardHome() {
   return (
@@ -8,7 +9,7 @@ export default function CardHome() {
       <section className="hero-section">
       <h2 className="tituloNuestrosProductos">- Catálogo de Productos -</h2>
         <div className="card-grid" data-aos="zoom-in" data-aos-duration="1000" >
-          <a className="cardHome" href="#">
+          <LinkRouter className="cardHome" to='/camisetasF'>
             <div className="card__background"
               style={{
                 backgroundImage:
@@ -19,8 +20,8 @@ export default function CardHome() {
               <p className="card__category">Category</p>
               <h3 className="card__heading">Camisetas Mujer</h3>
             </div>
-          </a>
-          <a className="cardHome" href="#">
+          </LinkRouter>
+          <LinkRouter className="cardHome" to='/camisetasM'>
             <div
               className="card__background"
               style={{
@@ -32,8 +33,8 @@ export default function CardHome() {
               <p className="card__category">Category</p>
               <h3 className="card__heading">Camisetas Hombre</h3>
             </div>
-          </a>
-          <a className="cardHome" href="#">
+          </LinkRouter>
+          <LinkRouter className="cardHome" to='/buzos'>
             <div
               className="card__background"
               style={{
@@ -45,8 +46,8 @@ export default function CardHome() {
               <p className="card__category">Category</p>
               <h3 className="card__heading">Buzos</h3>
             </div>
-          </a>
-          <a className="cardHome" href="#">
+          </LinkRouter>
+          <LinkRouter className="cardHome" to='/gorras'>
             <div
               className="card__background"
               style={{
@@ -58,7 +59,7 @@ export default function CardHome() {
               <p className="card__category">Category</p>
               <h3 className="card__heading">Gorras</h3>
             </div>
-          </a>
+          </LinkRouter>
           <div></div>
         </div>
       </section>
