@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import remeraFActions from '../../redux/actions/remeraFAction'
 import remeraMActions from '../../redux/actions/remeraMAction';
-import gorraActions from '../../redux/actions/gorraAction';
 import buzoActions from '../../redux/actions/buzoAction';
 
 
@@ -13,8 +12,7 @@ export default function PaginaDeStock() {
   const { remerasF } = useSelector(store => store.remerasF)
   const { getRemeraM } = remeraMActions;
   const { remerasM } = useSelector((state) => state.remerasM);
-  const { getGorra } = gorraActions;
-  const { gorras } = useSelector((state) => state.gorras);
+
   const { getBuzo } = buzoActions;
   const { buzos } = useSelector((state) => state.buzos);
 
@@ -22,14 +20,12 @@ export default function PaginaDeStock() {
   useEffect(() => {
     dispatch(getRemeraF());
     dispatch(getRemeraM());
-    dispatch(getGorra());
     dispatch(getBuzo());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   let remeritaF = remerasF[0]?.foto1
   let remeritaM = remerasM[0]?.foto1
-  let gorrita = gorras[0]?.foto1
   let bucito = buzos[0]?.foto1
 
   console.log(remeritaF);
@@ -86,52 +82,6 @@ export default function PaginaDeStock() {
         <div class="additional">
           <div class="user-card">
             <img className='imagenStock' src={`${remeritaM}`} alt="foto de remera de mujer " />
-          </div>
-          <div class="more-info">
-            <h1>Jane Doe</h1>
-            <div class="coords">
-              <span>Group Name</span>
-              <span>Joined January 2019</span>
-            </div>
-            <div class="coords">
-              <span>Position/Role</span>
-              <span>City, Country</span>
-            </div>
-            <div class="stats">
-              <div>
-                <div class="title">Awards</div>
-                <i class="fa fa-trophy"></i>
-                <div class="value">2</div>
-              </div>
-              <div>
-                <div class="title">Matches</div>
-                <i class="fa fa-gamepad"></i>
-                <div class="value">27</div>
-              </div>
-              <div>
-                <div class="title">Pals</div>
-                <i class="fa fa-group"></i>
-                <div class="value">123</div>
-              </div>
-              <div>
-                <div class="title">Coffee</div>
-                <i class="fa fa-coffee"></i>
-                <div class="value infinity">∞</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="generalA">
-          <h1>Jane Doe</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam vestibulum sodales odio ut pulvinar.</p>
-          <span class="more">Mouse over the card for more info</span>
-        </div>
-      </div>
-
-      <div class="card green">
-        <div class="additional">
-          <div class="user-card">
-            <img className='imagenStock' src={`${gorrita}`} alt="foto de remera de mujer " />
           </div>
           <div class="more-info">
             <h1>Jane Doe</h1>

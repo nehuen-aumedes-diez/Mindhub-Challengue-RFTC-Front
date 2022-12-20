@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import Swal from 'sweetalert2'
 import remeraMActions from '../../redux/actions/remeraMAction'
 import '../CardRemeraDetalle/CardRemeraDetalle.css'
 
@@ -11,12 +12,13 @@ function CardRemeraMDetalle(props) {
     //console.log("ID",id)
     const {getOneRemeraMId} = remeraMActions
     let {remeraMencontrada} = useSelector(store => store.remerasM)
+    let navigate = useNavigate()
 
     useEffect( () => {
         dispatch(getOneRemeraMId(id))
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [])
-    let miRemera = remeraMencontrada[0]
+    let miRemera = remeraMencontrada?.[0]
 
         // ------- COLORES DE LOS TALLES SEGUN LA DISPONIBILIDAD DEL STOCK ------------
         let stockS = miRemera?.stock[0]
@@ -115,7 +117,7 @@ function CardRemeraMDetalle(props) {
     
         const agregarAlCarrito = () => {
             if (talleElegido === null){
-                alert('flaco elegi un talle primero')
+                Swal.fire('Por favor, seleccioná un talle primero')
             } else {                
                 let productoAgregado = {
                     tipo: 'Camiseta Hombre',
@@ -127,6 +129,22 @@ function CardRemeraMDetalle(props) {
                     talle: talleElegido
                 }
                 console.log("producto agregado", productoAgregado);
+                Swal.fire({
+                    title: 'Perfecto!',
+                    text: 'Este producto se agregó al carrito con éxito.',
+                    showCancelButton: true,
+                    cancelButtonText: 'Ok',
+                    confirmButtonColor: '#EEA904',
+                    confirmButtonText: 'Volver a tienda',
+                    imageUrl: `${miRemera?.foto1}`,
+                    imageWidth: 300,
+                    imageHeight: 300,
+                    imageAlt: `${miRemera?.nombre}`,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        navigate('/camisetasM', { replace: true })
+                    }
+                })
             }
         }
 

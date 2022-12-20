@@ -34,7 +34,6 @@ export default function Navbar() {
               <LinkRouter to='/camisetasF' className='itemDropdown'>Camisetas Mujer</LinkRouter>
               <LinkRouter to='/camisetasM' className='itemDropdown'>Camisetas Hombres</LinkRouter>
               <LinkRouter to='/buzos' className='itemDropdown'>Buzos</LinkRouter>
-              <LinkRouter to='/gorras' className='itemDropdown'>Gorras</LinkRouter>
             </div>
             :
             console.log('')

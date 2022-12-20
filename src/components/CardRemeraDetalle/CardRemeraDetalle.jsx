@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import Swal from 'sweetalert2'
 import remeraFActions from '../../redux/actions/remeraFAction'
 import './CardRemeraDetalle.css'
 
@@ -8,17 +9,17 @@ function CardRemeraDetalle(props) {
 
     let {id} = useParams()
     let dispatch = useDispatch()
-    //console.log("ID",id)
+    console.log("ID",id)
     const {getOneRemeraFId} = remeraFActions
     let {remeraFencontrada} = useSelector(store => store.remerasF)
-    //console.log("remera encontrada store", remeraFencontrada);
+    let navigate = useNavigate()
+    console.log(remeraFencontrada);
 
     useEffect( () => {
         dispatch(getOneRemeraFId(id))
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [])
-    let miRemera = remeraFencontrada[0]
-
+    let miRemera = remeraFencontrada?.[0]
 
     // ------- COLORES DE LOS TALLES SEGUN LA DISPONIBILIDAD DEL STOCK ------------
     let stockS = miRemera?.stock[0]
@@ -72,7 +73,7 @@ function CardRemeraDetalle(props) {
     }
     // --------------------------------------------------
 
-    let [talleElegido, setTalleElegido] = useState('')
+    let [talleElegido, setTalleElegido] = useState(null)
     let [talleActivoS, setTalleActivoS] = useState('')
     let [talleActivoM, setTalleActivoM] = useState('')
     let [talleActivoL, setTalleActivoL] = useState('')
@@ -116,6 +117,9 @@ function CardRemeraDetalle(props) {
     }, [reload])
 
     const agregarAlCarrito = () => {
+        if (talleElegido === null){
+            Swal.fire('Por favor, seleccioná un talle primero')
+        } else { 
         let productoAgregado = {
             tipo: 'Camiseta Mujer',
             id: miRemera?._id,
@@ -126,8 +130,24 @@ function CardRemeraDetalle(props) {
             talle: talleElegido
         }
         console.log("producto agregado", productoAgregado);
+        Swal.fire({
+            title: 'Perfecto!',
+            text: 'Este producto se agregó al carrito con éxito.',
+            showCancelButton: true,
+            cancelButtonText: 'Ok',
+            confirmButtonColor: '#EEA904',
+            confirmButtonText: 'Volver a tienda',
+            imageUrl: `${miRemera?.foto1}`,
+            imageWidth: 300,
+            imageHeight: 300,
+            imageAlt: `${miRemera?.nombre}`,
+        }).then((result) => {
+            if (result.isConfirmed) {
+                navigate('/camisetasF', { replace: true })
+            }
+        })
     }
-
+    }
 
   return (
     <div className='supergeneral-detalle'>
