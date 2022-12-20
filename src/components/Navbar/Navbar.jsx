@@ -61,7 +61,13 @@ console.log(logged);
               <BiUser className='RefCart'></BiUser>
               <p className='nameUser'>{name}</p>
               </LinkRouter>
-              <button className='btnLogout' onClick={()=>signOut()}>  Salir</button>
+              {logged? 
+              (<button className='btnLogout' onClick={()=>signOut()}>  Salir</button>
+              ):(
+                <></>
+              )
+              }
+              
             
 
             {/* <BiUser className='RefCart' onMouseEnter={() => { setMenuUser(true) }} onClick={() => { !menuUser ? setMenuUser(true) : setMenuUser(false) }}></BiUser>
