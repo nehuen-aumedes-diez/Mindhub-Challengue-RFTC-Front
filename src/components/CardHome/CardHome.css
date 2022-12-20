@@ -24,7 +24,6 @@
   
   .hero-section{
     align-items: flex-start;
-    background-image: linear-gradient(0deg, black 85%, skyblue 140%);
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -141,7 +140,7 @@
   }
   @media only screen and (max-width: 1440px) {
     #containerGeneralCardHome{
-      margin: 4vh 0 1vh 0;
+      margin: 0vh 0 1vh 0;
     }
   }
   @media only screen and (max-width: 1024px) {
