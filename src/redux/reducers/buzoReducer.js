@@ -7,6 +7,8 @@ const initialState = {
 
   buzos: [],
   buzoId: [],
+  busqueda: '',
+  ordenPrecio: 'asc',
 };
 
 const buzoReducer = createReducer(initialState, (builder) => {
@@ -36,6 +38,8 @@ const buzoReducer = createReducer(initialState, (builder) => {
       return {
           ...state,
           buzos: action.payload.buzos,
+          busqueda: action.payload.busqueda,
+          ordenPrecio: action.payload.ordenPrecio,
       }
     })
 });

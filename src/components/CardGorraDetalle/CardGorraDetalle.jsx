@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import gorraActions from '../../redux/actions/gorraAction'
@@ -17,7 +17,18 @@ function CardGorraDetalle(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     let miGorra = gorraId?.gorraId?.[0]
-    console.log("BUZO", miGorra);
+    console.log("GORRA", miGorra);
+    
+        const agregarAlCarrito = () => {
+            let productoAgregado = {
+                id: miGorra?._id,
+                nombre: miGorra?.nombre,
+                foto: miGorra?.foto1,
+                precio: miGorra?.precio,
+                stock: miGorra?.stock,
+            }
+            console.log("producto agregado", productoAgregado);
+        }
 
   return (
     <div className='supergeneral-detalle'>
@@ -49,13 +60,7 @@ function CardGorraDetalle(props) {
                     {miGorra?.nombre}
                 </div>
                 <div className="talle-producto">
-                    <h4>TALLE</h4>
-                    <ul>
-                        <li>S</li>
-                        <li>M</li>
-                        <li>L</li>
-                        <li>XL</li>
-                    </ul>
+                    <h4>{miGorra?.stock} en stock</h4>
                 </div>
                 <div className="precio-producto">
                     <span>${miGorra?.precio}</span>
@@ -64,7 +69,7 @@ function CardGorraDetalle(props) {
                     <span>{miGorra?.descripcion}</span>
                 </div>
                 <div className="comprar-producto">
-                    <span>AGREGAR AL CARRITO</span>
+                    <span  onClick={agregarAlCarrito} >AGREGAR AL CARRITO</span>
                 </div>
             </div>
         </div>
