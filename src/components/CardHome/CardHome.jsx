@@ -1,5 +1,6 @@
 import React from "react";
 import "./CardHome.css";
+import { Link, Link as LinkRouter } from 'react-router-dom';
 
 export default function CardHome() {
   return (
@@ -8,7 +9,7 @@ export default function CardHome() {
       <section className="hero-section">
       <h2 className="tituloNuestrosProductos">- Catálogo de Productos -</h2>
         <div className="card-grid" data-aos="zoom-in" data-aos-duration="1000" >
-          <a className="cardHome" href="#">
+          <LinkRouter className="cardHome" to='/camisetasF'>
             <div className="card__background"
               style={{
                 backgroundImage:
@@ -19,8 +20,8 @@ export default function CardHome() {
               <p className="card__category">Category</p>
               <h3 className="card__heading">Camisetas Mujer</h3>
             </div>
-          </a>
-          <a className="cardHome" href="#">
+          </LinkRouter>
+          <LinkRouter className="cardHome" to='/camisetasM'>
             <div
               className="card__background"
               style={{
@@ -32,8 +33,8 @@ export default function CardHome() {
               <p className="card__category">Category</p>
               <h3 className="card__heading">Camisetas Hombre</h3>
             </div>
-          </a>
-          <a className="cardHome" href="#">
+          </LinkRouter>
+          <LinkRouter className="cardHome" to='/buzos'>
             <div
               className="card__background"
               style={{
@@ -45,21 +46,20 @@ export default function CardHome() {
               <p className="card__category">Category</p>
               <h3 className="card__heading">Buzos</h3>
             </div>
-          </a>
-          <a className="cardHome" href="#">
+          </LinkRouter>
+          <LinkRouter className="cardHome" to='/'>
             <div
               className="card__background"
               style={{
                 backgroundImage:
-                  "url(https://cdn.shopify.com/s/files/1/0015/5841/3357/collections/IMG_0121_720x.jpg?v=1654540849)",
+                  "url(https://cdn.discordapp.com/attachments/1051848440973365311/1054903522279313520/NUMBER-10-ARGENTINA-SOL_e33fa6c3-4df8-429d-a6c4-4d88edd3bf7b_550x.jpg)",
               }}
             />
             <div className="card__content">
-              <p className="card__category">Category</p>
-              <h3 className="card__heading">Gorras</h3>
+              <p className="card__category" >PROXIMAMENTE</p>
+              <h3 className="card__heading">Camperas Selecciones</h3>
             </div>
-          </a>
-          <div></div>
+          </LinkRouter>
         </div>
       </section>
     </div>

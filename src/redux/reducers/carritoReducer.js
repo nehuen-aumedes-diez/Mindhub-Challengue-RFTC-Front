@@ -1,7 +1,12 @@
 import { createReducer } from "@reduxjs/toolkit";
 import cartActions from "../actions/carrito";
 
-const { addToCart, getItemsInCart, deleteItems } = cartActions
+const { 
+    agregarAlcarro,
+    obtenerCarro,
+    borrarItem,
+    getItemsInCart
+ } = cartActions
 
 const initialState={
     itemsInCart: []
@@ -10,9 +15,15 @@ const initialState={
 const cartReducer = createReducer(initialState,
     (builder)=> {
         builder
-        .addCase(addToCart.fulfilled,(state,action)=>{
+        .addCase(agregarAlcarro.fulfilled,(state,action)=>{
             if(action.payload.success){
                 state.itemsInCart.push(action.payload.response)
+            }
+        })
+        .addCase(obtenerCarro.fulfilled,(state,action)=>{
+            console.log(action.payload);
+            return {
+                itemsInCart: action.payload.cartItems
             }
         })
         .addCase(getItemsInCart.fulfilled,(state,action)=>{
@@ -21,7 +32,7 @@ const cartReducer = createReducer(initialState,
                 itemsInCart: action.payload.cartItems
             }
         })
-        .addCase(deleteItems.fulfilled,(state,action)=>{
+        .addCase(borrarItem.fulfilled,(state,action)=>{
           console.log(action.payload);
           return {
               

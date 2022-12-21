@@ -100,7 +100,7 @@ export default function SignInSignUp() {
                         <span>o usa tu cuenta</span>
                         <input className='inputS' type="email" placeholder="Correo" name='email' onChange={getInplut2}/>
                         <input className='inputS' type="password" placeholder="Contraseña" name='password' onChange={getInplut2}/>
-                        <a href="#">¿Olvidó su contraseña?</a>
+                        {/* <a href="#">¿Olvidó su contraseña?</a> */}
                         <button className='buttonS'>Inicia sesión</button>
                     </form>
                 </div>

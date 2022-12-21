@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import { BASE_URL } from '../../api/url'
 
-const addToCart = createAsyncThunk('addToCart', async () => {
+const agregarAlcarro = createAsyncThunk('addToCart', async () => {
     let url = `${BASE_URL}carrito/`
     try {
       let res = await axios.post(url,data)
@@ -28,7 +28,7 @@ const addToCart = createAsyncThunk('addToCart', async () => {
     }
   })
 
-const getItemsInCart = createAsyncThunk('getItemsInCart', async ()=>{
+const obtenerCarro = createAsyncThunk('getItemsInCart', async ()=>{
   try {
     const res = await axios.get(
         `${BASE_URL}carrito/`
@@ -44,10 +44,10 @@ const getItemsInCart = createAsyncThunk('getItemsInCart', async ()=>{
     }
 }
 })
-const deleteItems=createAsyncThunk("deleteItems",async(id)=>{
+const agregarItem=createAsyncThunk("deleteItems",async(id)=>{
  let url=`${BASE_URL}carrito/${id}`
   try {
-    const res = await axios.delete(
+    const res = await axios.post(
       url
        )
     console.log(res);
@@ -58,13 +58,28 @@ const deleteItems=createAsyncThunk("deleteItems",async(id)=>{
     }
   }
 })
+const borrarItem=createAsyncThunk("deleteItems",async(id)=>{
+  let url=`${BASE_URL}carrito/${id}`
+   try {
+     const res = await axios.delete(
+       url
+        )
+     console.log(res);
+   } catch (error) {
+     console.log(error);
+     return{
+       payload:"error"
+     }
+   }
+ })
 
 
 
 const cartActions = {
-    addToCart,
-    deleteItems,
-    getItemsInCart
+    agregarAlcarro,
+    obtenerCarro,
+    borrarItem,
+    agregarItem
 }
 
 export default cartActions
