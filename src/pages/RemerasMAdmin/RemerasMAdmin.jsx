@@ -19,7 +19,7 @@ export default function RemerasMAdmin() {
          
 
         <div className='ProductosAdmin-contenedor'>
-    {remerasM.map(todasLasRemeras => <CardRemerasMAdmin key={todasLasRemeras._id} img={todasLasRemeras?.foto2} nombre={todasLasRemeras?.nombre} id={todasLasRemeras._id} precio={todasLasRemeras.precio} talle={todasLasRemeras.talle} />)}
+    {remerasM.map(todasLasRemeras => <CardRemerasMAdmin key={todasLasRemeras._id} img={todasLasRemeras?.foto1} nombre={todasLasRemeras?.nombre} id={todasLasRemeras._id} precio={todasLasRemeras.precio} talle={todasLasRemeras.talle} />)}
 
        </div>
         </>

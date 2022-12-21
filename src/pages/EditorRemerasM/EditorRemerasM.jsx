@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useRef } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "./EditorDeBuzos.css";
+
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
-const EditorDeBuzos = () => {
+const EditorDeRemerasM = () => {
   const nombreInput = useRef();
   const precioInput = useRef();
   const foto1Input = useRef();
@@ -63,11 +63,11 @@ const EditorDeBuzos = () => {
 
     return (
       <div className="container11">
-      <h1 className="title11">Editor de Buzos</h1>
+      <h1 className="title11">Editor de Remeras Femeninas</h1>
 
       <div className="card11">
         <label className="label11" for="nombre">
-          {" "}
+         
           <h3>Nombre del Modelo</h3>
         </label>
         <input
@@ -124,4 +124,4 @@ const EditorDeBuzos = () => {
   );
 };
 
-export default EditorDeBuzos;
+export default EditorDeRemerasM;
