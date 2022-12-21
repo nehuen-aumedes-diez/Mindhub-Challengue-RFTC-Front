@@ -28,38 +28,37 @@ const agregarAlcarro = createAsyncThunk('addToCart', async () => {
     }
   })
 
-const obtenerCarro = createAsyncThunk('getItemsInCart', async ()=>{
-  try {
-    const res = await axios.get(
-        `${BASE_URL}carrito/`
-    )
-    console.log(res);
-    return {
-        cartItems : res.data.itemsCart,
-    }
-} catch (error) {
-    console.log(error);
-    return {
-        payload: "Error"
-    }
-}
-})
-const agregarItem=createAsyncThunk("deleteItems",async(id)=>{
- let url=`${BASE_URL}carrito/${id}`
-  try {
-    const res = await axios.post(
-      url
-       )
-    console.log(res);
-  } catch (error) {
-    console.log(error);
-    return{
-      payload:"error"
-    }
-  }
-})
-const borrarItem=createAsyncThunk("deleteItems",async(id)=>{
+  const removerUno=createAsyncThunk("deleteItems",async(id)=>{
+    let url=`${BASE_URL}carrito/${id}`
+     try {
+       const res = await axios.post(
+         url
+          )
+       console.log(res);
+     } catch (error) {
+       console.log(error);
+       return{
+         payload:"error"
+       }
+     }
+   })
+
+const removerTodo=createAsyncThunk("deleteItems",async(id)=>{
   let url=`${BASE_URL}carrito/${id}`
+   try {
+     const res = await axios.delete(
+       url
+        )
+     console.log(res);
+   } catch (error) {
+     console.log(error);
+     return{
+       payload:"error"
+     }
+   }
+ })
+ const limpiarCarro=createAsyncThunk("deleteItems",async()=>{
+  let url=`${BASE_URL}carrito/`
    try {
      const res = await axios.delete(
        url
@@ -76,10 +75,10 @@ const borrarItem=createAsyncThunk("deleteItems",async(id)=>{
 
 
 const cartActions = {
-    agregarAlcarro,
-    obtenerCarro,
-    borrarItem,
-    agregarItem
+  agregarAlcarro,
+  removerUno,
+  removerTodo,
+  limpiarCarro
 }
 
 export default cartActions

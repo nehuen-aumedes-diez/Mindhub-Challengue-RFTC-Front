@@ -3,9 +3,9 @@ import cartActions from "../actions/carrito";
 
 const { 
     agregarAlcarro,
-    obtenerCarro,
-    borrarItem,
-    getItemsInCart
+    removerUno,
+    removerTodo,
+    limpiarCarro
  } = cartActions
 
 const initialState={
@@ -20,22 +20,22 @@ const cartReducer = createReducer(initialState,
                 state.itemsInCart.push(action.payload.response)
             }
         })
-        .addCase(obtenerCarro.fulfilled,(state,action)=>{
+        .addCase(removerUno.fulfilled,(state,action)=>{
             console.log(action.payload);
             return {
                 itemsInCart: action.payload.cartItems
             }
         })
-        .addCase(getItemsInCart.fulfilled,(state,action)=>{
+        .addCase(removerTodo.fulfilled,(state,action)=>{
             console.log(action.payload);
             return {
                 itemsInCart: action.payload.cartItems
             }
         })
-        .addCase(borrarItem.fulfilled,(state,action)=>{
+        .addCase(limpiarCarro.fulfilled,(state,action)=>{
           console.log(action.payload);
           return {
-              
+                itemsInCart: " "
           }
       })
     })
