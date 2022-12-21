@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import CamisetasF from "./pages/CamisetasF/CamisetasF";
 import Home from "./pages/Home/Home";
@@ -16,17 +16,29 @@ import GorrasDetalles from "./pages/GorrasDetalles/GorrasDetalles";
 import Contacto from "./pages/Contacto/Contacto";
 import Nosotros from './pages/Nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
+import PaginaDeStock from './pages/PaginaDeStock/PaginaDeStock'
+import { useDispatch } from "react-redux";
+import userActions from "./redux/actions/userAction";
 import Cart from "./components/Cart/Cart";
 
 function App() {
+  let dispatch = useDispatch()
+  
+  useEffect(()=>{
+    let token = JSON.parse(localStorage.getItem('token'))
+    // console.log(token?.token.user);
+    if(token){
+      dispatch(userActions.relogin(token.token.user))
+    }
+  },[])
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/camisetasF/:id" element={<CamisetasFDetalles/>}></Route>
         <Route path="/camisetasM/:id" element={<CamisetasMDetalles/>}></Route>
-        <Route path="/hola" element={<SignInSignUp/>}></Route>
-        <Route path="/chau" element={<Contador/>}></Route>
+        <Route path="/signinsignup" element={<SignInSignUp/>}></Route>
+        <Route path="/chau" element={<PaginaDeStock/>}></Route>
         <Route path="/camisetasF" element={<CamisetasF/>}></Route>
         <Route path="/camisetasFDetalles" element={<CamisetasFDetalles/>}></Route>
         <Route path="/camisetasM" element={<CamisetasM/>}></Route>
@@ -41,6 +53,6 @@ function App() {
       </Routes>
     </Layout>
   );
-}
+} 
 
 export default App;

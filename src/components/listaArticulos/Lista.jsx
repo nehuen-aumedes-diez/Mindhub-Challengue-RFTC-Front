@@ -14,8 +14,8 @@ export default function Select(props) {
     <ul className='listalist' >
         <dl>
             <dt>Camisetas</dt>
-                <dd> <Navlink>Hombre</Navlink></dd>
-                <dd>  <Navlink>Mujer</Navlink></dd>
+                <dd> <Navlink to='/camisetasM'>Hombre</Navlink></dd>
+                <dd>  <Navlink to='/camisetasF'>Mujer</Navlink></dd>
         </dl>
         <hr
           style={{
@@ -25,8 +25,8 @@ export default function Select(props) {
             height: '5px',
           }}
         />
-        <li>  <Navlink>Buzos</Navlink></li>
-        <li>  <Navlink>Gorras</Navlink></li>
+        <li>  <Navlink to='/buzos'>Buzos</Navlink></li>
+        <li>  <Navlink to='/gorras'>Gorras</Navlink></li>
     </ul>
     
 

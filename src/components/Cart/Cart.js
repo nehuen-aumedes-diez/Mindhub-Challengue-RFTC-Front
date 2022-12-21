@@ -1,13 +1,21 @@
+import Producto from '../Producto/Producto'
+import './cart.css'
+
+
 const Cart = () => {
 
     return(
 
-        <div>
-            <h2>Carrito</h2>
-            <h3>Productos</h3>
-            <div className="cart"></div>
-            <h3>items de compra</h3>
-            <div className="cart"></div>
+        <div className='carritoContendor'>
+        <h2 >Carrito</h2>
+            <Producto />
+            <Producto />
+            <Producto />
+            <Producto />
+            <Producto />
+            <Producto />
+
+
         </div>
 
     )

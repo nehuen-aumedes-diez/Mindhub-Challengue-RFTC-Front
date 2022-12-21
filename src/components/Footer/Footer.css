@@ -25,9 +25,12 @@ ul {
   font-weight: 600;
   margin-bottom: 2px;
 }
-.cta-text span {
+.cta-text a {
   color: #757575;
   font-size: 15px;
+}
+.cta-text a:hover{
+  border-bottom: 1px solid var(--Amarillo);
 }
 .footer-content {
   position: relative;
