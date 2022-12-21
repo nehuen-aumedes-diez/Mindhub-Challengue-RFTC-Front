@@ -17,14 +17,15 @@
       "filtro-market- filtro-market- articulos articulos articulos articulos void-para-el-mensajero"
       "filtro-market- filtro-market- articulos articulos articulos articulos void-para-el-mensajero";
     height: 100vh;
-        background-color: lightgray;
+        background-color: #161616;
+        font-family: proxima-nova, sans-serif;
     }
   
   .filtro-market- { grid-area: filtro-market-; 
     padding-top: 4vh;
     display: flex;
     justify-content: space-around ;
-    background-color: lightgray;
+    background-color: #161616;
     
     }
 
@@ -33,7 +34,7 @@
     display: flex;
     justify-content: space-around ;
     align-items: center;
-    background-color: lightgray;
+    background-color: #161616;
 
 }
   
@@ -53,7 +54,7 @@
 }
   
   .void-para-el-mensajero { grid-area: void-para-el-mensajero; 
-    background-color: lightgray;
+    background-color: #161616;
 
 }
 

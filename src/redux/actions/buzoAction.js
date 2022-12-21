@@ -4,7 +4,7 @@ import { BASE_URL } from "../../api/url";
 
 const getBuzo = createAsyncThunk("getBuzo", async () => {
   try {
-    const res = await axios.get(`http://localhost:8000/api/buzo/`);
+    const res = await axios.get(`http://localhost:8000/api/productos?tipo=buzo`);
 
     return res.data.res;
 
@@ -36,7 +36,7 @@ const deleteBuzo = createAsyncThunk("deleteBuzo", async ({buzoId}) => {
 const getOneBuzoId = createAsyncThunk(
   "getOneBuzoId",
   async (_id) => {
-    let url = ` ${BASE_URL}/buzo/?_id=${_id}`;
+    let url = `http://localhost:8000/api/productos?tipo=buzo&_id=${_id}`;
     try {
       const res = await axios.get(url);
       console.log(res.data.res);
@@ -53,7 +53,7 @@ const getOneBuzoId = createAsyncThunk(
 );
 
 const filtrarBuzos = createAsyncThunk('filtrarBuzos', async(data) => {
-  let url = ` ${BASE_URL}/buzo?nombre=${data.nombre}&order=${data.order}`
+  let url = ` ${BASE_URL}/productos?tipo=buzo&nombre=${data.nombre}&order=${data.order}`
   try{
       const res = await axios.get(url)
       return {

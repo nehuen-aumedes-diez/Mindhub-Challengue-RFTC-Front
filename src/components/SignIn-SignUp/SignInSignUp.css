@@ -249,3 +249,55 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+
+@media (max-width: 768px) {
+	.containerS {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 80%;
+		height: 100%;
+	}
+	.bodyS {
+		display: flex;
+	flex-direction: column;
+	min-height: 200vh;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+		}
+	.overlay-containerS{
+		display: none;
+	}
+	.form-containerS{
+		position: inherit;
+		width: 100%;
+		
+	}
+	 .sign-up-containerS {
+		opacity: 1;
+		z-index: 4;
+		
+	} 
+	form{
+		background-color: transparent;
+	}
+	.sign-in-containerS {
+		background-color: #FF416C !important;
+		z-index: 1;
+	}
+	
+	
+}
+@media (max-width: 425px) {
+
+	.inputS{
+		padding: 5px;
+		font-size: 15px;
+	}
+	form{
+		padding: 10px;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}

@@ -19,7 +19,10 @@ export default function Testimonio() {
           </div>
           <figcaption>
             <h3>Lucas Sosa</h3>
-            <h5>Atr perro cumbia gato</h5>
+
+            <h5>Excelente atención</h5>
+
+       
             <div class="icons">
               <img className="ImgTestimonios" src="./estrellas.png" width={"100px"}></img>
             </div>
@@ -36,7 +39,7 @@ export default function Testimonio() {
           </div>
           <figcaption>
             <h3>Nicolas Sanchez</h3>
-            <h5>Alta atención wachin</h5>
+            <h5>Envíos en tiempo y forma</h5>
             <div class="icons">
               <img className="ImgTestimonios" src="./estrellas.png" width={"100px"}></img>
             </div>
@@ -53,7 +56,7 @@ export default function Testimonio() {
           </div>
           <figcaption>
             <h3>Violeta Indigo</h3>
-            <h5>Piolarda la camiseta </h5>
+            <h5>Muy buena calidad el buzo</h5>
             <div class="icons">
               <img className="ImgTestimonios" src="./estrellas.png" width={"100px"}></img>
             </div>

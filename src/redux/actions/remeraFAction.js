@@ -4,8 +4,8 @@ import { BASE_URL } from "../../api/url";
 
 const getRemeraF = createAsyncThunk("getRemeraF", async () => {
   try {
-    const res = await axios.get(`http://localhost:8000/api/remeraF/`);
-
+    const res = await axios.get(`http://localhost:8000/api/productos?tipo=remeraF`);
+    console.log(res)
     return res.data.res;
 
   } catch (error) {
@@ -18,7 +18,7 @@ const getRemeraF = createAsyncThunk("getRemeraF", async () => {
 const getOneRemeraFId = createAsyncThunk(
   "getOneRemeraFId",
   async (_id) => {
-    let url = ` ${BASE_URL}/remeraF/?_id=${_id}`;
+    let url = `http://localhost:8000/api/productos?tipo=remeraF&_id=${_id}`;
     try {
       const res = await axios.get(url);
       //console.log(res.data.res);
@@ -53,11 +53,11 @@ const deleteRemeraF = createAsyncThunk("deleteRemeraF", async ({remeraFId}) => {
 });
 
 const filtrarRemerasF = createAsyncThunk('filtrarRemerasF', async(data) => {
-  let url = ` ${BASE_URL}/remeraF?nombre=${data.nombre}&order=${data.order}`
+  let url = ` ${BASE_URL}/productos?tipo=remeraF&nombre=${data.nombre}&order=${data.order}`
   try{
       const res = await axios.get(url)
       //console.log("res", res);
-      //console.log("FILTRAR REMERAS ACTION",res.data);
+      console.log("FILTRAR REMERAS ACTION",res.data);
       //console.log("data: ",data);
       return {
         remerasF: res.data.res,
