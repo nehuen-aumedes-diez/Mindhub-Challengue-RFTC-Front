@@ -3,6 +3,7 @@ import remeraMReducer from "./remeraMReducer";
 import remeraFReducer from "./remeraFReducer";
 import userReducer from "./userReducer";
 import cartReducer from "./carritoReducer";
+import productosReducer from "./productosReducer";
 
 const rootReducer = {
  
@@ -10,7 +11,8 @@ const rootReducer = {
   remerasM: remeraMReducer,
   remerasF: remeraFReducer,
   userReducer,
-  carritoR: cartReducer
+  carritoR: cartReducer,
+  productos: productosReducer,
 
 };
 

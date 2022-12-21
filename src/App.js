@@ -52,8 +52,8 @@ function App() {
         <Route path="/contacto" element={<Contacto/>}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
         <Route path="/noticias" element={<Noticias/>}></Route>
+          <Route path='/carrito' element={<Cart />} />
         {/* <Route element={<proteccionRutas isAllowed={logged === false } reDirect={"/"} />}>
-          <Route path='/carrito' element={<carrito />} />
         </Route> */}
       </Routes> 
     </Layout> 
