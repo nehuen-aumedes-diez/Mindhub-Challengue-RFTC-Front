@@ -47,14 +47,16 @@ console.log(logged);
         <div id='containerIconRefs'>
           {logged?
            (
+            <>
             <div className='LinkIcon Icon1'><IoCartOutline className='RefCart' /></div>
+            <hr className='HR' />
+            </>
            ):(
             <></>
            )
           }
           
           
-          <hr className='HR' />
           <div className='LinkIcon' >
             
               <LinkRouter to='/signinsignup' className='LinkIcon Icon1'>
