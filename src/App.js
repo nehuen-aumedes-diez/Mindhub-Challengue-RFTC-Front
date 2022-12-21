@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import CamisetasF from "./pages/CamisetasF/CamisetasF";
+import CamisetasF from "./pages/camisetasF/CamisetasF";
 import Home from "./pages/Home/Home";
 import CamisetasFDetalles from "./pages/CamisetasFDetalles/CamisetasFDetalles";
 import { Routes, Route } from "react-router-dom";
@@ -13,15 +13,17 @@ import Gorras from "./pages/Gorras/Gorras";
 import CamisetasMDetalles from "./pages/CamisetasMDetalles/CamisetasMDetalles";
 import BuzosDetalles from "./pages/BuzosDetalles/BuzosDetalles";
 import GorrasDetalles from "./pages/GorrasDetalles/GorrasDetalles";
-import Contacto from "./pages/Contacto/Contacto";
-import Nosotros from './pages/Nosotros/Nosotros'
+import Contacto from "./pages/contacto/Contacto";
+import Nosotros from './pages/nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
 import PaginaDeStock from './pages/PaginaDeStock/PaginaDeStock'
 import { useDispatch } from "react-redux";
 import userActions from "./redux/actions/userAction";
-
-
-
+import BuzosAdmin from "./pages/BuzosAdmin/BuzosAdmin";
+import RemeraFAdmin from "./pages/RemeraFAdmin/RemeraFAdmin"
+import RemeraMAdmin from "./pages/RemerasMAdmin/RemerasMAdmin"
+import GorrasAdmin from "./pages/GorrasAdmin/GorrasAdmin"
+import EditorDeBuzos from "./pages/EditorDeBuzos/EditorDeBuzos";
 function App() {
   let dispatch = useDispatch()
   
@@ -50,6 +52,12 @@ function App() {
         <Route path="/*" element={<NotFound/>}></Route>
         <Route path="/contacto" element={<Contacto/>}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
+        <Route path="/remerafadmin" element={<RemeraFAdmin/>}></Route>
+        <Route path="/remeramadmin" element={<RemeraMAdmin/>}></Route>
+        <Route path="/gorrasadmin" element={<GorrasAdmin/>}></Route>
+        <Route path="/editordebuzos/:id" element={<EditorDeBuzos/>}></Route>
+ 
+        <Route path="/buzosAdmin" element={<BuzosAdmin/>}></Route>
       </Routes>
     </Layout>
   );
