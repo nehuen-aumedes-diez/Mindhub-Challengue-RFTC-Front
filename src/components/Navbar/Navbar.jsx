@@ -6,6 +6,7 @@ import { BiUser } from "react-icons/bi";
 import { Link as LinkRouter, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import userActions from '../../redux/actions/userAction';
+import swal from 'sweetalert'
 
 export default function Navbar() {
   let [hideDropdown, setHideDropdown] = useState(false)
@@ -17,7 +18,11 @@ export default function Navbar() {
   async function signOut(event){
     await dispatch(userActions.signOut(token))
     navigate('/')
-    alert('usuario deslogueado')
+    swal({
+      title: `Hasta pronto ${name}!`,
+      icon: "success",
+      timer: "3000"
+  })
   }
 
 console.log(logged);
