@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import remeraFActions from '../../redux/actions/remeraFAction'
 import remeraMActions from '../../redux/actions/remeraMAction';
-import gorraActions from '../../redux/actions/gorraAction';
 import buzoActions from '../../redux/actions/buzoAction';
 
 
@@ -13,8 +12,7 @@ export default function PaginaDeStock() {
   const { remerasF } = useSelector(store => store.remerasF)
   const { getRemeraM } = remeraMActions;
   const { remerasM } = useSelector((state) => state.remerasM);
-  const { getGorra } = gorraActions;
-  const { gorras } = useSelector((state) => state.gorras);
+
   const { getBuzo } = buzoActions;
   const { buzos } = useSelector((state) => state.buzos);
 
@@ -22,7 +20,6 @@ export default function PaginaDeStock() {
   useEffect(() => {
     dispatch(getRemeraF());
     dispatch(getRemeraM());
-    dispatch(getGorra());
     dispatch(getBuzo());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -44,21 +41,7 @@ export default function PaginaDeStock() {
   console.log(tallesF);
 
   let remeritaM = remerasM[0]?.foto1
-  let cantidadM = remerasM.length
-  let contadorM = [0]
-  for (var a = 0; a < remerasM.length; a++) {
-    contadorM.push(remerasM[a].stock.reduce((viejo, nuevo) => viejo + nuevo));
-  }
-  let todasM = contadorM.reduce((viejo, nuevo) => viejo + nuevo)
-
-  let gorrita = gorras[0]?.foto1
-  let cantidadG = gorras.length
-  let contadorG = [0]
-  for (var b = 0; b < gorras.length; b++) {
-    contadorG.push(gorras[b].stock);
-  }
-  let todasG = contadorG.reduce((viejo, nuevo) => viejo + nuevo)
-
+  
   let bucito = buzos[0]?.foto1
   let cantidadB = buzos.length
   let contadorB = [0]
@@ -145,30 +128,43 @@ export default function PaginaDeStock() {
             <img className='imagenStock' src={`${gorrita}`} alt="foto de remera de mujer " />
           </div>
           <div class="more-info">
-            <h1>Gorras</h1>
+            <h1>Jane Doe</h1>
+            <div class="coords">
+              <span>Group Name</span>
+              <span>Joined January 2019</span>
+            </div>
+            <div class="coords">
+              <span>Position/Role</span>
+              <span>City, Country</span>
+            </div>
             <div class="stats">
               <div>
-                <div class="title">Modelos</div>
+                <div class="title">Awards</div>
                 <i class="fa fa-trophy"></i>
-                <div class="value">{`${cantidadG}`}</div>
+                <div class="value">2</div>
               </div>
               <div>
-                <div class="title">Unidades</div>
+                <div class="title">Matches</div>
                 <i class="fa fa-gamepad"></i>
-                <div class="value">{`${todasG}`}</div>
+                <div class="value">27</div>
               </div>
               <div>
-                <div class="title">Talles</div>
+                <div class="title">Pals</div>
                 <i class="fa fa-group"></i>
                 <div class="value">123</div>
               </div>
-              <div class="value infinity"><img className='imgMas' src="./icons8-more-67.png" alt="mas" /></div>
+              <div>
+                <div class="title">Coffee</div>
+                <i class="fa fa-coffee"></i>
+                <div class="value infinity">∞</div>
+              </div>
             </div>
           </div>
         </div>
         <div class="generalA">
-          <h1>Gorras</h1>
+          <h1>Jane Doe</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam vestibulum sodales odio ut pulvinar.</p>
+          <span class="more">Mouse over the card for more info</span>
         </div>
       </div>
 
