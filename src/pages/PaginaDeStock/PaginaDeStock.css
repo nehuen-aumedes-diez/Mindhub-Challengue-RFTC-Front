@@ -62,7 +62,7 @@
 .card .additional .user-card .level,
 .card .additional .user-card .points {
   top: 15%;
-  color: #fff;
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
   font-size: 0.75em;
   font-weight: bold;
@@ -124,7 +124,7 @@
 }
 
 .card.green .additional .stats {
-  color: #325C46;
+  color: rgb(50, 92, 70);
 }
 
 .card .additional .stats > div {

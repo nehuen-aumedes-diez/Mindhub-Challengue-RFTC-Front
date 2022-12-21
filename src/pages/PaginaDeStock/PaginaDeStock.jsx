@@ -33,14 +33,38 @@ export default function PaginaDeStock() {
   let todasF = contadorF.reduce((viejo, nuevo) => viejo + nuevo)
   let tallesF = []
   for (var e = 0; e < remerasF.length; e++) {
-    console.log(remerasF[e].talle);
-    while (remerasF[e].talle>3) {
+    if(remerasF[e].talle.length>3) {
       tallesF.push(remerasF[e].talle)
     }
   }
-  console.log(tallesF);
+  let siOnoF = ''
+  if (tallesF<4) {
+    siOnoF ='👎'
+  }else{
+    siOnoF ='👍'
+  }
+
 
   let remeritaM = remerasM[0]?.foto1
+  let cantidadM = remerasM.length
+  let contadorM = [0]
+  for (var b = 0; b < remerasM.length; b++) {
+    contadorM.push(remerasM[b].stock.reduce((viejo, nuevo) => viejo + nuevo));
+  }
+  let todasM = contadorM.reduce((viejo, nuevo) => viejo + nuevo)
+  let tallesM = []
+  for (var e = 0; e < remerasM.length; e++) {
+    if(remerasM[e].talle.length>3) {
+      tallesM.push(remerasM[e].talle)
+    }
+  }
+  let siOnoM = ''
+  if (tallesM<4) {
+    siOnoM ='👎'
+  }else{
+    siOnoM ='👍'
+  }
+
   
   let bucito = buzos[0]?.foto1
   let cantidadB = buzos.length
@@ -49,8 +73,18 @@ export default function PaginaDeStock() {
     contadorB.push(buzos[c].stock.reduce((viejo, nuevo) => viejo + nuevo));
   }
   let todasB = contadorB.reduce((viejo, nuevo) => viejo + nuevo)
-
-
+  let tallesG = []
+  for (var e = 0; e < buzos.length; e++) {
+    if(buzos[e].talle.length>3) {
+      tallesG.push(buzos[e].talle)
+    }
+  }
+  let siOnoG = ''
+  if (tallesG<4) {
+    siOnoG ='👎'
+  }else{
+    siOnoG ='👍'
+  }
 
 
   return (
@@ -77,9 +111,9 @@ export default function PaginaDeStock() {
               <div>
                 <div class="title">Talles</div>
                 <i class="fa fa-group"></i>
-                <div class="value">{`${tallesF}`}</div>
+                <div class="value">{`${siOnoF}`}</div>
               </div>
-              <div class="value infinity"><img className='imgMas' src="./icons8-more-67.png" alt="mas" /></div>
+              <div class="value infinity"><img className='imgMas' src="./icons8-plus-1285.png" alt="mas" /></div>
             </div>
           </div>
         </div>
@@ -110,9 +144,9 @@ export default function PaginaDeStock() {
               <div>
                 <div class="title">Talles</div>
                 <i class="fa fa-group"></i>
-                <div class="value">123</div>
+                <div class="value">{`${siOnoM}`}</div>
               </div>
-              <div class="value infinity"><img className='imgMas' src="./icons8-more-67.png" alt="mas" /></div>
+              <div class="value infinity"><img className='imgMas' src="./icons8-plus-128.png" alt="mas" /></div>
             </div>
           </div>
         </div>
@@ -121,53 +155,6 @@ export default function PaginaDeStock() {
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam vestibulum sodales odio ut pulvinar.</p>
         </div>
       </div>
-
-      <div class="card green">
-        <div class="additional">
-          <div class="user-card">
-            <img className='imagenStock' src={`${gorrita}`} alt="foto de remera de mujer " />
-          </div>
-          <div class="more-info">
-            <h1>Jane Doe</h1>
-            <div class="coords">
-              <span>Group Name</span>
-              <span>Joined January 2019</span>
-            </div>
-            <div class="coords">
-              <span>Position/Role</span>
-              <span>City, Country</span>
-            </div>
-            <div class="stats">
-              <div>
-                <div class="title">Awards</div>
-                <i class="fa fa-trophy"></i>
-                <div class="value">2</div>
-              </div>
-              <div>
-                <div class="title">Matches</div>
-                <i class="fa fa-gamepad"></i>
-                <div class="value">27</div>
-              </div>
-              <div>
-                <div class="title">Pals</div>
-                <i class="fa fa-group"></i>
-                <div class="value">123</div>
-              </div>
-              <div>
-                <div class="title">Coffee</div>
-                <i class="fa fa-coffee"></i>
-                <div class="value infinity">∞</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="generalA">
-          <h1>Jane Doe</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a volutpat mauris, at molestie lacus. Nam vestibulum sodales odio ut pulvinar.</p>
-          <span class="more">Mouse over the card for more info</span>
-        </div>
-      </div>
-
       <div class="card green">
         <div class="additional">
           <div class="user-card">
@@ -189,9 +176,9 @@ export default function PaginaDeStock() {
               <div>
                 <div class="title">Talles</div>
                 <i class="fa fa-group"></i>
-                <div class="value">123</div>
+                <div class="value">{`${siOnoG}`}</div>
               </div>
-              <div class="value infinity"><img className='imgMas' src="./icons8-more-67.png" alt="mas" /></div>
+              <div class="value infinity"><img className='imgMas' src="./icons8-plus-128.png" alt="mas" /></div>
             </div>
           </div>
         </div>
