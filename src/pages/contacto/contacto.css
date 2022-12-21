@@ -131,7 +131,7 @@
     font-family: "Yantramanav", sans-serif;
     padding: 1em;
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
   }
 
   @keyframes BgGradient {

@@ -9,24 +9,24 @@ import NotFound from "./pages/NotFound/Error";
 import SignInSignUp from "./components/SignIn-SignUp/SignInSignUp";
 import CamisetasM from './pages/CamisetasM/CamisetasM'
 import Buzos from './pages/Buzos/Buzos'
-import Gorras from "./pages/Gorras/Gorras";
 import CamisetasMDetalles from "./pages/CamisetasMDetalles/CamisetasMDetalles";
 import BuzosDetalles from "./pages/BuzosDetalles/BuzosDetalles";
-import GorrasDetalles from "./pages/GorrasDetalles/GorrasDetalles";
 import Contacto from "./pages/Contacto/Contacto";
 import Nosotros from './pages/Nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
 import Noticias from "./pages/Noticias/Noticias";
 import PaginaDeStock from './pages/PaginaDeStock/PaginaDeStock'
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import userActions from "./redux/actions/userAction";
+import proteccionRutas from "./components/proteccionRutas/proteccionRutas";
 
 
 
 
 function App() {
   let dispatch = useDispatch()
-  
+  let {logged, role} = useSelector(store => store.userReducer)
+
   useEffect(()=>{
     let token = JSON.parse(localStorage.getItem('token'))
     // console.log(token?.token.user);
@@ -49,12 +49,13 @@ function App() {
         <Route path="/camisetasM" element={<CamisetasM/>}></Route>
         <Route path="/buzos" element={<Buzos/>}></Route>
         <Route path="/buzos/:id" element={<BuzosDetalles/>}></Route>
-        <Route path="/gorras" element={<Gorras/>}></Route>
-        <Route path="/gorras/:id" element={<GorrasDetalles/>}></Route>
         <Route path="/*" element={<NotFound/>}></Route>
         <Route path="/contacto" element={<Contacto/>}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
         <Route path="/noticias" element={<Noticias/>}></Route>
+        {/* <Route element={<proteccionRutas isAllowed={logged === false } reDirect={"/"} />}>
+          <Route path='/carrito' element={<carrito />} />
+        </Route> */}
       </Routes> 
     </Layout> 
   );

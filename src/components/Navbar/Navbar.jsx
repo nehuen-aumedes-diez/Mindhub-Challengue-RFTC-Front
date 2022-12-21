@@ -10,7 +10,7 @@ import userActions from '../../redux/actions/userAction';
 export default function Navbar() {
   let [hideDropdown, setHideDropdown] = useState(false)
   let [menuUser, setMenuUser] = useState(false)
-  let {name, token} = useSelector(store => store.userReducer)
+  let {name, token, logged} = useSelector(store => store.userReducer)
   let dispatch = useDispatch()
   const navigate = useNavigate();
 
@@ -19,6 +19,8 @@ export default function Navbar() {
     navigate('/')
     alert('usuario deslogueado')
   }
+
+console.log(logged);
 
   return (
     <div id='containerGeneralNav' onMouseLeave={() => { setHideDropdown(false) ; setMenuUser(false) }}>
@@ -34,7 +36,6 @@ export default function Navbar() {
               <LinkRouter to='/camisetasF' className='itemDropdown'>Camisetas Mujer</LinkRouter>
               <LinkRouter to='/camisetasM' className='itemDropdown'>Camisetas Hombres</LinkRouter>
               <LinkRouter to='/buzos' className='itemDropdown'>Buzos</LinkRouter>
-              <LinkRouter to='/gorras' className='itemDropdown'>Gorras</LinkRouter>
             </div>
             :
             console.log('')
@@ -43,15 +44,29 @@ export default function Navbar() {
         <LinkRouter to='/contacto' className='LinkRefNav'>Contacto</LinkRouter>
         <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>
         <div id='containerIconRefs'>
-          <div className='LinkIcon Icon1'><IoCartOutline className='RefCart' /></div>
+          {logged?
+           (
+            <div className='LinkIcon Icon1'><IoCartOutline className='RefCart' /></div>
+           ):(
+            <></>
+           )
+          }
+          
+          
           <hr className='HR' />
           <div className='LinkIcon' >
             
               <LinkRouter to='/signinsignup' className='LinkIcon Icon1'>
               <BiUser className='RefCart'></BiUser>
-              <p>{name}</p>
+              <p className='nameUser'>{name}</p>
               </LinkRouter>
-              <button className='btnLogout' onClick={()=>signOut()}>logout</button>
+              {logged? 
+              (<button className='btnLogout' onClick={()=>signOut()}>  Salir</button>
+              ):(
+                <></>
+              )
+              }
+              
             
 
             {/* <BiUser className='RefCart' onMouseEnter={() => { setMenuUser(true) }} onClick={() => { !menuUser ? setMenuUser(true) : setMenuUser(false) }}></BiUser>

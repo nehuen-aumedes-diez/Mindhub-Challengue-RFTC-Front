@@ -5,7 +5,7 @@ const { getRemeraF, getOneRemeraFId, deleteRemeraF, filtrarRemerasF } = remeraFA
 
 const initialState = {
 
-    remerasF: [ ],
+    remerasF: [],
     remeraFencontrada: [],
     busqueda: '',
     ordenPrecio: 'asc',
@@ -14,9 +14,8 @@ const initialState = {
 const remeraFReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(getRemeraF.fulfilled, (state, action) => {
-      //console.log(action);
+      //console.log("REDUCER",action);
       return {
-        ...state,
         remerasF: action.payload,
       };
     })
@@ -33,7 +32,7 @@ const remeraFReducer = createReducer(initialState, (builder) => {
       }
     })
     .addCase(filtrarRemerasF.fulfilled, (state, action) => {
-      //console.log("reducer DE FILTRAR: ", action.payload);
+      console.log("reducer DE FILTRAR: ", action.payload);
       return {
           ...state,
           remerasF: action.payload.remerasF,
