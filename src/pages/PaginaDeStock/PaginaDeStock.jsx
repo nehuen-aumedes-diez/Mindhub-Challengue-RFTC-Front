@@ -169,7 +169,7 @@ export default function PaginaDeStock() {
                 <div class="value">{`${cantidadB}`}</div>
               </div>
               <div>
-                <div class="title">Matches</div>
+                <div class="title">Unidades</div>
                 <i class="fa fa-gamepad"></i>
                 <div class="value">{`${todasB}`}</div>
               </div>
