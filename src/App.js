@@ -22,7 +22,8 @@ import proteccionRutas from "./components/proteccionRutas/proteccionRutas";
 import BuzosAdmin from "./pages/BuzosAdmin/BuzosAdmin"
 import EditorDeBuzos from "./pages/EditorDeBuzos/EditorDeBuzos";
 import RemerasFAdmin from "./pages/RemeraFAdmin/RemeraFAdmin";
-import RemeraMAdmin from "./pages/RemerasMAdmin/RemerasMAdmin"import Cart from "./components/Cart/Cart";import EditorDeRemerasF from "./pages/EditorRemerasF/EditorRemerasF";
+import RemeraMAdmin from "./pages/RemerasMAdmin/RemerasMAdmin";
+import Cart from "./components/Cart/Cart";import EditorDeRemerasF from "./pages/EditorRemerasF/EditorRemerasF";
 import EditorDeRemerasM from "./pages/EditorRemerasM/EditorRemerasM";
 
 function App() {
