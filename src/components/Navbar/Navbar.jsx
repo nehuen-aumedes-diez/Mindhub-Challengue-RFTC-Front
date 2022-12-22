@@ -11,7 +11,7 @@ import swal from 'sweetalert'
 export default function Navbar() {
   let [hideDropdown, setHideDropdown] = useState(false)
   let [menuUser, setMenuUser] = useState(false)
-  let { name, token, logged } = useSelector(store => store.userReducer)
+  let { name, token, logged,role } = useSelector(store => store.userReducer)
   let dispatch = useDispatch()
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ export default function Navbar() {
     })
   }
 
-  console.log(logged);
+  console.log(role);
 
   return (
     <div id='containerGeneralNav' onMouseLeave={() => { setHideDropdown(false); setMenuUser(false) }}>
@@ -48,33 +48,41 @@ export default function Navbar() {
         </div>
         <LinkRouter to='/contacto' className='LinkRefNav'>Contacto</LinkRouter>
         <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>
-        <LinkRouter to='/stockgeneral' className='LinkRefNav'>Stock</LinkRouter>
-        <div id='containerIconRefs'>
-          {logged ?
-            (
-              <>
 
-                <hr className='HR' />
-              </>
-            ) : (
-              <></>
-            )
+        <div id='containerIconRefs'>
+          {logged?
+           (
+            <>
+            <LinkRouter to='/stockgeneral' className='LinkRefNav'>Stock</LinkRouter>
+            <hr className='HR' />
+            </>
+           ):(
+            <></>
+           )
           }
           <div className='LinkIcon' >
-            {logged ? (
+        {
+          logged?
+          (<>
+            {(role === "user")? (
               <div className='LinkIcon Icon1'>
                 <LinkRouter to='/carrito' className='LinkRefNav'>
-                  <IoCartOutline className='RefCart' />
+                <IoCartOutline className='RefCart' />
 
+            {/* {(logged && role === "user")? (
+              <div className='LinkIcon Icon1'>
+                <LinkRouter to='/carrito' className='LinkRefNav'>
+                <IoCartOutline className='RefCart' />
                 </LinkRouter>
                 <BiUserX className='RefCart' onClick={() => signOut()}></BiUserX>
+                <p className='userName'>{name}</p>
               </div>
             ) : (
               <LinkRouter to='/signinsignup' className='LinkIcon2 Icon1'>
                 <BiUser className='RefCart'></BiUser>
               </LinkRouter>
             )
-            }
+            } */}
           </div>
         </div>
       </div>

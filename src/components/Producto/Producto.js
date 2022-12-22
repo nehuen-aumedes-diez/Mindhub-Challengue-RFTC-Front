@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Producto.css'
 
 const Cart = (props) => {
-    let { id, nombre, precio, fnBorrarTodos, foto, cantidad, tipo} = props
+    let { id, nombre, precio, foto, cantidad, tipo, borrarUno, borrarTodos, agregarUno} = props
 
     let [carritoFinal, setCarritoFinal] = useState('')
     let [reload, setReload] = useState(true)
@@ -11,24 +11,19 @@ const Cart = (props) => {
         let carritoLocal = localStorage.getItem('carrito')
         setCarritoFinal(JSON.parse(carritoLocal))
     }, [reload])
-    //console.log(carritoFinal)
-    //console.log(id)
-    
-    const borrarUno = () => {
-        let put = carritoFinal.find(item => item.id === id)
-        //console.log(put);
-        /*  if (put.cantidad !== 1){
-            put.cantidad--
-        } */
-        setReload(!reload)
+
+
+    const guardarEnLocal = () => {
+        localStorage.setItem('carrito', JSON.stringify(carritoFinal))
     }
     
+    console.log("1",carritoFinal);
     return(
         <div className='carritoItem' id={id}>
             <h2>{nombre} - {tipo}</h2>
             <div className='fotoytitulocarrito'>
-                <div>
-                    <img src={foto} style={{width: '100px'}} alt='' />
+                <div className='fotoDeItemCarrito'>
+                    <img src={foto} alt='' />
                 </div>
                 <div id='detailsCompra'>
                     <h5>${precio}</h5>
@@ -37,8 +32,9 @@ const Cart = (props) => {
                 </div>
             </div>
             <div className='botonesDeItemCarrito'>
-                <button className='borrarUnoCarrito' onClick={borrarUno}>Eliminar uno</button>
-                <button className='borrarUnoCarrito' onClick={fnBorrarTodos}>Eliminar todos</button>
+                <div className='borrarUnoCarrito' id={id} onClick={borrarUno}>-</div>
+                <div className='agregarUnoCarrito' id={id} onClick={agregarUno}>+</div>
+                <div className='borrarTodosCarrito' id={id} onClick={borrarTodos}>Eliminar todos</div>
             </div>
         </div>
     )

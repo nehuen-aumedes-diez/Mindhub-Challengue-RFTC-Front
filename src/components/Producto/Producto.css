@@ -4,8 +4,19 @@
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     padding: 20px;
     justify-content: center;
+    background-color: rgba(255, 255, 255, 0.76);
+}
+
+.carritoItem h2, .carritoItem h5, .carritoItem p{
+    color: black;
+}
+
+.carritoItem h2{
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .fotoytitulocarrito{
@@ -13,6 +24,36 @@
 }
 
 .borrarUnoCarrito{
+    width: 10%;
+    text-align: center;
+    background-color: #878787;
+    padding: 5px;
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+.borrarUnoCarrito:hover{
+    background-color: rgb(141, 21, 21);
+    color: white;
+}
+
+.agregarUnoCarrito:hover{
+    background-color: rgb(120, 178, 33);
+    color: white;
+}
+
+.agregarUnoCarrito{
+    width: 10%;
+    text-align: center;
+    background-color: #878787;
+    padding: 5px;
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+}
+
+.borrarTodosCarrito{
     width: 25%;
     text-align: center;
     background-color: #E94533;
@@ -20,6 +61,10 @@
     border-radius: 20px;
     color: white;
     cursor: pointer;
+}
+
+.borrarTodosCarrito:hover{
+    background-color: rgb(69, 0, 0);
 }
 
 .botonesDeItemCarrito{
@@ -35,4 +80,21 @@
 
 #detailsCompra{
     margin-left: 1rem;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#detailsCompra h5{
+    font-size: 2rem;
+}
+
+.fotoDeItemCarrito{
+    width: 20%;
+}
+
+.fotoDeItemCarrito img{
+    width: 100%;
 }
