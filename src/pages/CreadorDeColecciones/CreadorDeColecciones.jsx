@@ -68,7 +68,7 @@ const CreadorDeColecciones = () => {
     <div className="container11">
       <h1 className="title11">Editor de Colecion</h1>
 
-      <div className="card11">
+      <form className="card11">
         <label className="label11" for="nombre">
           <h3>Nombre del Modelo</h3>
         </label>
@@ -178,7 +178,7 @@ const CreadorDeColecciones = () => {
         <button type="button" id="btn11" value="Enviar" onClick={handleSubmit}>
           Enviar
         </button>
-      </div>
+      </form>
     </div>
   );
 };
