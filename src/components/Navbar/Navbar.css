@@ -21,7 +21,7 @@
   }
 
   #containerRefsNav {
-    /*  border: 2px solid red; */
+     /* border: 2px solid red; */
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -69,20 +69,31 @@
   }
 
   .LinkIcon {
-    /*  border: 2px solid yellow; */
+     /* border: 2px solid yellow; */
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 30px;
     color: var(--Amarillo);
+    width: 100%;
   }
 
+  .LinkIcon2 {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   height: 30px;
+   color: var(--Amarillo);
+   width: 70%;
+ }
+
   #containerIconRefs {
-    /*  border: 2px solid greenyellow; */
+    /* border: 2px solid greenyellow; */
     display: flex;
-    gap: 10px;
     z-index: 1;
+    width: 25%;
   }
+
 
   #containerDropdownMenuUser{
     /* border: 2px solid darkgoldenrod; */
@@ -120,6 +131,7 @@
   font-size: 10px;
   font-style: italic;
 }
+
 
 @media screen and (min-width: 425px) and (max-width: 768px) {
   #containerDropdownMenuUser{
@@ -230,20 +242,13 @@
   }
 
   #containerIconRefs {
-    /*  border: 2px solid greenyellow; */
+     /* border: 2px solid greenyellow; */
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 5px;
-  }
-
-  .LinkIcon{
-      transition: .2s ease;
-  }
-
-  .LinkIcon:hover{
-      transform: scale(1.1);
-      cursor: pointer;
+    justify-content: center;
+    width: 18%;
   }
 
   #containerDropdownMenuUser{
@@ -258,6 +263,15 @@
   .LogoNav{
     width: 100px;
     height: 100px;
+  }
+
+  .RefCart{
+    cursor: pointer;
+    transition: .3s ease;
+  }
+
+  .RefCart:hover{
+    transform: scale(1.2);
   }
 }
 

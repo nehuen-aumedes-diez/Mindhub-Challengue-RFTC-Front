@@ -164,4 +164,8 @@
   #containerGeneralCardHome {
     margin: 0.5vh 0 1vh 0;
   }
+
+  .tituloNuestrosProductos{
+    font-size: 22px;
+  }
 }
