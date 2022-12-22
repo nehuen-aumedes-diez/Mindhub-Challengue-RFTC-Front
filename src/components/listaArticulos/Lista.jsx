@@ -26,7 +26,6 @@ export default function Select(props) {
           }}
         />
         <li>  <Navlink to='/buzos'>Buzos</Navlink></li>
-        <li>  <Navlink to='/gorras'>Gorras</Navlink></li>
     </ul>
     
 
@@ -38,7 +37,6 @@ export default function Select(props) {
             <option value="2">Camiseta Hombre</option>
             <option value="1">Camiseta Mujer</option>
             <option value="3">Buzos</option>
-            <option value="3">Gorras</option>
     </select> 
     </>
   )

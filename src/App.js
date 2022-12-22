@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import CamisetasF from "./pages/camisetasF/CamisetasF"
+import CamisetasF from "./pages/CamisetasF/CamisetasF";
 import Home from "./pages/Home/Home";
 import CamisetasFDetalles from "./pages/CamisetasFDetalles/CamisetasFDetalles";
 import { Routes, Route } from "react-router-dom";
@@ -9,23 +9,22 @@ import NotFound from "./pages/NotFound/Error";
 import SignInSignUp from "./components/SignIn-SignUp/SignInSignUp";
 import CamisetasM from './pages/CamisetasM/CamisetasM'
 import Buzos from './pages/Buzos/Buzos'
-import Gorras from "./pages/Gorras/Gorras";
 import CamisetasMDetalles from "./pages/CamisetasMDetalles/CamisetasMDetalles";
 import BuzosDetalles from "./pages/BuzosDetalles/BuzosDetalles";
 import GorrasDetalles from "./pages/GorrasDetalles/GorrasDetalles";
-import Contacto from "./pages/contacto/Contacto";
-import Nosotros from './pages/nosotros/Nosotros'
+import Contacto from "./pages/Contacto/Contacto";
+import Nosotros from './pages/Nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
 import Noticias from "./pages/Noticias/Noticias";
-import PaginaDeStock from './pages/PaginaDeStock/PaginaDeStock'
-import { useDispatch } from "react-redux";
+import PaginaDeStock from "./pages/PaginaDeStock/PaginaDeStock"
+import { useDispatch, useSelector } from "react-redux";
 import userActions from "./redux/actions/userAction";
-import Juego from "./components/Jueguito/Juego";
+
 
 
 
 function App() {
- /*  let dispatch = useDispatch()
+  let dispatch = useDispatch()
   
   useEffect(()=>{
     let token = JSON.parse(localStorage.getItem('token'))
@@ -48,12 +47,20 @@ function App() {
         <Route path="/camisetasM" element={<CamisetasM/>}></Route>
         <Route path="/buzos" element={<Buzos/>}></Route>
         <Route path="/buzos/:id" element={<BuzosDetalles/>}></Route>
-        <Route path="/gorras" element={<Gorras/>}></Route>
-        <Route path="/gorras/:id" element={<GorrasDetalles/>}></Route>
         <Route path="/*" element={<NotFound/>}></Route>
         <Route path="/contacto" element={<Contacto/>}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
         <Route path="/noticias" element={<Noticias/>}></Route>
+        <Route path="/buzosadmin" element={<BuzosAdmin/>}></Route>
+        <Route path="/editordebuzos/:id" element={<EditorDeBuzos/>}></Route>
+        <Route path="/remerafadmin" element={<RemerasFAdmin/>}></Route>
+        <Route path="/remeramadmin" element={<RemeraMAdmin/>}></Route>
+        <Route path="/editorderemerasf/:id" element={<EditorDeRemerasF/>}></Route>
+        <Route path="/editorderemerasm/:id" element={<EditorDeRemerasM/>}></Route>
+        
+        {/* <Route element={<proteccionRutas isAllowed={logged === false } reDirect={"/"} />}>
+          <Route path='/carrito' element={<carrito />} />
+        </Route> */}
       </Routes> 
     </Layout>  */
   );

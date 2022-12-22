@@ -4,6 +4,7 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 import userActions from '../../redux/actions/userAction';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
+import swal from 'sweetalert'
 
 export default function SignInSignUp() {
     
@@ -51,25 +52,45 @@ export default function SignInSignUp() {
         try {
             // let sendUser = await axios.post(`${BASE_URL}/auth/signup`,dataUser);
             // console.log(sendUser);
-            await dispatch(userActions.newUser(dataUser))
+            let newUser = await dispatch(userActions.newUser(dataUser))
+            console.log(newUser); 
+            swal({
+                title: "usuario creado",
+                text:  "Revisa tu email para finalizar",
+                icon: "success",
+                timer: "3000"
+            })
+            event.target.reset()
         } catch(error){
-            console.log(error);
+            alert(error);
         }
-        alert('usuario creado')
-        event.target.reset()
         }
 
     async function sendData2(event) {
         event.preventDefault();
         try {
-            await dispatch(userActions.signIn(dataLogin))
+            let res = await dispatch(userActions.signIn(dataLogin))
+            if(res.payload.success){
+                swal({
+                    title: "Bienvenido "+ res.payload.response.user.name,
+                    // text:  "You are logged!!",
+                    icon: "success",
+                    timer: "3000"
+                })
+                navigate("/")
+                event.target.reset()
+            } else {
+                swal({
+                    text: res.payload.response,
+                    icon: "warning",
+                    dangerMode: true,
+                    timer: "5000" 
+                })
+            }
         } catch(error){
-            console.log(error);
-        }
-        alert('usuario logueado')
-        event.target.reset()
-        navigate("/")
-        } 
+            alert(error);
+        }     
+} 
  
     return (
         <div className='bodyS'>
@@ -100,7 +121,7 @@ export default function SignInSignUp() {
                         <span>o usa tu cuenta</span>
                         <input className='inputS' type="email" placeholder="Correo" name='email' onChange={getInplut2}/>
                         <input className='inputS' type="password" placeholder="Contraseña" name='password' onChange={getInplut2}/>
-                        <a href="#">¿Olvidó su contraseña?</a>
+                        {/* <a href="#">¿Olvidó su contraseña?</a> */}
                         <button className='buttonS'>Inicia sesión</button>
                     </form>
                 </div>

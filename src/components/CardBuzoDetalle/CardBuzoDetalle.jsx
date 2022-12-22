@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import Swal from 'sweetalert2'
 import buzoActions from '../../redux/actions/buzoAction'
 import '../CardRemeraDetalle/CardRemeraDetalle.css'
 
@@ -11,14 +12,15 @@ function CardBuzoDetalle(props) {
     //console.log("ID",id)
     const {getOneBuzoId} = buzoActions
     let {buzoId} = useSelector(store => store.buzos)
+    let navigate = useNavigate()
     
     useEffect( () => {
         dispatch(getOneBuzoId(id))
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    console.log(buzoId?.buzoId);
+    //console.log(buzoId?.buzoId);
     let miBuzo = buzoId?.buzoId?.[0]
-    console.log("BUZO", miBuzo);
+    //console.log("BUZO", miBuzo);
 
         // ------- COLORES DE LOS TALLES SEGUN LA DISPONIBILIDAD DEL STOCK ------------
         let stockS = miBuzo?.stock[0]
@@ -72,7 +74,7 @@ function CardBuzoDetalle(props) {
         }
         // --------------------------------------------------
     
-        let [talleElegido, setTalleElegido] = useState('')
+        let [talleElegido, setTalleElegido] = useState(null)
         let [talleActivoS, setTalleActivoS] = useState('')
         let [talleActivoM, setTalleActivoM] = useState('')
         let [talleActivoL, setTalleActivoL] = useState('')
@@ -116,7 +118,11 @@ function CardBuzoDetalle(props) {
         }, [reload])
     
         const agregarAlCarrito = () => {
+            if (talleElegido === null){
+                Swal.fire('Por favor, seleccioná un talle primero')
+            } else { 
             let productoAgregado = {
+                tipo: 'Buzo',
                 id: miBuzo?._id,
                 nombre: miBuzo?.nombre,
                 foto: miBuzo?.foto1,
@@ -125,6 +131,23 @@ function CardBuzoDetalle(props) {
                 talle: talleElegido
             }
             console.log("producto agregado", productoAgregado);
+            Swal.fire({
+                title: 'Perfecto!',
+                text: 'Este producto se agregó al carrito con éxito.',
+                showCancelButton: true,
+                cancelButtonText: 'Ok',
+                confirmButtonColor: '#EEA904',
+                confirmButtonText: 'Volver a tienda',
+                imageUrl: `${miBuzo?.foto1}`,
+                imageWidth: 300,
+                imageHeight: 300,
+                imageAlt: `${miBuzo?.nombre}`,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        navigate('/buzos', { replace: true })
+                    }
+                })
+            }
         }
 
   return (
