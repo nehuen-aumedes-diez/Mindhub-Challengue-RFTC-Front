@@ -8,6 +8,10 @@
     justify-content: center;
 }
 
+.carritoItem h2, .carritoItem h5, .carritoItem p{
+    color: white;
+}
+
 .fotoytitulocarrito{
     display: flex;
 }

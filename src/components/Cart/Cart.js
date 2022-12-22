@@ -23,12 +23,10 @@ const Cart = () => {
     console.log(carritoFinal);
     
     useEffect( () => {
-        if(carritoFinal.length > 0){
+        if(carritoFinal?.length > 0){
             setTotal(carritoFinal?.reduce( (acc, art) => acc + art.precio * art.cantidad, 0))
-        } else{
-            setTotal(0)
         }
-    }, [])
+    }, [carritoFinal])
     console.log("TOTAL ->", total)
     
     //console.log(carritoFinal);
@@ -75,7 +73,7 @@ const Cart = () => {
                     {carritoFinal.map((prod, indice) => 
                     <Producto key={indice} id={prod._id} fnBorrarUno={borrarUno} fnBorrarTodos={() => {}} nombre={prod.nombre} tipo={prod.tipo} cantidad={prod.cantidad} foto={prod.foto} precio={prod.precio} />)}
                     <div className='totalDelCarrito'>
-                        <h3 style={{color: 'black'}}>{` TOTAL: $${total}`}</h3>
+                        <h3 style={{color: 'white'}}>{` TOTAL: $${total}`}</h3>
                     </div>
                     <button onClick={limpiarCarrito} >Limpiar carrito</button>
                 </>
