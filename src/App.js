@@ -39,7 +39,7 @@ function App() {
 
   useEffect(()=>{
     let token = JSON.parse(localStorage.getItem('token'))
-    // console.log(token?.token.user);
+    console.log(token?.token.user);
     if(token){
       dispatch(userActions.relogin(token.token.user))
     }
