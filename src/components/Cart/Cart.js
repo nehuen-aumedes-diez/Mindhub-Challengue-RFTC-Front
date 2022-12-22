@@ -127,7 +127,37 @@ const Cart = () => {
                     </div>
                     <div className='botonesFinalCarrito'>
                         <div className='botonLimpiarCarrito' onClick={limpiarCarrito} >Limpiar carrito</div>
-                        <div className='botonConfirmarCompra' onClick={() => alert("usar pasarela de pago")} >Confirmar compra</div>
+                        {/* <div className='botonConfirmarCompra' onClick={() => alert("usar pasarela de pago")} >Confirmar compra</div> */}
+                        <PayPalScriptProvider options={{"client-id": "Af9U1fl3xlEBDZikHYqtyE_ccj-q9C6bPDer6heHIcrkZ3xDXkMvnvZFiYnbKdBmxU5Ag60oTQvpRBnA"}}>
+                            <PayPalButtons
+
+                            disabled={false}
+                            forceReRender={[amount, currency]}
+                            fundingSource={undefined}
+                            createOrder={(data, actions) => {
+                                return actions.order
+                                    .create({
+                                        purchase_units: [
+                                            {
+                                                amount: {
+                                            
+                                                    value: `${total}` ,
+                                                },
+                                            },
+                                        ],
+                                    })
+                                    .then((orderId) => {
+                                        // Your code here after create the order
+                                        return orderId;
+                                    });
+                            }}
+                            onApprove={function (data, actions) {
+                                return actions.order.capture().then(function () {
+                                    // Your code here after capture the order
+                                });
+                            }}
+                        />
+                        </PayPalScriptProvider>
                     </div>
                 </>
                 : <h2>No tenés articulos en el carrito &#128553;</h2>
@@ -138,36 +168,6 @@ const Cart = () => {
             </>
             }
 
-            <PayPalScriptProvider options={{"client-id": "Af9U1fl3xlEBDZikHYqtyE_ccj-q9C6bPDer6heHIcrkZ3xDXkMvnvZFiYnbKdBmxU5Ag60oTQvpRBnA"}}>
-                <PayPalButtons
-
-                disabled={false}
-                forceReRender={[amount, currency]}
-                fundingSource={undefined}
-                createOrder={(data, actions) => {
-                    return actions.order
-                        .create({
-                            purchase_units: [
-                                {
-                                    amount: {
-                                
-                                        value: `${total}` ,
-                                    },
-                                },
-                            ],
-                        })
-                        .then((orderId) => {
-                            // Your code here after create the order
-                            return orderId;
-                        });
-                }}
-                onApprove={function (data, actions) {
-                    return actions.order.capture().then(function () {
-                        // Your code here after capture the order
-                    });
-                }}
-            />
-            </PayPalScriptProvider>
             
         </div>
 
