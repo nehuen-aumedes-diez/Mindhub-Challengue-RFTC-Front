@@ -22,8 +22,7 @@ import proteccionRutas from "./components/proteccionRutas/proteccionRutas";
 import BuzosAdmin from "./pages/BuzosAdmin/BuzosAdmin"
 import EditorDeBuzos from "./pages/EditorDeBuzos/EditorDeBuzos";
 import RemerasFAdmin from "./pages/RemeraFAdmin/RemeraFAdmin";
-import RemeraMAdmin from "./pages/RemerasMAdmin/RemerasMAdmin"
-import EditorDeRemerasF from "./pages/EditorRemerasF/EditorRemerasF";
+import RemeraMAdmin from "./pages/RemerasMAdmin/RemerasMAdmin"import Cart from "./components/Cart/Cart";import EditorDeRemerasF from "./pages/EditorRemerasF/EditorRemerasF";
 import EditorDeRemerasM from "./pages/EditorRemerasM/EditorRemerasM";
 
 function App() {
@@ -56,6 +55,7 @@ function App() {
         <Route path="/contacto" element={<Contacto/>}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
         <Route path="/noticias" element={<Noticias/>}></Route>
+          <Route path='/carrito' element={<Cart />} />
         <Route path="/buzosadmin" element={<BuzosAdmin/>}></Route>
         <Route path="/editordebuzos/:id" element={<EditorDeBuzos/>}></Route>
         <Route path="/remerafadmin" element={<RemerasFAdmin/>}></Route>
@@ -64,7 +64,6 @@ function App() {
         <Route path="/editorderemerasm/:id" element={<EditorDeRemerasM/>}></Route>
         
         {/* <Route element={<proteccionRutas isAllowed={logged === false } reDirect={"/"} />}>
-          <Route path='/carrito' element={<carrito />} />
         </Route> */}
       </Routes> 
     </Layout> 

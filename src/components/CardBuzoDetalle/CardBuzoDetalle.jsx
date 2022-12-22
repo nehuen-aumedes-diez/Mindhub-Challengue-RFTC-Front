@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import Swal from 'sweetalert2'
@@ -117,6 +117,9 @@ function CardBuzoDetalle(props) {
             console.log("XL ->", talleActivoXL);
         }, [reload])
     
+        let cart = []
+
+        let patito = useRef()
         const agregarAlCarrito = () => {
             if (talleElegido === null){
                 Swal.fire('Por favor, seleccioná un talle primero')
@@ -131,6 +134,71 @@ function CardBuzoDetalle(props) {
                 talle: talleElegido
             }
             console.log("producto agregado", productoAgregado);
+            //patito.current = 
+            cart = [...cart]
+            cart.push(productoAgregado)
+            localStorage.setItem('carrito', JSON.stringify({productos: cart}))
+
+            /* function toCart(array){
+                let cartButton = document.querySelectorAll('.btn-card')
+                cartButton.forEach(el => el.addEventListener('click', ev => {
+                    let product = array.find(prod => prod._id === ev.target.id)
+                    let reference = cart.find(prod => prod._id === product._id)
+                    if(reference){
+                        cart = cart.filter(prod => prod._id !== ev.target.id)
+                        ev.target.style.backgroundColor = '#4e6c50'
+                        ev.target.innerHTML = 'Agregar al carrito'
+                        localStorage.setItem('cart', JSON.stringify(cart))
+                        Toastify({
+                            text: "Producto eliminado",
+                            className: "danger",
+                            style: {
+                              background: "linear-gradient(90deg, rgba(4,1,0,1) 27%, rgba(237,11,11,1) 54%)",
+                            }
+                          }).showToast();
+                    }else{
+                        ev.target.style.backgroundColor = '#e8472b'
+                        ev.target.innerHTML = 'Quitar del carrito'
+                        cart.push(product)
+                        localStorage.setItem('cart', JSON.stringify(cart))
+                        Toastify({
+                            text: "Producto agregado",
+                            className: "success",
+                            style: {
+                              background: "linear-gradient(to right, #00b09b, #96c93d)",
+                            }
+                          }).showToast();
+                    }
+                }))
+            } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             Swal.fire({
                 title: 'Perfecto!',
                 text: 'Este producto se agregó al carrito con éxito.',

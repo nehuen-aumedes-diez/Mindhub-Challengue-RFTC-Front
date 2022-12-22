@@ -114,6 +114,7 @@ function CardRemeraDetalle(props) {
         console.log("M ->", talleActivoM);
         console.log("L ->", talleActivoL);
         console.log("XL ->", talleActivoXL);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [reload])
 
     const agregarAlCarrito = () => {
