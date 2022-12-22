@@ -54,7 +54,7 @@ export default function Noticias() {
                 <div className="capa-noticia">
                     <h3 className="tituloNoticia">Argentina – Francia: el historial entre los finalistas del Mundial de Qatar 2022</h3>
                     <p className="textoNoticia">A lo largo de la historia, los equipos disputaron 12 partidos entre ellos: seis culminaron en victoria para Argentina, tres fueron para Francia y los tres restantes resultaron en empate.</p>
-                    <button className="ButtonNoticias">Lee más...</button>
+                    <button className="ButtonNoticias">Lee más...</button> 
                 </div>
             </figure>
         </div>

@@ -1,6 +1,6 @@
 @media screen and (min-width: 320px) {
   #containerGeneralHome-1 {
-    min-height: 80vh;
+    min-height: 40vh;
   }
 
   .image-banner {
@@ -48,14 +48,14 @@
   .titulo-banner{
     color: white;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 22px;
     font-family: proxima-nova, sans-serif;
   }
 
   .titulo-banner2{
-    color: rgba(0, 0, 0, 0.76);
-    font-weight: 400;
-    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    font-size: 22px;
     font-family: proxima-nova, sans-serif;
   }
 }

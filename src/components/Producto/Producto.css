@@ -1,0 +1,29 @@
+.carritoItem{
+    width: 50%;
+    border: 1px solid grey;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+}
+
+.fotoytitulocarrito{
+    display: flex;
+}
+
+.borrarUnoCarrito{
+    width: 25%;
+    text-align: center;
+}
+
+.botonesDeItemCarrito{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.botonesDeItemCarrito button{
+    height: 40px;
+    text-align: center;
+}

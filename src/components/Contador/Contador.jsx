@@ -21,11 +21,11 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="demo"
-    document.getElementById("dias").innerHTML = days;
+     document.getElementById("dias").innerHTML = days;
   
-  document.getElementById("horas").innerHTML = hours;
+   document.getElementById("horas").innerHTML = hours;
   
-  document.getElementById("minutos").innerHTML = minutes;
+   document.getElementById("minutos").innerHTML = minutes;
   
   document.getElementById("segundos").innerHTML = seconds;
     
