@@ -13,6 +13,12 @@ function CardBuzoDetalle(props) {
     const {getOneBuzoId} = buzoActions
     let {buzoId} = useSelector(store => store.buzos)
     let navigate = useNavigate()
+
+    let { logged } = useSelector(store => store.userReducer)
+
+    let carritoLocal = JSON.parse(localStorage.getItem('carrito')) 
+    //console.log("CARRITO LOCAL",carritoLocal)
+    let carrito = [] || carritoLocal
     
     useEffect( () => {
         dispatch(getOneBuzoId(id))
@@ -111,15 +117,12 @@ function CardBuzoDetalle(props) {
                 setTalleActivoM('')
                 setTalleActivoL('')
             }
-            console.log("S ->", talleActivoS);
-            console.log("M ->", talleActivoM);
-            console.log("L ->", talleActivoL);
-            console.log("XL ->", talleActivoXL);
+            //console.log("S ->", talleActivoS);
+            //console.log("M ->", talleActivoM);
+            //console.log("L ->", talleActivoL);
+            //console.log("XL ->", talleActivoXL);
         }, [reload])
     
-        let cart = []
-
-        let patito = useRef()
         const agregarAlCarrito = () => {
             if (talleElegido === null){
                 Swal.fire('Por favor, seleccioná un talle primero')
@@ -131,79 +134,39 @@ function CardBuzoDetalle(props) {
                 foto: miBuzo?.foto1,
                 precio: miBuzo?.precio,
                 stock: miBuzo?.stock,
-                talle: talleElegido
+                talle: talleElegido,
+                cantidad: 1,
             }
-            console.log("producto agregado", productoAgregado);
-            //patito.current = 
-            cart = [...cart]
-            cart.push(productoAgregado)
-            localStorage.setItem('carrito', JSON.stringify({productos: cart}))
-
-            /* function toCart(array){
-                let cartButton = document.querySelectorAll('.btn-card')
-                cartButton.forEach(el => el.addEventListener('click', ev => {
-                    let product = array.find(prod => prod._id === ev.target.id)
-                    let reference = cart.find(prod => prod._id === product._id)
-                    if(reference){
-                        cart = cart.filter(prod => prod._id !== ev.target.id)
-                        ev.target.style.backgroundColor = '#4e6c50'
-                        ev.target.innerHTML = 'Agregar al carrito'
-                        localStorage.setItem('cart', JSON.stringify(cart))
-                        Toastify({
-                            text: "Producto eliminado",
-                            className: "danger",
-                            style: {
-                              background: "linear-gradient(90deg, rgba(4,1,0,1) 27%, rgba(237,11,11,1) 54%)",
-                            }
-                          }).showToast();
-                    }else{
-                        ev.target.style.backgroundColor = '#e8472b'
-                        ev.target.innerHTML = 'Quitar del carrito'
-                        cart.push(product)
-                        localStorage.setItem('cart', JSON.stringify(cart))
-                        Toastify({
-                            text: "Producto agregado",
-                            className: "success",
-                            style: {
-                              background: "linear-gradient(to right, #00b09b, #96c93d)",
-                            }
-                          }).showToast();
-                    }
-                }))
-            } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            let repeat = carrito.some(art => art.id === productoAgregado.id)
+            let repeat2 = carritoLocal?.some(art => art.id === productoAgregado.id)
+            //console.log("REPEAT __>", repeat);
+            if(repeat || repeat2){
+                if(carritoLocal !== null){
+                    carritoLocal.map((prod) => (prod.id === productoAgregado.id) && prod.cantidad++)
+                    guardarEnLocal2()
+                } else{
+                    carrito.map((prod) => (prod.id === productoAgregado.id) && prod.cantidad++)
+                    guardarEnLocal()
+                    console.log("CARRITO", carrito);
+                }
+            } else if (!repeat || !repeat2){
+                if(carritoLocal !== null){
+                    carritoLocal.push(productoAgregado)
+                    guardarEnLocal2()
+                } else{
+                    carrito.push(productoAgregado)
+                    guardarEnLocal()
+                }
+            }
 
             Swal.fire({
                 title: 'Perfecto!',
                 text: 'Este producto se agregó al carrito con éxito.',
                 showCancelButton: true,
-                cancelButtonText: 'Ok',
+                cancelButtonText: 'Cerrar',
+                showDenyButton: true,
+                denyButtonText: 'Carrito',
+                denyButtonColor: '#000000',
                 confirmButtonColor: '#EEA904',
                 confirmButtonText: 'Volver a tienda',
                 imageUrl: `${miBuzo?.foto1}`,
@@ -213,9 +176,34 @@ function CardBuzoDetalle(props) {
                 }).then((result) => {
                     if (result.isConfirmed) {
                         navigate('/buzos', { replace: true })
+                    } else if (result.isDenied){
+                        navigate('/carrito', {replace: true})
                     }
                 })
             }
+        }
+        const guardarEnLocal = () => {
+            localStorage.setItem('carrito', JSON.stringify(carrito))
+        }
+        const guardarEnLocal2 = () => {
+            localStorage.setItem('carrito', JSON.stringify(carritoLocal))
+        }
+
+        const irASignIn = () => {
+            Swal.fire({
+                title: 'Iniciar sesión',
+                text: 'Para realizar una compra es necesario estar logeado.',
+                showCancelButton: true,
+                cancelButtonText: 'Cerrar',
+                confirmButtonColor: '#EEA904',
+                confirmButtonText: 'Logearme',
+                icon: 'warning'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        navigate('/signinsignup', {replace: true})
+                    }
+                })
+            
         }
 
   return (
@@ -263,7 +251,10 @@ function CardBuzoDetalle(props) {
                     <span>{miBuzo?.descripcion}</span>
                 </div>
                 <div className="comprar-producto">
-                    <span onClick={agregarAlCarrito}>AGREGAR AL CARRITO</span>
+                {logged
+                ?   <span onClick={agregarAlCarrito}>AGREGAR AL CARRITO</span>
+                :   <span onClick={irASignIn}>INICIAR SESIÓN PARA COMPRAR</span>
+                }
                 </div>
             </div>
         </div>

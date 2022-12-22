@@ -14,6 +14,12 @@ function CardRemeraMDetalle(props) {
     let {remeraMencontrada} = useSelector(store => store.remerasM)
     let navigate = useNavigate()
 
+    let { logged } = useSelector(store => store.userReducer)
+
+    let carritoLocal = JSON.parse(localStorage.getItem('carrito')) 
+    //console.log("CARRITO LOCAL",carritoLocal)
+    let carrito = [] || carritoLocal
+
     useEffect( () => {
         dispatch(getOneRemeraMId(id))
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -126,14 +132,38 @@ function CardRemeraMDetalle(props) {
                     foto: miRemera?.foto1,
                     precio: miRemera?.precio,
                     stock: miRemera?.stock,
-                    talle: talleElegido
+                    talle: talleElegido,
+                    cantidad: 1,
                 }
-                console.log("producto agregado", productoAgregado);
+                let repeat = carrito.some(art => art.id === productoAgregado.id)
+                let repeat2 = carritoLocal?.some(art => art.id === productoAgregado.id)
+                //console.log("REPEAT __>", repeat);
+                if(repeat || repeat2){
+                    if(carritoLocal !== null){
+                        carritoLocal.map((prod) => (prod.id === productoAgregado.id) && prod.cantidad++)
+                        guardarEnLocal2()
+                    } else{
+                        carrito.map((prod) => (prod.id === productoAgregado.id) && prod.cantidad++)
+                        guardarEnLocal()
+                        console.log("CARRITO", carrito);
+                    }
+                } else if (!repeat || !repeat2){
+                    if(carritoLocal !== null){
+                        carritoLocal.push(productoAgregado)
+                        guardarEnLocal2()
+                    } else{
+                        carrito.push(productoAgregado)
+                        guardarEnLocal()
+                    }
+                }
                 Swal.fire({
                     title: 'Perfecto!',
                     text: 'Este producto se agregó al carrito con éxito.',
                     showCancelButton: true,
-                    cancelButtonText: 'Ok',
+                    cancelButtonText: 'Cerrar',
+                    showDenyButton: true,
+                    denyButtonText: 'Carrito',
+                    denyButtonColor: '#000000',
                     confirmButtonColor: '#EEA904',
                     confirmButtonText: 'Volver a tienda',
                     imageUrl: `${miRemera?.foto1}`,
@@ -143,10 +173,35 @@ function CardRemeraMDetalle(props) {
                 }).then((result) => {
                     if (result.isConfirmed) {
                         navigate('/camisetasM', { replace: true })
+                    } else if (result.isDenied){
+                        navigate('/carrito', {replace: true})
                     }
                 })
             }
         }
+
+        const guardarEnLocal = () => {
+            localStorage.setItem('carrito', JSON.stringify(carrito))
+        }
+        const guardarEnLocal2 = () => {
+            localStorage.setItem('carrito', JSON.stringify(carritoLocal))
+        }
+
+        const irASignIn = () => {
+            Swal.fire({
+                title: 'Iniciar sesión',
+                text: 'Para realizar una compra es necesario estar logeado.',
+                showCancelButton: true,
+                cancelButtonText: 'Cerrar',
+                confirmButtonColor: '#EEA904',
+                confirmButtonText: 'Logearme',
+                icon: 'warning'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        navigate('/signinsignup', {replace: true})
+                    }
+                })
+            }
 
 return (
     <div className='supergeneral-detalle'>
@@ -193,7 +248,10 @@ return (
                     <span>{miRemera?.descripcion}</span>
                 </div>
                 <div className="comprar-producto">
-                    <span onClick={agregarAlCarrito} >AGREGAR AL CARRITO</span>
+                {logged
+                ?   <span onClick={agregarAlCarrito}>AGREGAR AL CARRITO</span>
+                :   <span onClick={irASignIn}>INICIAR SESIÓN PARA COMPRAR</span>
+                }
                 </div>
             </div>
         </div>

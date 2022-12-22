@@ -5,7 +5,7 @@ import { BASE_URL } from "../../api/url";
 const getRemeraF = createAsyncThunk("getRemeraF", async () => {
   try {
     const res = await axios.get(`http://localhost:8000/api/productos?tipo=remeraF`);
-    console.log(res)
+    //console.log(res)
     return res.data.res;
 
   } catch (error) {
@@ -57,7 +57,7 @@ const filtrarRemerasF = createAsyncThunk('filtrarRemerasF', async(data) => {
   try{
       const res = await axios.get(url)
       //console.log("res", res);
-      console.log("FILTRAR REMERAS ACTION",res.data);
+      //console.log("FILTRAR REMERAS ACTION",res.data);
       //console.log("data: ",data);
       return {
         remerasF: res.data.res,
