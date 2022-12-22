@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 //import productosAction from '../../redux/actions/productosAction'
 import Producto from '../Producto/Producto'
 import './cart.css'
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 
 const Cart = () => {
@@ -14,6 +15,9 @@ const Cart = () => {
     let [carritoFinal, setCarritoFinal] = useState('')
     let [reload, setReload] = useState(true)
     let [total, setTotal] = useState('')
+
+    const amount = `${total}`;
+    const currency = "MXN";
 
     
     useEffect( () => {
@@ -133,6 +137,38 @@ const Cart = () => {
                 <h2>No tenés articulos en el carrito &#128553; </h2>
             </>
             }
+
+            <PayPalScriptProvider options={{"client-id": "Af9U1fl3xlEBDZikHYqtyE_ccj-q9C6bPDer6heHIcrkZ3xDXkMvnvZFiYnbKdBmxU5Ag60oTQvpRBnA"}}>
+                <PayPalButtons
+
+                disabled={false}
+                forceReRender={[amount, currency]}
+                fundingSource={undefined}
+                createOrder={(data, actions) => {
+                    return actions.order
+                        .create({
+                            purchase_units: [
+                                {
+                                    amount: {
+                                
+                                        value: `${total}` ,
+                                    },
+                                },
+                            ],
+                        })
+                        .then((orderId) => {
+                            // Your code here after create the order
+                            return orderId;
+                        });
+                }}
+                onApprove={function (data, actions) {
+                    return actions.order.capture().then(function () {
+                        // Your code here after capture the order
+                    });
+                }}
+            />
+            </PayPalScriptProvider>
+            
         </div>
 
     )

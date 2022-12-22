@@ -5,6 +5,7 @@ import remeraFActions from '../../redux/actions/remeraFAction'
 import Market from '../../components/market/Market'
 import SearchBar from '../../components/searchBar/SearchBar'
 import Select from '../../components/order/Select'
+import './CamisetasF.css' 
 
 function CamisetasF() {
   const dispatch = useDispatch()
