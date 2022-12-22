@@ -11,8 +11,8 @@ import CamisetasM from './pages/CamisetasM/CamisetasM'
 import Buzos from './pages/Buzos/Buzos'
 import CamisetasMDetalles from "./pages/CamisetasMDetalles/CamisetasMDetalles";
 import BuzosDetalles from "./pages/BuzosDetalles/BuzosDetalles";
-import Contacto from "./pages/contacto/Contacto";
-import Nosotros from './pages/nosotros/Nosotros'
+import Contacto from "./pages/Contacto/Contacto";
+import Nosotros from './pages/Nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
 import Noticias from "./pages/Noticias/Noticias";
 import PaginaDeStock from "./pages/PaginaDeStock/PaginaDeStock"

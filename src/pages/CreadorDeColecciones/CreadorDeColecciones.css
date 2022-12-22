@@ -10,16 +10,7 @@
  margin-bottom: 30px;
  padding-left: 10vw;
 }
-@media screen and (max-width:420px) {
-    .card11 {
-        width: 300px;
-        background-color: #1d3247;
-    }
-    .container11 {
-        
-        width: 300px;
-    }
-}
+
 
 
 .card11 {
@@ -34,6 +25,7 @@
     color: white;
     border-radius: 5px;
     width: auto;
+    width: 450px;
 }
 
 .card11:hover {
@@ -102,4 +94,10 @@ textarea {
     box-shadow: 0 5px 22px 0 rgba(0, 0, 0, .25);
     transition: all .2s ease-in-out;
 
+}
+@media screen and (max-width:498px) {
+    .card11 {
+        width: 280px;
+    }
+    
 }

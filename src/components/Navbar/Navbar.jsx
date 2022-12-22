@@ -47,10 +47,12 @@ export default function Navbar() {
           }
         </div>
         <LinkRouter to='/contacto' className='LinkRefNav'>Contacto</LinkRouter>
-        <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>
 
+        <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>  
+        
         <div id='containerIconRefs'>
-          {logged?
+
+          {(logged && role === "admin")?
            (
             <>
             <LinkRouter to='/stockgeneral' className='LinkRefNav'>Stock</LinkRouter>
@@ -68,6 +70,24 @@ export default function Navbar() {
               <div className='LinkIcon Icon1'>
                 <LinkRouter to='/carrito' className='LinkRefNav'>
                 <IoCartOutline className='RefCart' />
+                </LinkRouter>
+                <BiUserX className='RefCart' onClick={() => signOut()}></BiUserX>
+                <p className='userName'>{name}</p>
+              </div>
+            ) : (
+              < >
+              <BiUserX className='RefCart' onClick={() => signOut()}></BiUserX>
+                <p className='userName'>{name}</p>
+              </>
+            )
+            }
+          </>):
+          (<>
+            <LinkRouter to='/signinsignup' className='LinkIcon2 Icon1'>
+                <BiUser className='RefCart'></BiUser>
+              </LinkRouter>
+          </>)
+        }
 
             {/* {(logged && role === "user")? (
               <div className='LinkIcon Icon1'>
