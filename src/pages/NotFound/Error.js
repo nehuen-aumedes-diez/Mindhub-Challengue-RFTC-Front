@@ -1,5 +1,6 @@
 import React from "react";
 import "./error.css";
+import { Link as LinkRouter } from "react-router-dom";
 
 export default function NotFound() {
   return (
@@ -10,7 +11,7 @@ export default function NotFound() {
           La página que estas buscando no existe, por favor vuelve a:
         </p>
         <div class="wrap">
-          <button class="button">Inicio</button>
+        <LinkRouter to='/Buzos'> <button class="button">Tienda</button></LinkRouter> 
         </div>
       </div>
       <body>

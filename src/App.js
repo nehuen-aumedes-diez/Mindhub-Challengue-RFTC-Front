@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import CamisetasF from "./pages/CamisetasF/CamisetasF";
+import CamisetasF from './pages/camisetasF/CamisetasF'
 import Home from "./pages/Home/Home";
 import CamisetasFDetalles from "./pages/CamisetasFDetalles/CamisetasFDetalles";
 import { Routes, Route } from "react-router-dom";
@@ -11,31 +11,40 @@ import CamisetasM from './pages/CamisetasM/CamisetasM'
 import Buzos from './pages/Buzos/Buzos'
 import CamisetasMDetalles from "./pages/CamisetasMDetalles/CamisetasMDetalles";
 import BuzosDetalles from "./pages/BuzosDetalles/BuzosDetalles";
-import GorrasDetalles from "./pages/GorrasDetalles/GorrasDetalles";
-import Contacto from "./pages/Contacto/Contacto";
-import Nosotros from './pages/Nosotros/Nosotros'
+import Contacto from "./pages/contacto/Contacto";
+import Nosotros from './pages/nosotros/Nosotros'
 import Contador from "./components/Contador/Contador";
 import Noticias from "./pages/Noticias/Noticias";
 import PaginaDeStock from "./pages/PaginaDeStock/PaginaDeStock"
 import { useDispatch, useSelector } from "react-redux";
 import userActions from "./redux/actions/userAction";
+import BuzosAdmin from './pages/BuzosAdmin/BuzosAdmin';
+import EditorDeBuzos from './pages/EditorDeBuzos/EditorDeBuzos';
+import EditorRemerasF from './pages/EditorRemerasF/EditorRemerasF';
+import RemerasFAdmin from './pages/RemeraFAdmin/RemeraFAdmin';
+import RemeraMAdmin from './pages/RemerasMAdmin/RemerasMAdmin';
+import EditorDeRemerasF from './pages/EditorRemerasF/EditorRemerasF';
+import EditorDeRemerasM from './pages/EditorRemerasM/EditorRemerasM';
+
 
 
 
 
 function App() {
   let dispatch = useDispatch()
-  
+  let {logged, role} = useSelector(store => store.userReducer)
+
   useEffect(()=>{
     let token = JSON.parse(localStorage.getItem('token'))
     // console.log(token?.token.user);
     if(token){
       dispatch(userActions.relogin(token.token.user))
     }
-  },[]) */
+  },[])
   return (
-   <Juego></Juego>
-   /*  <Layout>
+   
+    <Layout>
+       {/* <Noticias></Noticias> */}
        <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/camisetasF/:id" element={<CamisetasFDetalles/>}></Route>
@@ -62,7 +71,7 @@ function App() {
           <Route path='/carrito' element={<carrito />} />
         </Route> */}
       </Routes> 
-    </Layout>  */
+    </Layout> 
   );
 } 
 
