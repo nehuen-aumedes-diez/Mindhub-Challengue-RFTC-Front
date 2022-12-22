@@ -27,6 +27,7 @@ import RemerasFAdmin from './pages/RemeraFAdmin/RemeraFAdmin';
 import RemeraMAdmin from './pages/RemerasMAdmin/RemerasMAdmin';
 //import EditorDeRemerasF from './pages/EditorRemerasF/EditorRemerasF';
 //import EditorDeRemerasM from './pages/EditorRemerasM/EditorRemerasM';
+import CreadorDeColecciones from "./pages/CreadorDeColecciones/CreadorDeColecciones";
 
 
 
@@ -52,7 +53,7 @@ function App() {
         <Route path="/camisetasF/:id" element={<CamisetasFDetalles/>}></Route>
         <Route path="/camisetasM/:id" element={<CamisetasMDetalles/>}></Route>
         <Route path="/signinsignup" element={<SignInSignUp/>}></Route>
-        <Route path="/chau" element={<PaginaDeStock/>}></Route>
+        <Route path="/stockgeneral" element={<PaginaDeStock/>}></Route>
         <Route path="/camisetasF" element={<CamisetasF/>}></Route>
         <Route path="/camisetasFDetalles" element={<CamisetasFDetalles/>}></Route>
         <Route path="/camisetasM" element={<CamisetasM/>}></Route>
@@ -62,16 +63,16 @@ function App() {
         <Route path="/contacto" element={<Contacto/>}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
         <Route path="/noticias" element={<Noticias/>}></Route>
-          <Route path='/carrito' element={<Cart />} />
+        <Route path='/carrito' element={<Cart />} />
         <Route path="/buzosadmin" element={<BuzosAdmin/>}></Route>
         {/* <Route path="/editordebuzos/:id" element={<EditorDeBuzos/>}></Route> */}
         <Route path="/remerafadmin" element={<RemerasFAdmin/>}></Route>
         <Route path="/remeramadmin" element={<RemeraMAdmin/>}></Route>
         {/* <Route path="/editorderemerasf/:id" element={<EditorDeRemerasF/>}></Route>
-        <Route path="/editorderemerasm/:id" element={<EditorDeRemerasM/>}></Route> */}
-        
+        <Route path="/editorderemerasm/:id" element={<EditorDeRemerasM/>}></Route> */}        
         {/* <Route element={<proteccionRutas isAllowed={logged === false } reDirect={"/"} />}>
         </Route> */}
+        <Route path="/crearColeccion" element={<CreadorDeColecciones/>}></Route>
       </Routes> 
     </Layout> 
   );
