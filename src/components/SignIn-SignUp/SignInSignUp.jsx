@@ -103,7 +103,7 @@ export default function SignInSignUp() {
                             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <span>o use su correo electrónico para registrarse</span>
+                        {/* <span>o use su correo electrónico para registrarse</span> */}
                         <input className='inputS' type="text"  placeholder="Nombre" name='name' onChange={getInplut}/>
                         <input className='inputS' type="email" placeholder="Correo" name='email' onChange={getInplut} />
                         <input className='inputS' type="password" placeholder="Contraseña" name='password' onChange={getInplut} />
@@ -118,7 +118,7 @@ export default function SignInSignUp() {
                             <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
                             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <span>o usa tu cuenta</span>
+                        {/* <span>o usa tu cuenta</span> */}
                         <input className='inputS' type="email" placeholder="Correo" name='email' onChange={getInplut2}/>
                         <input className='inputS' type="password" placeholder="Contraseña" name='password' onChange={getInplut2}/>
                         {/* <a href="#">¿Olvidó su contraseña?</a> */}

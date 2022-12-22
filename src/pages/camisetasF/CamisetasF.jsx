@@ -15,7 +15,7 @@ function CamisetasF() {
   //console.log("ORDEN ALF",ordenAlfabetico);
   //console.log("ORDEN PRE",ordenPrecio);
   //console.log("busqueda: ", busqueda);
-  console.log(remerasF)
+  //console.log(remerasF)
 
   useEffect( () => {
       dispatch(getRemeraF())
@@ -47,7 +47,7 @@ function CamisetasF() {
       ordencito = event?.target?.value
     }
     //console.log(nombrecito)
-    console.log("ordencito",ordencito)
+    //console.log("ordencito",ordencito)
       let order= '';
       if (ordencito === '0') {
           order = ordenPrecio

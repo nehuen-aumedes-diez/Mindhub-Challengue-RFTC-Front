@@ -1,7 +1,16 @@
 import React from "react";
+import Swal from "sweetalert2";
 import "./contacto.css";
 
 export default function Contacto() {
+  const alertas = () => {
+    Swal.fire({
+      title: 'Excelente!',
+      text: 'Recibimos tu mail. Pronto tendrás una respuesta!',
+      icon: 'success'
+  })
+}
+
   return (
     <div id="containerGeneralContacto">
         <div className="cuerpo-contacto">
@@ -34,7 +43,7 @@ export default function Contacto() {
           </div>
           <div class="contact">
             <h3 className="titulo-envianos">Envianos un correo</h3>
-            <form id="contact-form">
+            <form id="contact-form" action="https://formsubmit.co/retrofootballtc@gmail.com" method="POST" onSubmit={alertas} >
               <p>
                 <label>Nombre</label>
                 <input type="text" name="name" id="name" required />
@@ -58,6 +67,8 @@ export default function Contacto() {
               <p class="full">
                 <button type="submit">Enviar</button>
               </p>
+              <input type="hidden" name="_next" value="http://localhost:3000/" />
+              <input type="hidden" name="_captcha" value="false" />
             </form>
           </div>
         </div>

@@ -48,7 +48,7 @@ export default function Navbar() {
         </div>
         <LinkRouter to='/contacto' className='LinkRefNav'>Contacto</LinkRouter>
         <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>
-        <LinkRouter to='/stockGeneral' className='LinkRefNav'>Stock</LinkRouter>
+        
         <div id='containerIconRefs'>
           <div className='LinkIcon' >
             {logged ? (
