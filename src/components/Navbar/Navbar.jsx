@@ -50,11 +50,22 @@ export default function Navbar() {
         <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>
 
         <div id='containerIconRefs'>
+          {logged?
+           (
+            <>
+            <LinkRouter to='/stockgeneral' className='LinkRefNav'>Stock</LinkRouter>
+            <hr className='HR' />
+            </>
+           ):(
+            <></>
+           )
+          }
           <div className='LinkIcon' >
             {logged ? (
               <div className='LinkIcon Icon1'>
-                <LinkRouter to='/carrito' className='LinkIcon2 Icon1'>
-                  <IoCartOutline className='RefCart' />
+                <LinkRouter to='/carrito' className='LinkRefNav'>
+                <IoCartOutline className='RefCart' />
+
                 </LinkRouter>
                 <BiUserX className='RefCart' onClick={() => signOut()}></BiUserX>
               </div>
