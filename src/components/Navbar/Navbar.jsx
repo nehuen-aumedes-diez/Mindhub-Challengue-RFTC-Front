@@ -2,7 +2,7 @@ import React from 'react'
 import './Navbar.css'
 import { useState } from 'react'
 import { IoCartOutline } from "react-icons/io5";
-import { BiUser } from "react-icons/bi";
+import { BiUser, BiUserX } from "react-icons/bi";
 import { Link as LinkRouter, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import userActions from '../../redux/actions/userAction';
@@ -11,11 +11,11 @@ import swal from 'sweetalert'
 export default function Navbar() {
   let [hideDropdown, setHideDropdown] = useState(false)
   let [menuUser, setMenuUser] = useState(false)
-  let {name, token, logged} = useSelector(store => store.userReducer)
+  let { name, token, logged } = useSelector(store => store.userReducer)
   let dispatch = useDispatch()
   const navigate = useNavigate();
 
-  async function signOut(event){
+  async function signOut(event) {
     await dispatch(userActions.signOut(token))
     navigate('/')
     swal({
@@ -25,14 +25,14 @@ export default function Navbar() {
   })
   }
 
-console.log(logged);
+  console.log(logged);
 
   return (
-    <div id='containerGeneralNav' onMouseLeave={() => { setHideDropdown(false) ; setMenuUser(false) }}>
-      <LinkRouter to='/'id='logoHome'><img className='LogoNav' src='./logo.png' /></LinkRouter>
+    <div id='containerGeneralNav' onMouseLeave={() => { setHideDropdown(false); setMenuUser(false) }}>
+      <LinkRouter to='/' id='logoHome'><img className='LogoNav' src='./logo.png' /></LinkRouter>
       <div id='containerRefsNav'>
-      <LinkRouter to='/' className='LinkRefNav'>Inicio</LinkRouter>
-      <LinkRouter to='/nosotros' className='LinkRefNav'>Nosotros</LinkRouter>
+        <LinkRouter to='/' className='LinkRefNav'>Inicio</LinkRouter>
+        <LinkRouter to='/nosotros' className='LinkRefNav'>Nosotros</LinkRouter>
         <div className='LinkRefNav'
           onMouseEnter={() => { setHideDropdown(true) }} onClick={() => { !hideDropdown ? setHideDropdown(true) : setHideDropdown(false) }}>
           Tienda
@@ -49,6 +49,8 @@ console.log(logged);
         <LinkRouter to='/contacto' className='LinkRefNav'>Contacto</LinkRouter>
         <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>
         <div id='containerIconRefs'>
+<<<<<<< HEAD
+=======
           {logged?
            (
             <>
@@ -61,31 +63,19 @@ console.log(logged);
           }
           
           
+>>>>>>> e11e457485f4c0eec000ad81ede291a1ce6ab80e
           <div className='LinkIcon' >
-            
-              <LinkRouter to='/signinsignup' className='LinkIcon Icon1'>
-              <BiUser className='RefCart'></BiUser>
-              <p className='nameUser'>{name}</p>
-              </LinkRouter>
-              {logged? 
-              (<button className='btnLogout' onClick={()=>signOut()}>  Salir</button>
-              ):(
-                <></>
-              )
-              }
-              
-            
-
-            {/* <BiUser className='RefCart' onMouseEnter={() => { setMenuUser(true) }} onClick={() => { !menuUser ? setMenuUser(true) : setMenuUser(false) }}></BiUser>
-            {menuUser ?
-              <div id='containerDropdownMenuUser' onMouseLeave={() => { setMenuUser(false) }} >
-                <LinkRouter to='/signinsignup' className='itemDropdown'>Ingreso / Registro</LinkRouter>
-                <LinkRouter to='/camisetasF' className='itemDropdown'>Registro</LinkRouter>
+            {logged ? (
+              <div className='LinkIcon Icon1'>
+                <IoCartOutline className='RefCart' />
+                <BiUserX className='RefCart' onClick={() => signOut()}></BiUserX>
               </div>
-              :
-              console.log('')
+            ) : (
+              <LinkRouter to='/signinsignup' className='LinkIcon2 Icon1'>
+                <BiUser className='RefCart'></BiUser>
+              </LinkRouter>
+            )
             }
-             */}
           </div>
         </div>
       </div>
