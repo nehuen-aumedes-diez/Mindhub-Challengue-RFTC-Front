@@ -49,21 +49,6 @@ export default function Navbar() {
         <LinkRouter to='/contacto' className='LinkRefNav'>Contacto</LinkRouter>
         <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>
         <div id='containerIconRefs'>
-<<<<<<< HEAD
-=======
-          {logged?
-           (
-            <>
-            <div className='LinkIcon Icon1'><IoCartOutline className='RefCart' /></div>
-            <hr className='HR' />
-            </>
-           ):(
-            <></>
-           )
-          }
-          
-          
->>>>>>> e11e457485f4c0eec000ad81ede291a1ce6ab80e
           <div className='LinkIcon' >
             {logged ? (
               <div className='LinkIcon Icon1'>
