@@ -95,8 +95,8 @@ export default function PaginaDeStock() {
       <div class="card">
         <div class="additional">
           <div class="user-card">
-            <img className='imagenStock' src={`${remeritaF}`} alt="foto de remera de mujer " />
-          </div>
+            <img className='imagenStock' id='imagenEstatica' src={`${remeritaF}`} alt="foto de remera de mujer " />
+          </div> 
           <div class="more-info">
             <h1>Remeras Femeninas</h1>
             <div class="stats">
@@ -116,8 +116,8 @@ export default function PaginaDeStock() {
                 <div class="value">{`${siOnoF}`}</div>
               </div>
               <div class="value infinity">
-                <Linkeador to={`/remerafadmin`}><img className='imgMas' src="./icons8-plus-1285.png" alt="mas" /></Linkeador>
-              </div>
+                <Linkeador to={`/remerafadmin`}><img className='imgMas'  src="./icons8-plus-1285.png" alt="mas" /></Linkeador>
+              </div> 
             </div>
           </div>
         </div>

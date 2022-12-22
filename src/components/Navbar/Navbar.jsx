@@ -48,23 +48,23 @@ export default function Navbar() {
         </div>
         <LinkRouter to='/contacto' className='LinkRefNav'>Contacto</LinkRouter>
         <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>
-
+        <LinkRouter to='/stockgeneral' className='LinkRefNav'>Stock</LinkRouter>
         <div id='containerIconRefs'>
-          {logged?
-           (
-            <>
-            <LinkRouter to='/stockgeneral' className='LinkRefNav'>Stock</LinkRouter>
-            <hr className='HR' />
-            </>
-           ):(
-            <></>
-           )
+          {logged ?
+            (
+              <>
+
+                <hr className='HR' />
+              </>
+            ) : (
+              <></>
+            )
           }
           <div className='LinkIcon' >
             {logged ? (
               <div className='LinkIcon Icon1'>
                 <LinkRouter to='/carrito' className='LinkRefNav'>
-                <IoCartOutline className='RefCart' />
+                  <IoCartOutline className='RefCart' />
 
                 </LinkRouter>
                 <BiUserX className='RefCart' onClick={() => signOut()}></BiUserX>
