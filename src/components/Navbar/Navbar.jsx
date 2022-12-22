@@ -26,6 +26,7 @@ export default function Navbar() {
   }
 
   console.log(role);
+  console.log(name);
 
   return (
     <div id='containerGeneralNav' onMouseLeave={() => { setHideDropdown(false); setMenuUser(false) }}>
