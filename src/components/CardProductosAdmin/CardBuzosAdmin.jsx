@@ -1,13 +1,38 @@
 import React from "react";
 import "./CardProductosAdmin.css";
 import { Link as Linkeador } from "react-router-dom";
+import axios from "axios";
+import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
 
-
-
-
-const CardBuzosAdmin = (props) => {
+const CardProductosAdmin = (props) => {
   let { img, nombre, precio, talle, id } = props;
+  const nav = useNavigate()
 
+
+  let deleteF = async (event) => {
+
+    event.preventDefault();
+    const data = { _id: id, };
+
+    console.log(data);
+    
+    try {
+      let res = await axios.delete(`http://localhost:8000/api/productos/${id}`, data)
+      console.log(res);
+      if (res.data.success) {
+        nav("/chau");
+        swal({
+          title: "Coleccion eliminada",
+          icon: "success",
+          timer: "3000",
+        });
+      } 
+    } catch (error) {
+      console.log(error.message);
+    }
+
+  }
   return (
     <>
       <div id="wrapper">
@@ -24,15 +49,10 @@ const CardBuzosAdmin = (props) => {
 
         <div class="info-card">
           <ul id="nav-links">
-            <Linkeador to={`/editordebuzos/${id}`} >
+            <Linkeador to={`/editordeproductos/${id}`} >
               <li>Editar</li>
             </Linkeador>
-            <Linkeador to={`/crearBuzo`}>
-              <li>Crear</li>
-            </Linkeador>
-            <Linkeador to={`/borrar/${id}`}>
-              <li>Borrar</li>
-            </Linkeador>
+            <li onClick={deleteF}>Eliminar coleccion </li>
           </ul>
         </div>
       </div>
@@ -40,4 +60,4 @@ const CardBuzosAdmin = (props) => {
   );
 };
 
-export default CardBuzosAdmin;
+export default CardProductosAdmin;

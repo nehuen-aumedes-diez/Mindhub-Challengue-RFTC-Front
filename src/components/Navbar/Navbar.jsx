@@ -43,6 +43,7 @@ console.log(logged);
         </div>
         <LinkRouter to='/contacto' className='LinkRefNav'>Contacto</LinkRouter>
         <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>
+        <LinkRouter to='/stockGeneral' className='LinkRefNav'>Stock</LinkRouter>
         <div id='containerIconRefs'>
           {logged?
            (
