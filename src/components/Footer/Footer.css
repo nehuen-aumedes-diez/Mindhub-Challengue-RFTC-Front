@@ -5,6 +5,9 @@ ul {
 .footer-section {
   background: #151414;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  
 }
 .footer-cta {
   border-bottom: 1px solid #373636;
@@ -103,7 +106,6 @@ ul {
 }
 .footer-widget ul li {
   display: inline-block;
-  float: left;
   width: 50%;
   margin-bottom: 12px;
 }
@@ -177,4 +179,33 @@ ul {
 
 .footer-content{
   height: 23rem;
+}
+
+@media screen and (max-width: 992px) {
+  .copyright-area{
+    display: none;
+  }
+  .footer-section{
+    height: 100vh;
+  }
+}
+@media screen and (max-width: 769px) {
+  .footer-section{
+    height: 120vh;
+  }
+}
+@media screen and (max-width: 542px) {
+  .footer-section{
+    height: 125vh;
+  }
+}
+@media screen and (max-width: 392px) {
+  .footer-section{
+    height: 130vh;
+  }
+}
+@media screen and (max-width: 324px) {
+  .footer-section{
+    height: 132vh;
+  }
 }

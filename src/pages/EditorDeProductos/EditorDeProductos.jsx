@@ -26,14 +26,14 @@ const EditorDeProductos = () => {
 
     const data = {
 
-      nombre:nombreInput.current?.value,
-      precio:precioInput.current.value,
+      nombre: nombreInput.current?.value,
+      precio: precioInput.current.value,
       foto1: foto1Input.current.value,
-      foto2:foto2Input.current.value,
-      stock:[Number(talleSInput.current.value),
-    Number(talleMInput.current.value),
-    Number(talleLInput.current.value),
-    Number(talleXLInput.current.value)],
+      foto2: foto2Input.current.value,
+      stock: [Number(talleSInput.current.value),
+      Number(talleMInput.current.value),
+      Number(talleLInput.current.value),
+      Number(talleXLInput.current.value)],
     }
 
     console.log(data);
@@ -65,7 +65,7 @@ const EditorDeProductos = () => {
     <div className="container11">
       <h1 className="title11">Editor de Colecion</h1>
 
-      <div className="card11">
+      <form className="card11">
         <label className="label11" for="nombre">
 
           <h3>Nombre del Modelo</h3>
@@ -152,7 +152,7 @@ const EditorDeProductos = () => {
         <button type="button" id="btn11" value="Enviar" onClick={handleSubmit}>
           Enviar
         </button>
-      </div>
+      </form>
     </div>
   );
 };
