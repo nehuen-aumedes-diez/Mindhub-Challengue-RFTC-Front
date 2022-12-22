@@ -7,7 +7,9 @@ import 'animate.css';
 export default function Home1() {
 
   let [counter, setCounter] = useState(0)
+  let [counterTitle, setCounterTitle] = useState(0)
   let [id, setId] = useState(0)
+  let [id2, setId2] = useState(0)
 
   const imagesBanner = 
   [
@@ -22,11 +24,22 @@ export default function Home1() {
       if(counter === imagesBanner.length - 1){
         setCounter(0)
       }
-  },4000)
+  },13000)
     setId(idInterval)
     return clearInterval(id)
   },[counter])
 
+  useEffect(()=>{
+    let idInterval = setInterval(()=>{
+      setCounterTitle(counterTitle + 1)
+      if(counterTitle === 2){
+        setCounterTitle(0)
+      }
+  },3500)
+    setId2(idInterval)
+    console.log(counterTitle)
+    return clearInterval(id2)
+  },[counterTitle])
 
 
 
@@ -35,7 +48,7 @@ export default function Home1() {
       <Contador/>  
       <div id="containerBanner">
         <img className="image-banner animate__animated animate__zoomIn animate__slow" src={imagesBanner[counter]} alt="" />
-        {counter === 1 ? <h2 className="titulo-banner">- De tu equipo favorito -</h2> : counter === 2 ? <h2 className="titulo-banner2">- Ademas vestí los colores de la seleccion -</h2> : <h2 className="titulo-banner">- La mejor indumentaria retro -</h2> }
+        {counterTitle === 0 ? <h2 className="titulo-banner">- La mejor indumentaria retro -</h2> : counterTitle === 1 ? <h2 className="titulo-banner2">- De tu equipo favorito -</h2> : <h2 className="titulo-banner">- Al mejor precio, con envío gratís en CABA -</h2> }
       </div>
     </div>
   );

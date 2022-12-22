@@ -22,7 +22,7 @@ export default function Navbar() {
       title: `Hasta pronto ${name}!`,
       icon: "success",
       timer: "3000"
-  })
+    })
   }
 
   console.log(logged);
@@ -48,23 +48,14 @@ export default function Navbar() {
         </div>
         <LinkRouter to='/contacto' className='LinkRefNav'>Contacto</LinkRouter>
         <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>
-        
+
         <div id='containerIconRefs'>
-          {logged?
-           (
-            <>
-            <LinkRouter to='/stockGeneral' className='LinkRefNav'>Stock</LinkRouter>
-            <div className='LinkIcon Icon1'><IoCartOutline className='RefCart' /></div>
-            <hr className='HR' />
-            </>
-           ):(
-            <></>
-           )
-          }
           <div className='LinkIcon' >
             {logged ? (
               <div className='LinkIcon Icon1'>
-                <IoCartOutline className='RefCart' />
+                <LinkRouter to='/carrito' className='LinkIcon2 Icon1'>
+                  <IoCartOutline className='RefCart' />
+                </LinkRouter>
                 <BiUserX className='RefCart' onClick={() => signOut()}></BiUserX>
               </div>
             ) : (

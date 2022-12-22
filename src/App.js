@@ -11,8 +11,8 @@ import CamisetasM from './pages/CamisetasM/CamisetasM'
 import Buzos from './pages/Buzos/Buzos'
 import CamisetasMDetalles from "./pages/CamisetasMDetalles/CamisetasMDetalles";
 import BuzosDetalles from "./pages/BuzosDetalles/BuzosDetalles";
-import Contacto from "./pages/Contacto/Contacto";
-import Nosotros from './pages/Nosotros/Nosotros'
+import Contacto from "./pages/Contacto/Contacto"
+import Nosotros from "./pages/Nosotros/Nosotros"
 import Contador from "./components/Contador/Contador";
 import Noticias from "./pages/Noticias/Noticias";
 import PaginaDeStock from "./pages/PaginaDeStock/PaginaDeStock"
@@ -62,7 +62,7 @@ function App() {
         <Route path="/contacto" element={<Contacto/>}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
         <Route path="/noticias" element={<Noticias/>}></Route>
-          <Route path='/carrito' element={<Cart />} />
+        <Route path='/carrito' element={<Cart />} />
         <Route path="/buzosadmin" element={<BuzosAdmin/>}></Route>
         {/* <Route path="/editordebuzos/:id" element={<EditorDeBuzos/>}></Route> */}
         <Route path="/remerafadmin" element={<RemerasFAdmin/>}></Route>
