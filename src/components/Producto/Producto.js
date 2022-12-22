@@ -30,7 +30,7 @@ const Cart = (props) => {
                 <div>
                     <img src={foto} style={{width: '100px'}} alt='' />
                 </div>
-                <div>
+                <div id='detailsCompra'>
                     <h5>${precio}</h5>
                     <p>Cantidad: {cantidad}</p>
                     <p>Subtotal: ${cantidad * precio}</p>
