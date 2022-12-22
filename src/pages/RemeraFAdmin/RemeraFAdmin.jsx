@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import remeraFAction from "../../redux/actions/remeraFAction"
-import CardRemerasFAdmin from '../../components/CardProductosAdmin/CardRemerasFAdmin';
+import CardProductosAdmin from '../../components/CardProductosAdmin/CardBuzosAdmin';
 
 export default function RemerasFAdmin() {
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ export default function RemerasFAdmin() {
       return (
        <div className='ProductosAdmin-contenedor'>
   
-    {remerasF.map(todasLasRemeras => <CardRemerasFAdmin key={todasLasRemeras._id} img={todasLasRemeras?.foto1} nombre={todasLasRemeras?.nombre} id={todasLasRemeras._id} precio={todasLasRemeras.precio} talle={todasLasRemeras.talle} />)}
+    {remerasF.map(todasLasRemeras => <CardProductosAdmin key={todasLasRemeras._id} img={todasLasRemeras?.foto1} nombre={todasLasRemeras?.nombre} id={todasLasRemeras._id} precio={todasLasRemeras.precio} talle={todasLasRemeras.talle} />)}
 
        </div>
     )
