@@ -53,8 +53,7 @@ export default function Navbar() {
           {logged?
            (
             <>
-            <LinkRouter to='/stockGeneral' className='LinkRefNav'>Stock</LinkRouter>
-            <div className='LinkIcon Icon1'><IoCartOutline className='RefCart' /></div>
+            <LinkRouter to='/stockgeneral' className='LinkRefNav'>Stock</LinkRouter>
             <hr className='HR' />
             </>
            ):(
@@ -64,7 +63,9 @@ export default function Navbar() {
           <div className='LinkIcon' >
             {logged ? (
               <div className='LinkIcon Icon1'>
+                <LinkRouter to='/carrito' className='LinkRefNav'>
                 <IoCartOutline className='RefCart' />
+                </LinkRouter>
                 <BiUserX className='RefCart' onClick={() => signOut()}></BiUserX>
               </div>
             ) : (

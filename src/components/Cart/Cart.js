@@ -23,12 +23,10 @@ const Cart = () => {
     console.log(carritoFinal);
     
     useEffect( () => {
-        if(carritoFinal.length > 0){
+        if(carritoFinal?.length > 0){
             setTotal(carritoFinal?.reduce( (acc, art) => acc + art.precio * art.cantidad, 0))
-        } else{
-            setTotal(0)
         }
-    }, [])
+    }, [carritoFinal])
     console.log("TOTAL ->", total)
     
     //console.log(carritoFinal);
