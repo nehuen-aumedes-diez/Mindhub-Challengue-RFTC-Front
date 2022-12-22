@@ -15,6 +15,11 @@
 .borrarUnoCarrito{
     width: 25%;
     text-align: center;
+    background-color: #E94533;
+    padding: 5px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
 }
 
 .botonesDeItemCarrito{
@@ -26,4 +31,8 @@
 .botonesDeItemCarrito button{
     height: 40px;
     text-align: center;
+}
+
+#detailsCompra{
+    margin-left: 1rem;
 }

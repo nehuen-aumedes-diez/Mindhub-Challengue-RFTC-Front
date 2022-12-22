@@ -62,7 +62,7 @@ function App() {
         <Route path="/contacto" element={<Contacto/>}></Route>
         <Route path="/nosotros" element={<Nosotros/>}></Route>
         <Route path="/noticias" element={<Noticias/>}></Route>
-          <Route path='/carrito' element={<Cart />} />
+        <Route path='/carrito' element={<Cart />} />
         <Route path="/buzosadmin" element={<BuzosAdmin/>}></Route>
         {/* <Route path="/editordebuzos/:id" element={<EditorDeBuzos/>}></Route> */}
         <Route path="/remerafadmin" element={<RemerasFAdmin/>}></Route>
