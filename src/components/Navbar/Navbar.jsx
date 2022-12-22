@@ -48,13 +48,12 @@ export default function Navbar() {
         </div>
         <LinkRouter to='/contacto' className='LinkRefNav'>Contacto</LinkRouter>
         <LinkRouter to='/noticias' className='LinkRefNav'>Noticias</LinkRouter>
-        <LinkRouter to='/stockGeneral' className='LinkRefNav'>Stock</LinkRouter>
+        
         <div id='containerIconRefs'>
-<<<<<<< HEAD
-=======
           {logged?
            (
             <>
+            <LinkRouter to='/stockGeneral' className='LinkRefNav'>Stock</LinkRouter>
             <div className='LinkIcon Icon1'><IoCartOutline className='RefCart' /></div>
             <hr className='HR' />
             </>
@@ -62,9 +61,6 @@ export default function Navbar() {
             <></>
            )
           }
-          
-          
->>>>>>> e11e457485f4c0eec000ad81ede291a1ce6ab80e
           <div className='LinkIcon' >
             {logged ? (
               <div className='LinkIcon Icon1'>
