@@ -1,5 +1,7 @@
-.carritoItem{
+
+.carritoItem {
     width: 50%;
+    height: 56vh;
     border: 1px solid grey;
     margin-bottom: 2rem;
     display: flex;
@@ -10,20 +12,25 @@
     background-color: rgba(255, 255, 255, 0.76);
 }
 
-.carritoItem h2, .carritoItem h5, .carritoItem p{
+.carritoItem h2,
+.carritoItem h5,
+.carritoItem p {
     color: black;
 }
 
-.carritoItem h2{
+.carritoItem h2 {
     font-size: 2rem;
     font-weight: bold;
 }
 
-.fotoytitulocarrito{
+.fotoytitulocarrito {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-height: 20vh;
 }
 
-.borrarUnoCarrito{
+.borrarUnoCarrito {
     width: 10%;
     text-align: center;
     background-color: #878787;
@@ -33,17 +40,17 @@
     cursor: pointer;
 }
 
-.borrarUnoCarrito:hover{
+.borrarUnoCarrito:hover {
     background-color: rgb(141, 21, 21);
     color: white;
 }
 
-.agregarUnoCarrito:hover{
+.agregarUnoCarrito:hover {
     background-color: rgb(120, 178, 33);
     color: white;
 }
 
-.agregarUnoCarrito{
+.agregarUnoCarrito {
     width: 10%;
     text-align: center;
     background-color: #878787;
@@ -53,7 +60,7 @@
     cursor: pointer;
 }
 
-.borrarTodosCarrito{
+.borrarTodosCarrito {
     width: 25%;
     text-align: center;
     background-color: #E94533;
@@ -63,38 +70,78 @@
     cursor: pointer;
 }
 
-.borrarTodosCarrito:hover{
+.borrarTodosCarrito:hover {
     background-color: rgb(69, 0, 0);
 }
 
-.botonesDeItemCarrito{
+.botonesDeItemCarrito {
     display: flex;
     justify-content: space-around;
     text-align: center;
 }
 
-.botonesDeItemCarrito button{
+.botonesDeItemCarrito button {
     height: 40px;
     text-align: center;
 }
 
-#detailsCompra{
-    margin-left: 1rem;
+#detailsCompra {
     display: flex;
-    width: 80%;
+    flex-wrap: wrap;
+    width: 50%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#detailsCompra h5{
+#detailsCompra h5 {
     font-size: 2rem;
 }
 
-.fotoDeItemCarrito{
-    width: 20%;
+.fotoDeItemCarrito {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.fotoDeItemCarrito img{
+.fotoDeItemCarrito img {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media screen and (max-width:780px) {
+
+    .carritoItem {
+        width: 80vw;
+    }
+
+    .carritoItem h2 {
+        font-size: 1.4rem;
+    }
+
+    #detailsCompra h5 {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width:429px) {
+
+    .carritoItem {
+        width: 100%;
+    }
+
+    #detailsCompra h5 {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width:395px) {
+
+    .carritoItem {
+        width: 100%;
+        gap: 10px;
+        padding: 0px;
+    }
 }
