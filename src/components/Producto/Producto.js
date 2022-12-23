@@ -32,9 +32,9 @@ const Cart = (props) => {
                 </div>
             </div>
             <div className='botonesDeItemCarrito'>
-                <div className='borrarUnoCarrito' id={id} onClick={borrarUno}>-</div>
-                <div className='agregarUnoCarrito' id={id} onClick={agregarUno}>+</div>
-                <div className='borrarTodosCarrito' id={id} onClick={borrarTodos}>Eliminar todos</div>
+                <button className='borrarUnoCarrito' id={id} onClick={borrarUno}>-</button>
+                <button className='agregarUnoCarrito' id={id} onClick={agregarUno}>+</button>
+                <button className='custom-btn btn-7'id={id} onClick={borrarTodos}><span>Eliminar todos</span></button>
             </div>
         </div>
     )

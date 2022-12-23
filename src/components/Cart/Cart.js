@@ -122,13 +122,13 @@ const Cart = () => {
                         <h3>{` TOTAL: $${total}`}</h3>
                     </div>
                     <div className='botonesFinalCarrito'>
-                        <div className='botonLimpiarCarrito' onClick={limpiarCarrito} >Limpiar carrito</div>
-                        <div className='botonConfirmarCompra' onClick={() => alert("usar pasarela de pago")} >Confirmar compra</div>
+                        <button className='custom-btn btn-7' onClick={limpiarCarrito} ><span>Limpiar carrito</span></button>
+                        <button className="custom-btn btn-3" onClick={() => alert("usar pasarela de pago")} ><span>Confirmar compra</span></button>
                     </div>
                 </>
                 : <h2>No tenés articulos en el carrito &#128553;</h2>
                 )
-            :
+            : 
             <>
                 <h2>No tenés articulos en el carrito &#128553; </h2>
             </>
