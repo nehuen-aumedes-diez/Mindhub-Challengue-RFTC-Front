@@ -1,0 +1,14 @@
+
+  .listalist a:link {
+    font-size: large;
+    font-weight: bolder;
+    text-decoration: none;
+  }
+  
+  
+select {
+    width: 189px;
+    height: 30px;
+    font-size: medium;
+    font-weight: bolder;
+}

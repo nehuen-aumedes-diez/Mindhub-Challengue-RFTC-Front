@@ -1,0 +1,60 @@
+@media screen and (min-width: 320px) {
+  #containerGeneralHome-1 {
+    min-height: 40vh;
+  }
+
+  .image-banner {
+    width: 100%;
+  }
+
+  #containerBanner{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .titulo-banner{
+    color: white;
+    font-weight: 200;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .titulo-banner2{
+    color: black;
+    font-weight: 250;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #containerBanner {
+    padding: 5rem;
+  }
+
+  .image-banner {
+    width: 100%;
+    filter: brightness(75%);
+    height: 93vh;
+    object-fit: cover;
+  }
+
+  .titulo-banner{
+    color: white;
+    font-weight: 400;
+    font-size: 22px;
+    font-family: proxima-nova, sans-serif;
+  }
+
+  .titulo-banner2{
+    color: white;
+    font-weight: 500;
+    font-size: 22px;
+    font-family: proxima-nova, sans-serif;
+  }
+}

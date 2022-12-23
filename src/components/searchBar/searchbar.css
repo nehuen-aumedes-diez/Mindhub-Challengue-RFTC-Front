@@ -1,0 +1,91 @@
+.search_wrap{
+	width: 300px;
+
+}
+
+.search_wrap .search_box{
+	position: relative;
+	width: 80%;
+	height: 4vh;
+}
+
+.search_wrap .search_box .input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px 20px;
+	border-radius: 3px;
+	font-size: 18px;
+}
+
+
+
+.search_wrap .search_box .btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 15%;
+	height: 100%;
+	background: #7690da;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.search_wrap .search_box .btn:hover{
+	background: #708bd2;	
+}
+
+.search_wrap .search_box .btn.btn_common .fas{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	font-size: 20px;
+}
+
+
+.search_wrap.search_wrap_3 .search_box .input{
+	padding-right: 80px;
+}
+
+.search_wrap.search_wrap_2 .search_box .btn{
+	left: 0;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+
+.search_wrap.search_wrap_3 .search_box .input{
+	border-radius: 50px;
+}
+
+.search_wrap.search_wrap_3 .search_box .btn{
+	right: 0px;
+	border-radius: 50%;
+}
+
+@media only screen and (max-width: 320px) {
+    .search_wrap .search_box{
+    left:30px ;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .search_wrap .search_box{
+    left:30px ;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .search_wrap .search_box{
+    left:30px ;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .search_wrap .search_box{
+    left:30px ;
+    }
+}

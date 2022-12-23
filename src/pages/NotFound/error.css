@@ -1,0 +1,139 @@
+body {
+    background-color: #000;
+}
+#containerError {
+    background-color: #000;
+}
+.cuerpo-error{
+    text-align: center;
+    padding-top: 5%;
+    background-color: black;
+    padding-bottom: 5%;} 
+
+.cuerpo-error svg #football{
+    animation: jump 1.5s ease-in-out  infinite ;    
+}
+.textocont {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.titulo404 {
+    color: aliceblue;
+    font-size: 50px;
+}
+.texto404{
+    color: aliceblue;
+    font-size: 20px;
+    padding-top: 50px;
+    
+}
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 50px;
+    }
+  
+  .button:hover {
+    background-color: #e75879;
+    box-shadow: 0px 15px 20px rgba(230, 51, 96, 0.776);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+@keyframes jump{
+    0%{
+    transform: translate(0 ,0) ;
+    }
+    50%{
+        transform: translate(-25px,-100px) ;
+    }
+    100%{
+        transform: translate(0, 0) ;
+    }
+}
+.jugadorbody{
+    margin-left: 30%;
+}
+.cuerpo-error svg #hand{
+    
+    animation: hand 1.5s linear infinite;
+    transform-origin: top right;
+    transform-box: fill-box ;
+}
+@keyframes hand{
+    0%{
+        transform: rotate(-7deg)  ;
+        
+    }    
+    100%{
+        transform: rotate(0deg) ;
+    }
+}
+
+
+.cuerpo-error svg #leg{
+    animation: kick 1.5s ease-in-out  infinite  ;
+    transform-origin: top;
+    transform-box: fill-box;
+}
+@keyframes kick{
+    0%{
+        transform: rotate(7deg);
+    }
+    100%{
+        transform: rotate(-5deg) ;
+    }
+}
+
+.cuerpo-error svg #head{
+    animation: rotate 1.5s ease-in-out infinite;
+    transform-origin: center;
+    transform-box: fill-box ;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(15deg) translate(5px , -5px) ;
+        
+    }
+    100%{
+        transform: rotate(0deg) ;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .jugadorbody{
+        width: 80%;
+    }
+    .titulo404 {
+        color: aliceblue;
+        font-size: 30px;
+    }
+    .texto404{
+        color: aliceblue;
+        font-size: 15px;
+    }
+    .button {
+        width: 150px;
+        }
+  }

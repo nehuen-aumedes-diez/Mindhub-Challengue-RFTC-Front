@@ -1,0 +1,137 @@
+
+
+#content-conteo {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    background: rgb(159, 27, 64);
+    background: linear-gradient(90deg, rgb(0, 0, 0) 0%, #FDE5B0 200%);
+    padding: 5px;
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.75);
+}
+
+#faltan,
+#conteo {
+    display: inline-flex;
+}
+
+#faltan {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    margin: auto;
+}
+
+#conteo {
+    display: flex;
+    width: 50%;
+}
+
+.wrap-date {
+    font-weight: bold;
+    width: 25%;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+    margin: 3px;
+    -webkit-box-shadow: 0px 0px 3px -1px rgba(255, 255, 255, 1);
+    -moz-box-shadow: 0px 0px 3px -1px rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 3px -1px rgba(255, 255, 255, 1);
+
+}
+
+.text-time {
+    background: white;
+    color: #29000e;
+    text-align: center;
+    padding: 1px;
+    margin-bottom: 0;
+    font-size: 1.2em;
+    font-family: 'Open Sans', sans-serif;
+    vertical-align: bottom;
+}
+
+.wrap-time {
+    font-size: 3em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@media only screen and (max-width: 1200px){
+    #faltan{
+        width: 500px;
+    }
+    #faltan img{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .wrap-date {
+        max-height: 80px;
+    }
+
+    .text-time {
+        font-size: 0.8em;
+    }
+
+    .wrap-time {
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #content-conteo {
+        display: block;
+    }
+
+    #faltan,
+    #conteo {
+        display: block;
+    }
+
+    #faltan {
+        width: 100%;
+        text-align: center;
+    }
+
+    #conteo {
+        display: flex;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .text-time {
+        font-size: 1em;
+    }
+
+    .wrap-time {
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #content-conteo {
+        display: block;
+    }
+
+    #faltan,
+    #conteo {
+        display: block;
+    }
+
+    #faltan {
+        width: 100%;
+        text-align: center;
+    }
+
+    #conteo {
+        display: flex;
+        width: 100%;
+        font-size: 5vw;
+        margin: 0 auto;
+
+    }
+}
