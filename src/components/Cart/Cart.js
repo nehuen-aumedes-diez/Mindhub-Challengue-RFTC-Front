@@ -66,6 +66,7 @@ const Cart = () => {
             })
     }
 
+
     const borrarUno = (e) => {
         //console.log(e)
         //console.log(encontrado);
@@ -173,6 +174,49 @@ const Cart = () => {
             </>
             }
 
+            <PayPalScriptProvider options={{"client-id": "AVh7rNnsYal82tWSqIDxi-KFWJntSLsCf0zyUOYTqwtW_RDGS6Zu1ssuP4JCJc-n-apumaC2LI3sg_k0"}}>
+                <PayPalButtons
+
+                disabled={false}
+                forceReRender={[amount, currency]}
+                fundingSource={undefined}
+                createOrder={(data, actions) => {
+                    return actions.order
+                        .create({
+                            purchase_units: [
+                                {
+                                    amount: {
+                                
+                                        value: `${total}` ,
+                                    },
+                                },
+                            ],
+                        })
+                        .then((orderId) => {
+                            // Your code here after create the order
+                            return orderId;
+                        });
+                }}
+                onApprove={function (data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        Swal.fire({
+                            title: 'Felicidades!',
+                            text: "Te compraste una tapapanzas",
+                            icon: 'success',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Si!'
+                            }).then((result) => {
+                            if (result.isConfirmed) {
+                                localStorage.removeItem('carrito')
+                                setReload(!reload)
+                            }
+                            })
+                    });
+                }}
+                />
+            </PayPalScriptProvider>
             
         </div>
 
