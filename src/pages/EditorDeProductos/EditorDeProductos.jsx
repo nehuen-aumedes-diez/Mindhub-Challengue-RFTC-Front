@@ -5,6 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import './EditorDeProductos.css'
+import { BASE_URL } from "../../api/url";
 
 const EditorDeProductos = () => {
 
@@ -38,7 +39,7 @@ const EditorDeProductos = () => {
 
     console.log(data);
     try {
-      let res = await axios.patch(`http://localhost:8000/api/productos/${id}`, data);
+      let res = await axios.patch(`${BASE_URL}/productos/${id}`, data);
 
       if (res.data.success) {
         nav("/stockGeneral");
