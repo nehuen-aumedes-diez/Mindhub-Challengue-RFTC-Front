@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import CamisetasF from './pages/CamisetasF/CamisetasF'
+import CamisetasF from './pages/CamisetasF/CamisetasF.jsx'
 import Home from "./pages/Home/Home";
 import CamisetasFDetalles from "./pages/CamisetasFDetalles/CamisetasFDetalles";
 import { Routes, Route } from "react-router-dom";
