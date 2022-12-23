@@ -134,47 +134,7 @@ const Cart = () => {
                     <div className='botonesFinalCarrito'>
                         <button className='custom-btn btn-7' onClick={limpiarCarrito} ><span>Limpiar carrito</span></button>
                         {/* <div className='botonConfirmarCompra' onClick={() => alert("usar pasarela de pago")} >Confirmar compra</div> */}
-                        <PayPalScriptProvider options={{"client-id": "Af9U1fl3xlEBDZikHYqtyE_ccj-q9C6bPDer6heHIcrkZ3xDXkMvnvZFiYnbKdBmxU5Ag60oTQvpRBnA"}}>
-                            <PayPalButtons
-
-                            disabled={false}
-                            forceReRender={[amount, currency]}
-                            fundingSource={undefined}
-                            createOrder={(data, actions) => {
-                                return actions.order
-                                    .create({
-                                        purchase_units: [
-                                            {
-                                                amount: {
-                                            
-                                                    value: `${total}` ,
-                                                },
-                                            },
-                                        ],
-                                    })
-                                    .then((orderId) => {
-                                        // Your code here after create the order
-                                        return orderId;
-                                    });
-                            }}
-                            onApprove={function (data, actions) {
-                                return actions.order.capture().then(function () {
-                                    // Your code here after capture the order
-                                });
-                            }}
-                        />
-                        </PayPalScriptProvider>
-                    </div>
-                </>
-                : <h2>No tenés articulos en el carrito &#128553;</h2>
-                )
-            : 
-            <>
-                <h2>No tenés articulos en el carrito &#128553; </h2>
-            </>
-            }
-
-            <PayPalScriptProvider options={{"client-id": "AVh7rNnsYal82tWSqIDxi-KFWJntSLsCf0zyUOYTqwtW_RDGS6Zu1ssuP4JCJc-n-apumaC2LI3sg_k0"}}>
+                                    <PayPalScriptProvider options={{"client-id": "AVh7rNnsYal82tWSqIDxi-KFWJntSLsCf0zyUOYTqwtW_RDGS6Zu1ssuP4JCJc-n-apumaC2LI3sg_k0"}}>
                 <PayPalButtons
 
                 disabled={false}
@@ -217,6 +177,16 @@ const Cart = () => {
                 }}
                 />
             </PayPalScriptProvider>
+                    </div>
+                </>
+                : <h2>No tenés articulos en el carrito &#128553;</h2>
+                )
+            : 
+            <>
+                <h2>No tenés articulos en el carrito &#128553; </h2>
+            </>
+            }
+
             
         </div>
 
