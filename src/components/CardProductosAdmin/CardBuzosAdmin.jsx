@@ -22,7 +22,7 @@ const CardProductosAdmin = (props) => {
       let res = await axios.delete(`${BASE_URL}/productos/${id}`, data)
       console.log(res);
       if (res.data.success) {
-        nav("/chau");
+        nav("/stockGeneral");
         swal({
           title: "Coleccion eliminada",
           icon: "success",
