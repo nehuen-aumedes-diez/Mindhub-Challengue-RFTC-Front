@@ -161,12 +161,12 @@ const Cart = () => {
                     return actions.order.capture().then(function(details) {
                         Swal.fire({
                             title: 'Felicidades!',
-                            text: "Te compraste una tapapanzas",
+                            text: "Gracias por tu compra!",
                             icon: 'success',
                             showCancelButton: true,
                             confirmButtonColor: '#3085d6',
                             cancelButtonColor: '#d33',
-                            confirmButtonText: 'Si!'
+                            confirmButtonText: 'Siuu'
                             }).then((result) => {
                             if (result.isConfirmed) {
                                 localStorage.removeItem('carrito')
