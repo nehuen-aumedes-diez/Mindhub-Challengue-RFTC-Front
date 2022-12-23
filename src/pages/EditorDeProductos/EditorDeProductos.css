@@ -1,28 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Quicksand');
 
 .container11 {
-    margin-top: 41px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+width: 90vw;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ gap: 10px;
+ margin-bottom: 30px;
+ padding-left: 10vw;
+
 }
 
-@media (min-width: 768px) {
-    .container11 {
-        width: 750px;
+@media screen and (max-width:420px) {
+    .card11 {
+        width: 300px;
+        background-color: #1d3247;
     }
-}
-
-@media (min-width: 992px) {
     .container11 {
-        width: 970px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .container11 {
-        width: 1170px;
+        
+        width: 300px;
     }
 }
 
@@ -38,8 +35,7 @@
     color: white;
     padding: 20px;
     border-radius: 5px;
-    width: 400px;
-    margin: 40px auto;
+    
 }
 
 .card11:hover {
@@ -49,7 +45,7 @@
 }
 
 .label11 h3 {
-    margin: 10px 0;
+    
     display: flex;
     text-align: start;
 }
@@ -58,7 +54,7 @@
 .label11,
 p {
     display: block;
-    margin-bottom: 5px;
+   
     color: #ffff;
     letter-spacing: 0.5px;
     font-size: 20px;
@@ -67,8 +63,8 @@ p {
 
 .input11,
 textarea {
+
     
-    padding: 12px 5%;
     width: 90%;
     border: 0;
     border-radius: 4px;
@@ -93,7 +89,7 @@ textarea {
     justify-content: center;
     background-color: goldenrod;
     padding: 12px 5%;
-    margin: 20px;
+    
     position: relative;
     color: #FFF;
     font-size: 18px;

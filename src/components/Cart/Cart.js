@@ -1,24 +1,29 @@
 import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+//import { useDispatch, useSelector } from 'react-redux'
 import Swal from 'sweetalert2'
-import productosAction from '../../redux/actions/productosAction'
+//import productosAction from '../../redux/actions/productosAction'
 import Producto from '../Producto/Producto'
 import './cart.css'
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 
 const Cart = () => {
-    let dispatch = useDispatch()
-    let { productos } = useSelector(store => store.productos)
-    //let { carrito } = useSelector(store => store.carritoR)
-    let {getProductos} = productosAction
+    // let dispatch = useDispatch()
+    // let { productos } = useSelector(store => store.productos)
+    // let { carrito } = useSelector(store => store.carritoR)
+    // let {getProductos} = productosAction
     let [carritoFinal, setCarritoFinal] = useState('')
     let [reload, setReload] = useState(true)
     let [total, setTotal] = useState('')
+
+    const amount = `${total}`;
+    const currency = "MXN";
 
     
     useEffect( () => {
         let carritoLocal = localStorage.getItem('carrito')
         setCarritoFinal(JSON.parse(carritoLocal))
+        
     }, [reload])
     console.log(carritoFinal);
     
@@ -31,10 +36,10 @@ const Cart = () => {
     
     //console.log(carritoFinal);
 
-    useEffect( () => {
-        dispatch(getProductos())
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    // useEffect( () => {
+    //     dispatch(getProductos())
+    //     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, [])
 
     const limpiarCarrito = () => {
         Swal.fire({
@@ -58,8 +63,54 @@ const Cart = () => {
             })
     }
 
+
     const borrarUno = (e) => {
-        console.log(e)
+        //console.log(e)
+        //console.log(encontrado);
+        // setCarritoFinal(restando)
+        //console.log("2",carritoFinal);
+        let encontrado = carritoFinal.find( art => art.id === e?.target?.id)
+        if (encontrado.cantidad !== 1){
+            setCarritoFinal(carritoFinal.map((prod) => (prod.id === encontrado.id) && prod.cantidad--))
+            guardarEnLocal()
+            //console.log("3",carritoFinal);
+        }
+        setReload(!reload)
+    }
+
+    const agregarUno = (e) => {
+        let encontrado = carritoFinal.find( art => art.id === e?.target?.id)
+        if (encontrado.cantidad < encontrado.stock[0]){
+            setCarritoFinal(carritoFinal.map((prod) => (prod.id === encontrado.id) && prod.cantidad++))
+            guardarEnLocal()
+            //console.log("3",carritoFinal);
+        }
+        setReload(!reload)
+    }
+
+    const borrarTodos = (e) => {
+        //console.log("2",carritoFinal)
+        let encontrado = carritoFinal.find( art => art.id === e?.target?.id)
+        //console.log("encotnraod",encontrado);
+        if (encontrado){
+            let filtrado = carritoFinal.filter( art => art !== encontrado)
+            //console.log("filtrado", filtrado);
+            guardarFiltradoEnLocal(filtrado)
+            setCarritoFinal(filtrado)
+        }
+        //console.log("4",carritoFinal);
+        // guardarEnLocal()
+        setReload(!reload)
+    }
+
+
+
+    const guardarEnLocal = () => {
+        localStorage.setItem('carrito', JSON.stringify(carritoFinal))
+    }
+
+    const guardarFiltradoEnLocal = (data) => {
+        localStorage.setItem('carrito', JSON.stringify(data))
     }
 
     return(
@@ -71,11 +122,14 @@ const Cart = () => {
                 ? 
                 <>
                     {carritoFinal.map((prod, indice) => 
-                    <Producto key={indice} id={prod._id} fnBorrarUno={borrarUno} fnBorrarTodos={() => {}} nombre={prod.nombre} tipo={prod.tipo} cantidad={prod.cantidad} foto={prod.foto} precio={prod.precio} />)}
+                    <Producto key={indice} id={prod.id} borrarUno={borrarUno} agregarUno={agregarUno} borrarTodos={borrarTodos} nombre={prod.nombre} tipo={prod.tipo} cantidad={prod.cantidad} foto={prod.foto} precio={prod.precio} />)}
                     <div className='totalDelCarrito'>
-                        <h3 style={{color: 'black'}}>{` TOTAL: $${total}`}</h3>
+                        <h3>{` TOTAL: $${total}`}</h3>
                     </div>
-                    <button onClick={limpiarCarrito} >Limpiar carrito</button>
+                    <div className='botonesFinalCarrito'>
+                        <div className='botonLimpiarCarrito' onClick={limpiarCarrito} >Limpiar carrito</div>
+                        <div className='botonConfirmarCompra' onClick={() => alert("usar pasarela de pago")} >Confirmar compra</div>
+                    </div>
                 </>
                 : <h2>No tenés articulos en el carrito &#128553;</h2>
                 )
@@ -84,6 +138,51 @@ const Cart = () => {
                 <h2>No tenés articulos en el carrito &#128553; </h2>
             </>
             }
+
+            <PayPalScriptProvider options={{"client-id": "AVh7rNnsYal82tWSqIDxi-KFWJntSLsCf0zyUOYTqwtW_RDGS6Zu1ssuP4JCJc-n-apumaC2LI3sg_k0"}}>
+                <PayPalButtons
+
+                disabled={false}
+                forceReRender={[amount, currency]}
+                fundingSource={undefined}
+                createOrder={(data, actions) => {
+                    return actions.order
+                        .create({
+                            purchase_units: [
+                                {
+                                    amount: {
+                                
+                                        value: `${total}` ,
+                                    },
+                                },
+                            ],
+                        })
+                        .then((orderId) => {
+                            // Your code here after create the order
+                            return orderId;
+                        });
+                }}
+                onApprove={function (data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        Swal.fire({
+                            title: 'Felicidades!',
+                            text: "Te compraste una tapapanzas",
+                            icon: 'success',
+                            showCancelButton: true,
+                            confirmButtonColor: '#3085d6',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Si!'
+                            }).then((result) => {
+                            if (result.isConfirmed) {
+                                localStorage.removeItem('carrito')
+                                setReload(!reload)
+                            }
+                            })
+                    });
+                }}
+                />
+            </PayPalScriptProvider>
+            
         </div>
 
     )

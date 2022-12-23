@@ -6,4 +6,52 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(114, 111, 111, 0.26);
+    color: rgba(190, 185, 185, 0.699);
+}
+
+.totalDelCarrito h3{
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.botonesFinalCarrito{
+    display: flex;
+    gap: 3rem;
+}
+
+.botonConfirmarCompra{
+    border-radius: 20px;
+	border: 1px solid lawngreen;
+	background-color: lawngreen;
+	color: #000000;
+    cursor: pointer;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}
+
+.botonLimpiarCarrito{
+    border-radius: 20px;
+	border: 1px solid #c80505;
+	background-color: #c80505;
+    cursor: pointer;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.botonLimpiarCarrito:hover{
+    background-color: #040404;
+    color: red;
+}
+
+.botonConfirmarCompra:hover{
+    background-color: rgb(3, 255, 45);
+    border: 1px solid black;
 }

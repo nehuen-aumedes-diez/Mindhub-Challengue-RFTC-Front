@@ -7,6 +7,7 @@ const initialState = {
     perfiles: [],
     name:"",
     logged: false,
+    role:"",
     token:""
 }
 
@@ -26,6 +27,7 @@ const userReducer = createReducer(initialState, (builder)=>{
             let newState={
                 ...state,
                 name: user.name,
+                role: user.role,
                 logged: true,
                 token: token
             }
@@ -47,6 +49,7 @@ const userReducer = createReducer(initialState, (builder)=>{
             let newState={
                 ...state,
                 name: "",
+                role: "",
                 logged: false,
                 token: ""
             }
@@ -67,6 +70,7 @@ const userReducer = createReducer(initialState, (builder)=>{
             let newState={
                 ...state,
                 name: user.name,
+                role:user.role,
                 logged: true,
                 token: token
             }
