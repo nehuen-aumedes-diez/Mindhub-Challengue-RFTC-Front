@@ -15,6 +15,7 @@ const Cart = () => {
     let [carritoFinal, setCarritoFinal] = useState('')
     let [reload, setReload] = useState(true)
     let [total, setTotal] = useState('')
+    let [totalArt, setTotalArt] = useState('')
 
     const amount = `${total}`;
     const currency = "MXN";
@@ -30,9 +31,11 @@ const Cart = () => {
     useEffect( () => {
         if(carritoFinal?.length > 0){
             setTotal(carritoFinal?.reduce( (acc, art) => acc + art.precio * art.cantidad, 0))
+            setTotalArt(carritoFinal?.reduce( (acc, art) => acc + art.cantidad, 0))
         }
     }, [carritoFinal])
     console.log("TOTAL ->", total)
+    console.log("TOTAL ART ->", totalArt)
     
     //console.log(carritoFinal);
 
@@ -88,12 +91,13 @@ const Cart = () => {
     }
 
     const borrarTodos = (e) => {
-        //console.log("2",carritoFinal)
-        let encontrado = carritoFinal.find( art => art.id === e?.target?.id)
-        //console.log("encotnraod",encontrado);
+        console.log("id",e);
+        console.log("2.....",carritoFinal)
+        let encontrado = carritoFinal?.find( art => art.id === e?.target?.id)
+        console.log("encotnraod",encontrado);
         if (encontrado){
-            let filtrado = carritoFinal.filter( art => art !== encontrado)
-            //console.log("filtrado", filtrado);
+            let filtrado = carritoFinal?.filter( art => art !== encontrado)
+            console.log("filtrado", filtrado);
             guardarFiltradoEnLocal(filtrado)
             setCarritoFinal(filtrado)
         }
@@ -123,10 +127,11 @@ const Cart = () => {
                     {carritoFinal.map((prod, indice) => 
                     <Producto key={indice} id={prod.id} borrarUno={borrarUno} agregarUno={agregarUno} borrarTodos={borrarTodos} nombre={prod.nombre} tipo={prod.tipo} cantidad={prod.cantidad} foto={prod.foto} precio={prod.precio} />)}
                     <div className='totalDelCarrito'>
+                        <h5>{`Total de artículos: ${totalArt}`}</h5>
                         <h3>{` TOTAL: $${total}`}</h3>
                     </div>
                     <div className='botonesFinalCarrito'>
-                        <div className='botonLimpiarCarrito' onClick={limpiarCarrito} >Limpiar carrito</div>
+                        <button className='custom-btn btn-7' onClick={limpiarCarrito} ><span>Limpiar carrito</span></button>
                         {/* <div className='botonConfirmarCompra' onClick={() => alert("usar pasarela de pago")} >Confirmar compra</div> */}
                         <PayPalScriptProvider options={{"client-id": "Af9U1fl3xlEBDZikHYqtyE_ccj-q9C6bPDer6heHIcrkZ3xDXkMvnvZFiYnbKdBmxU5Ag60oTQvpRBnA"}}>
                             <PayPalButtons
@@ -162,7 +167,7 @@ const Cart = () => {
                 </>
                 : <h2>No tenés articulos en el carrito &#128553;</h2>
                 )
-            :
+            : 
             <>
                 <h2>No tenés articulos en el carrito &#128553; </h2>
             </>
