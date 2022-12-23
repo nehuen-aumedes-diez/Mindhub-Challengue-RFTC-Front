@@ -5,6 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import './CreadorDeColecciones.css'
+import { BASE_URL } from "../../api/url";
 
 const CreadorDeColecciones = () => {
 
@@ -41,7 +42,7 @@ const CreadorDeColecciones = () => {
 
     console.log(data);
     try {
-      let res = await axios.post(`http://localhost:8000/api/productos`, data);
+      let res = await axios.post(`${BASE_URL}/productos`, data);
 
       if (res.data.success) {
         nav("/stockGeneral");
