@@ -4,6 +4,7 @@ import { Link as Linkeador } from "react-router-dom";
 import axios from "axios";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../../api/url";
 
 const CardProductosAdmin = (props) => {
   let { img, nombre, precio, talle, id } = props;
@@ -18,7 +19,7 @@ const CardProductosAdmin = (props) => {
     console.log(data);
     
     try {
-      let res = await axios.delete(`http://localhost:8000/api/productos/${id}`, data)
+      let res = await axios.delete(`${BASE_URL}/productos/${id}`, data)
       console.log(res);
       if (res.data.success) {
         nav("/chau");
