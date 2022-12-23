@@ -4,7 +4,7 @@ import { BASE_URL } from "../../api/url";
 
 const getRemeraF = createAsyncThunk("getRemeraF", async () => {
   try {
-    const res = await axios.get(`http://localhost:8000/api/productos?tipo=remeraF`);
+    const res = await axios.get(`${BASE_URL}/productos?tipo=remeraF`);
     //console.log(res)
     return res.data.res;
 
@@ -18,7 +18,7 @@ const getRemeraF = createAsyncThunk("getRemeraF", async () => {
 const getOneRemeraFId = createAsyncThunk(
   "getOneRemeraFId",
   async (_id) => {
-    let url = `http://localhost:8000/api/productos?tipo=remeraF&_id=${_id}`;
+    let url = `${BASE_URL}/productos?tipo=remeraF&_id=${_id}`;
     try {
       const res = await axios.get(url);
       //console.log(res.data.res);
@@ -36,7 +36,7 @@ const getOneRemeraFId = createAsyncThunk(
 const deleteRemeraF = createAsyncThunk("deleteRemeraF", async ({remeraFId}) => {
 
   try {
-    const res = await axios.delete(`http://localhost:8000/api/remeraF/${remeraFId}`);
+    const res = await axios.delete(`${BASE_URL}/remeraF/${remeraFId}`);
 
     return {
       success: true,
